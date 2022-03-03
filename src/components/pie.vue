@@ -50,7 +50,6 @@ const option = {
     }
   ],
 };
-
 // basic resize in echart
 const resizeHandler = _.debounce(() => {
   if (myChart) {
@@ -60,7 +59,7 @@ const resizeHandler = _.debounce(() => {
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
-  let myChart = echarts.init(pie.value)
+  let myChart = echarts.init(pie.value, 'walden')
   myChart.setOption(option)
 });
 

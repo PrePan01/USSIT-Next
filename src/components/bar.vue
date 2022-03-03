@@ -7,6 +7,7 @@
 import { onMounted, onBeforeUnmount, ref, onBeforeUpdate } from 'vue'
 import * as echarts from 'echarts'
 import _ from 'lodash'
+import walden from '/src/assets/walden.json'
 const bar = ref(null)
 let app = {}
 const categories = (function () {
@@ -127,7 +128,7 @@ const resizeHandler = _.debounce(() => {
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
-  let myChart = echarts.init(bar.value)
+  let myChart = echarts.init(bar.value, 'walden')
   myChart.setOption(option)
   rollup(myChart)
 });
