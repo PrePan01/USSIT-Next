@@ -12,8 +12,7 @@ const option = {
     trigger: 'item'
   },
   legend: {
-    top: '5%',
-    left: 'center'
+    left: '5%'
   },
   series: [
     {
@@ -43,8 +42,6 @@ const option = {
         { value: 1048, name: 'Search Engine' },
         { value: 735, name: 'Direct' },
         { value: 580, name: 'Email' },
-        { value: 484, name: 'Union Ads' },
-        { value: 300, name: 'Video Ads' }
       ]
     }
   ],
@@ -71,7 +68,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .pie-chart {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
 }
 </style>

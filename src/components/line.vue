@@ -109,7 +109,7 @@ const rollup = (myChart) => {
 
 <style scoped>
 .line-chart {
-  width: 800px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
 }
 </style>

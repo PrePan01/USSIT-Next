@@ -58,7 +58,6 @@ const option = {
       }
     }
   },
-  legend: {},
   toolbox: {
     show: true,
     feature: {
@@ -173,7 +172,7 @@ const rollup = ((myChart) => {
 
 <style scoped>
 .bar-chart {
-  width: 800px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
 }
 </style>
