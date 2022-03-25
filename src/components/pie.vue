@@ -50,6 +50,7 @@ const option = {
     }
   ],
 };
+
 // basic resize in echart
 const resizeHandler = _.debounce(() => {
   if (myChart) {
