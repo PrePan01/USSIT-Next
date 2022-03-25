@@ -1,18 +1,24 @@
 <template>
-  <div class="pie-chart" ref="pie"></div>
+  <n-card hoverable>
+    <div class="pie-chart" ref="pie"></div>
+  </n-card>
 </template>
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { NCard } from 'naive-ui'
 import * as echarts from 'echarts'
 import _ from 'lodash'
 const pie = ref(null)
 const option = {
+  title: {
+    text: 'Dynamic Data'
+  },
   tooltip: {
     trigger: 'item'
   },
   legend: {
-    left: '5%'
+    top: 'bottom'
   },
   series: [
     {
@@ -68,7 +74,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .pie-chart {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 80%;
 }
 </style>

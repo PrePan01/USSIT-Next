@@ -1,27 +1,29 @@
 <template>
-  <div class="container">
-    <div class="left-top">
-      <Pie></Pie>
+  <n-config-provider :theme="darkTheme" style="height: 100%;">
+    <div class="container">
+      <div class="left-top">
+          <Pie></Pie>
+      </div>
+      <div class="left-center">
+        <Pie></Pie>
+      </div>
+      <div class="right-top">
+        <Zoom></Zoom>
+      </div>
+      <div class="right-center">
+        <Pie></Pie>
+      </div>
+      <div class="center">
+        <Map></Map>
+      </div>
+      <div class="left-button">
+        <Bar></Bar>
+      </div>
+      <div class="right-button">
+        <Line></Line>
+      </div>
     </div>
-    <div class="left-center">
-      <Pie></Pie>
-    </div>
-    <div class="right-top">
-      <Zoom></Zoom>
-    </div>
-    <div class="right-center">
-      <Pie></Pie>
-    </div>
-    <div class="center">
-      <Map></Map>
-    </div>
-    <div class="left-button">
-      <Bar></Bar>
-    </div>
-    <div class="right-button">
-      <Line></Line>
-    </div>
-  </div>
+  </n-config-provider>
 </template>
 
 <script setup>
@@ -31,6 +33,8 @@ import Line from "./components/line.vue"
 import Map from "./components/map.vue"
 import Zoom from "./components/zoom.vue"
 import * as echarts from 'echarts'
+import { NCard, NConfigProvider } from 'naive-ui'
+import { darkTheme } from 'naive-ui'
 // Theme Config
 import walden from '/src/assets/walden.json'
 echarts.registerTheme('walden', walden)
@@ -43,7 +47,7 @@ echarts.registerTheme('walden', walden)
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
-  gap: 10px 20px;
+  gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
     "left-top left-top center center center center right-top right-top"
@@ -61,41 +65,31 @@ body {
 }
 .left-top {
   grid-area: left-top;
-  background-color: antiquewhite;
 }
 
 .left-center {
   grid-area: left-center;
-  background-color: green;
 }
 
 .right-top {
   grid-area: right-top;
-  background-color: red;
 }
 
 .right-center {
   grid-area: right-center;
-  background-color: blue;
 }
 
 .center {
   grid-area: center;
-  background-color: yellow;
 }
 
 .left-button {
   grid-area: left-button;
-  background-color: purple;
 }
 
 .right-button {
   grid-area: right-button;
-  background-color: springgreen;
 }
 
-.anchorBL {
-  display: none;
-}
 </style>
 

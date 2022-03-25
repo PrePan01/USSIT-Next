@@ -1,11 +1,14 @@
 
 <template>
-  <div class="bar-chart" ref="bar"></div>
+  <n-card hoverable>
+    <div class="bar-chart" ref="bar"></div>
+  </n-card>
 </template>
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref, onBeforeUpdate } from 'vue'
 import * as echarts from 'echarts'
+import { NCard } from 'naive-ui'
 import _ from 'lodash'
 import walden from '/src/assets/walden.json'
 const bar = ref(null)
@@ -71,6 +74,11 @@ const option = {
     start: 0,
     end: 100
   },
+  grid: [
+    {
+      bottom: 20
+    }
+  ],
   xAxis: [
     {
       type: 'category',
@@ -139,40 +147,40 @@ onBeforeUnmount(() => {
 // TO DO
 const rollup = ((myChart) => {
   setInterval(function () {
-  let axisData = new Date().toLocaleTimeString().replace(/^\D*/, '');
-  data.shift();
-  data.push(Math.round(Math.random() * 1000));
-  data2.shift();
-  data2.push(+(Math.random() * 10 + 5).toFixed(1));
-  categories.shift();
-  categories.push(axisData);
-  categories2.shift();
-  categories2.push(app.count++);
-  myChart.setOption({
-    xAxis: [
-      {
-        data: categories
-      },
-      {
-        data: categories2
-      }
-    ],
-    series: [
-      {
-        data: data
-      },
-      {
-        data: data2
-      }
-    ]
-  });
-}, 2000);
+    let axisData = new Date().toLocaleTimeString().replace(/^\D*/, '');
+    data.shift();
+    data.push(Math.round(Math.random() * 1000));
+    data2.shift();
+    data2.push(+(Math.random() * 10 + 5).toFixed(1));
+    categories.shift();
+    categories.push(axisData);
+    categories2.shift();
+    categories2.push(app.count++);
+    myChart.setOption({
+      xAxis: [
+        {
+          data: categories
+        },
+        {
+          data: categories2
+        }
+      ],
+      series: [
+        {
+          data: data
+        },
+        {
+          data: data2
+        }
+      ]
+    });
+  }, 2000);
 })
 </script>
 
 <style scoped>
 .bar-chart {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 }
 </style>

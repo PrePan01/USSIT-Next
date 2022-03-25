@@ -553,7 +553,10 @@ const option = {
       label: {
         formatter: '{b}',
         position: 'right',
-        show: false
+        show: false,
+        textStyle: {
+          color: '#fff'
+        }
       },
       emphasis: {
         label: {
@@ -585,7 +588,10 @@ const option = {
       label: {
         formatter: '{b}',
         position: 'right',
-        show: true
+        show: true,
+        textStyle: {
+          color: '#fff'
+        }
       },
       itemStyle: {
         shadowBlur: 10,

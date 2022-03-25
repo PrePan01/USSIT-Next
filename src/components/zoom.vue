@@ -1,15 +1,21 @@
 <template>
+  <n-card hoverable>
   <div class="zoom-chart" ref="zoom"></div>
+  </n-card>
 </template>
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 import * as echarts from 'echarts'
+import { NCard } from 'naive-ui'
 import _ from 'lodash'
 const zoom = ref(null)
 const category = ['A', 'B', 'C', 'D', 'E']
 const value = [1, 2, 3, 4, 5]
 const option = {
+ title: {
+    text: 'Dynamic Data'
+  },
   tooltip: {
     trigger: 'axis',
     axisPointer: {
@@ -34,12 +40,13 @@ const option = {
     data: ['value'],
     itemGap: 5
   },
-  // grid: {
-  //   top: '12%',
-  //   left: '1%',
-  //   right: '10%',
-  //   containLabel: true
-  // },
+  grid: {
+    top: '25%',
+    left: '10%',
+    right: '10%',
+    bottom: '10%',
+     containLabel: true
+  },
   xAxis: [
     {
       type: 'category',
@@ -60,7 +67,7 @@ const option = {
     },
     {
       type: 'inside',
-      start: 94,
+      start: 1,
       end: 100
     },
     {
@@ -103,7 +110,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .zoom-chart {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 }
 </style>

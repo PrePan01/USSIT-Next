@@ -1,9 +1,12 @@
 <template>
-  <div class="line-chart" ref="line"></div>
+  <n-card hoverable>
+    <div class="line-chart" ref="line"></div>
+  </n-card>
 </template>
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { NCard } from 'naive-ui'
 import * as echarts from 'echarts'
 import _ from 'lodash'
 const line = ref(null)
@@ -61,6 +64,11 @@ const option = {
       show: false
     }
   },
+  grid: [
+    {
+      bottom: 20
+    }
+  ],
   series: [
     {
       name: 'Fake Data',
@@ -109,7 +117,7 @@ const rollup = (myChart) => {
 
 <style scoped>
 .line-chart {
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 90%;
 }
 </style>

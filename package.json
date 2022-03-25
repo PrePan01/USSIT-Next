@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
+    "naive-ui": "^2.26.4",
     "vite": "^2.8.0"
   }
 }
