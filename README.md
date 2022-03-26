@@ -1,4 +1,4 @@
-# USSIT@Next
+# USSIT@Next [![wakatime](https://wakatime.com/badge/user/b538f533-3e8c-4b7b-ab49-7aab7771d31c/project/2e051db0-f624-482d-aeec-c263ca04421b.svg)](https://wakatime.com/badge/user/b538f533-3e8c-4b7b-ab49-7aab7771d31c/project/2e051db0-f624-482d-aeec-c263ca04421b)
 [website](http://ussit.lawted.tech/)
 # Requirements
 
