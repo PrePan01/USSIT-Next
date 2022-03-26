@@ -1,5 +1,5 @@
 # USSIT@Next
-[website](www.ussit.lawted.tech)
+[website](http://www.ussit.lawted.tech)
 # Requirements
 
 ### vue3
