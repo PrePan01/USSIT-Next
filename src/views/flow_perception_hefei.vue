@@ -47,7 +47,7 @@ const requestTimeData = (interval) => {
     bus_timestamp: 1644659598
   }
   const doOnce = async () => {
-    let { data } = await utils.requestData('/api/get-flow-by-ts/', params)
+    let { data } = await utils.requestData(base, params)
     processTimeData(data.flow)
     params.bus_timestamp += 30
   }
