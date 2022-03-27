@@ -7,7 +7,7 @@
       <Pie></Pie>
     </div>
     <div class="center">
-      <Map></Map>
+      <Map title="车流量" :geoCoordMap="heifei" :data="mapData"></Map>
     </div>
     <div class="right3">
       <Line></Line>
@@ -34,11 +34,41 @@ import Map from "/src/components/map.vue"
 import Zoom from "/src/components/zoom.vue"
 import Table from "/src/components/table.vue"
 import * as echarts from 'echarts'
-import { NCard, NConfigProvider } from 'naive-ui'
-import { darkTheme } from 'naive-ui'
+import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
+import heifei from '/src/assets/hei_fei.json'
+import { onMounted, ref } from "vue"
 echarts.registerTheme('walden', walden)
+const mapData = ref(null)
+const requestTimeData = (interval, fn, once) => {
+  let params = {
+    bus_timestamp: 1644659758
+  }
+  if (once) {
+    const doOnce = async () => {
+      let { data } = await utils.requestData('/api/get-flow-by-ts/', params)
+      fn(data.flow)
+    }
+    doOnce()
+    return
+  }
+  setInterval(async () => {
+    let { data } = await utils.requestData('/api/get-flow-by-ts/', params)
+    fn(data.flow)
+  }, interval);
+}
+const processTimeData = (flow) => {
+  let ret = []
+  for (let bus of flow) {
+    let tmp = { name: bus.flow_id, value: bus.bus_flow }
+    ret.push(tmp)
+  }
+  mapData.value = ret
+}
+onMounted(() => {
+  requestTimeData(20000, processTimeData, 1)
+})
 </script>
 
 <style>

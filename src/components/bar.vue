@@ -129,7 +129,6 @@ const resizeHandler = _.debounce(() => {
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
   let myChart = echarts.init(bar.value, 'walden')
-  console.log(props)
   myChart.setOption(option)
 });
 

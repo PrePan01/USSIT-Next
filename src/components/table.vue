@@ -1,6 +1,6 @@
 <template>
   <n-card hoverable>
-    <n-data-table :columns="columns" :data="data" :pagination="pagination" :bordered="false" />
+    <n-data-table :columns="columns" :data="data" :bordered="false" />
   </n-card>
 </template>
 
