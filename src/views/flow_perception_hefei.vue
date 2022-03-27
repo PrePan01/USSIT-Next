@@ -41,7 +41,7 @@ import heifei from '/src/assets/hei_fei.json'
 import { onMounted, ref } from "vue"
 echarts.registerTheme('walden', walden)
 const mapData = ref([])
-const base = process.env.NODE_ENV === "development" ? "/api/get-flow-by-ts/" : "http://101.200.207.137:8000/get-flow-by-ts/?bus_timestamp=1644659758";
+const base = process.env.NODE_ENV === "development" ? "/api/get-flow-by-ts/" : "http://101.200.207.137:8000/get-flow-by-ts/";
 const requestTimeData = (interval) => {
   let params = {
     bus_timestamp: 1644659598
