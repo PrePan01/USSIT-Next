@@ -1,71 +1,93 @@
-
 <template>
   <div class="container">
-    <div class="header"></div>
-    <div class="left-center">
-      <Pie></Pie>
+    <div class="right1">
+      <Zoom></Zoom>
     </div>
-    <div class="right-center">
+    <div class="right2">
       <Pie></Pie>
     </div>
     <div class="center">
       <Map></Map>
     </div>
-    <div class="left-button">
-      <Zoom></Zoom>
-    </div>
-    <div class="right-button">
+    <div class="right3">
       <Line></Line>
+    </div>
+    <div class="left2">
+      <Bar
+        title="当前车流量"
+        yTitle="车流量"
+        :categories="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
+        :value="[10, 11, 11, 12, 13, 14, 21, 19, 10]"
+      ></Bar>
+    </div>
+    <div class="left1">
+      <Table></Table>
     </div>
   </div>
 </template>
 
 <script setup>
-import Pie from "./components/pie.vue"
-import Bar from "./components/bar.vue"
-import Line from "./components/line.vue"
-import Map from "./components/map.vue"
-import Zoom from "./components/zoom.vue"
+import Pie from "/src/components/pie.vue"
+import Bar from "/src/components/bar.vue"
+import Line from "/src/components/line.vue"
+import Map from "/src/components/map.vue"
+import Zoom from "/src/components/zoom.vue"
+import Table from "/src/components/table.vue"
 import * as echarts from 'echarts'
+import { NCard, NConfigProvider } from 'naive-ui'
+import { darkTheme } from 'naive-ui'
 // Theme Config
 import walden from '/src/assets/walden.json'
 echarts.registerTheme('walden', walden)
 </script>
 
 <style>
+body {
+  margin: 0px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 10px;
+}
 .container {
+  height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 2fr 1fr;
-  gap: 0px 0px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 10px 20px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header header header header"
-    "left-center center center right-center"
-    "left-button left-button right-button right-button";
+    "left1 left1 center center center center right1 right1"
+    "left1 left1 center center center center right1 right1"
+    "left1 left1 center center center center right2 right2"
+    "left1 left1 center center center center right2 right2"
+    "left2 left2 left2 left2 right3 right3 right3 right3"
+    "left2 left2 left2 left2 right3 right3 right3 right3";
 }
 
-.header {
-  grid-area: header;
+.right1 {
+  grid-area: right1;
 }
 
-.left-center {
-  grid-area: left-center;
-}
-
-.right-center {
-  grid-area: right-center;
+.right2 {
+  grid-area: right2;
 }
 
 .center {
   grid-area: center;
 }
 
-.left-button {
-  grid-area: left-button;
+.right3 {
+  grid-area: right3;
 }
 
-.right-button {
-  grid-area: right-button;
+.left2 {
+  grid-area: left2;
+}
+
+.left1 {
+  grid-area: left1;
 }
 </style>
+
+
