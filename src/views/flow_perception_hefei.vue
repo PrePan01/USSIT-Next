@@ -7,7 +7,7 @@
       <Pie></Pie>
     </div>
     <div class="center">
-      <Map title="车流量" :geoCoordMap="heifei" :data="mapData"></Map>
+      <Map v-if="mapData.length" title="车流量" :geoCoordMap="heifei" :data="mapData"></Map>
     </div>
     <div class="right3">
       <Line></Line>
@@ -21,7 +21,7 @@
       ></Bar>
     </div>
     <div class="left1">
-      <Table></Table>
+      <Table :data="mapData"></Table>
     </div>
   </div>
 </template>
@@ -40,23 +40,18 @@ import walden from '/src/assets/walden.json'
 import heifei from '/src/assets/hei_fei.json'
 import { onMounted, ref } from "vue"
 echarts.registerTheme('walden', walden)
-const mapData = ref(null)
-const requestTimeData = (interval, fn, once) => {
+const mapData = ref([])
+const requestTimeData = (interval) => {
   let params = {
-    bus_timestamp: 1644659758
+    bus_timestamp: 1644659598
   }
-  if (once) {
-    const doOnce = async () => {
-      let { data } = await utils.requestData('/api/get-flow-by-ts/', params)
-      fn(data.flow)
-    }
-    doOnce()
-    return
-  }
-  setInterval(async () => {
+  const doOnce = async () => {
     let { data } = await utils.requestData('/api/get-flow-by-ts/', params)
-    fn(data.flow)
-  }, interval);
+    processTimeData(data.flow)
+    params.bus_timestamp += 30
+  }
+  doOnce()
+  setInterval(() => doOnce(), interval);
 }
 const processTimeData = (flow) => {
   let ret = []
@@ -67,7 +62,7 @@ const processTimeData = (flow) => {
   mapData.value = ret
 }
 onMounted(() => {
-  requestTimeData(20000, processTimeData, 1)
+  requestTimeData(10000)
 })
 </script>
 
