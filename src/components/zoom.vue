@@ -1,20 +1,27 @@
 <template>
   <n-card hoverable>
-  <div class="zoom-chart" ref="zoom"></div>
+    <div class="zoom-chart" ref="zoom"></div>
   </n-card>
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, onUpdated } from 'vue'
 import * as echarts from 'echarts'
 import { NCard } from 'naive-ui'
 import _ from 'lodash'
+let myChart
 const zoom = ref(null)
-const category = ['A', 'B', 'C', 'D', 'E']
-const value = [1, 2, 3, 4, 5]
+const props = defineProps(
+  {
+    categories: Array,
+    value: Array,
+    yTitle: String,
+    title: String
+  }
+)
 const option = {
- title: {
-    text: 'Dynamic Data'
+  title: {
+    text: props.title
   },
   tooltip: {
     trigger: 'axis',
@@ -25,16 +32,6 @@ const option = {
       }
     }
   },
-  toolbox: {
-    show: true,
-    feature: {
-      mark: { show: true },
-      dataView: { show: true, readOnly: false },
-      magicType: { show: true, type: ['line', 'bar'] },
-      restore: { show: true },
-      saveAsImage: { show: true }
-    }
-  },
   calculable: true,
   legend: {
     data: ['value'],
@@ -42,32 +39,32 @@ const option = {
   },
   grid: {
     top: '25%',
-    left: '10%',
+    left: '0%',
     right: '10%',
-    bottom: '10%',
-     containLabel: true
+    bottom: '20%',
+    containLabel: true
   },
   xAxis: [
     {
       type: 'category',
-      data: category
+      data: props.categories
     }
   ],
   yAxis: [
     {
       type: 'value',
-      name: 'value',
+      name: props.yTitle,
     }
   ],
   dataZoom: [
     {
       show: true,
-      start: 94,
+      start: 0,
       end: 100
     },
     {
       type: 'inside',
-      start: 1,
+      start: 90,
       end: 100
     },
     {
@@ -75,16 +72,16 @@ const option = {
       yAxisIndex: 0,
       filterMode: 'empty',
       width: 30,
-      height: '80%',
+      height: '70%',
       showDataShadow: false,
-      left: '93%'
+      right: '3%'
     }
   ],
   series: [
     {
       name: 'value',
       type: 'bar',
-      data: value
+      data: props.value
     }
   ]
 };
@@ -98,9 +95,39 @@ const resizeHandler = _.debounce(() => {
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
-  let myChart = echarts.init(zoom.value, 'walden')
+  myChart = echarts.init(zoom.value, 'walden')
   myChart.setOption(option)
 });
+
+onUpdated(() => {
+  console.log(props)
+  myChart.setOption(
+    {
+      title: {
+        text: props.title
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: props.categories
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          name: props.yTitle,
+        }
+      ],
+      series: [
+        {
+          name: props.yTitle,
+          type: 'bar',
+          data: props.value
+        }
+      ]
+    }
+  )
+})
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", resizeHandler);

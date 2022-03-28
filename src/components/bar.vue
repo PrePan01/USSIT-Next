@@ -6,11 +6,10 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref, onBeforeUpdate } from 'vue'
+import { onMounted, onBeforeUnmount, ref, onBeforeUpdate, onUpdated } from 'vue'
 import * as echarts from 'echarts'
 import { NCard } from 'naive-ui'
 import _ from 'lodash'
-import walden from '/src/assets/walden.json'
 const props = defineProps(
   {
     categories: Array,
@@ -23,6 +22,7 @@ const props = defineProps(
   }
 )
 const bar = ref(null)
+let myChart
 let app = {}
 // const categories = (function () {
 //   let now = new Date();
@@ -100,7 +100,7 @@ const option = {
       type: 'value',
       scale: true,
       name: props.yTitle2,
-      boundaryGap: [0.2, 0.2]
+      boundaryGap: [0.2, 0.2],
     }
   ],
   series: [
@@ -128,9 +128,51 @@ const resizeHandler = _.debounce(() => {
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
-  let myChart = echarts.init(bar.value, 'walden')
+  myChart = echarts.init(bar.value, 'walden')
   myChart.setOption(option)
 });
+
+onUpdated(() => {
+  myChart.setOption({
+    title: {
+      text: props.title
+    },
+    xAxis: [
+      {
+        type: 'category',
+        boundaryGap: true,
+        data: props.categories
+      }
+    ],
+    yAxis: [
+      {
+        type: 'value',
+        scale: true,
+        name: props.yTitle,
+        boundaryGap: [0.2, 0.2]
+      },
+      {
+        type: 'value',
+        scale: true,
+        name: props.yTitle2,
+        boundaryGap: [0.2, 0.2],
+      }
+    ],
+    series: [
+      {
+        name: props.yTitle,
+        type: 'bar',
+        yAxisIndex: 1,
+        data: props.value
+      },
+      {
+        name: props.yTitle2,
+        type: 'line',
+        data: props.value2,
+      }
+    ]
+  })
+})
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", resizeHandler);

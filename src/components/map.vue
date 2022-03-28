@@ -30,7 +30,6 @@ const convertData = function (data) {
       });
     }
   }
-  console.log(res)
   return res;
 };
 const option = {
@@ -316,8 +315,6 @@ onUpdated(() => {
       }
     ]
   })
-  console.log(props.data)
-  console.log(props.geoCoordMap)
 })
 
 onBeforeUnmount(() => {

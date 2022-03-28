@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="right1">
-      <Zoom></Zoom>
+      <Line></Line>
     </div>
     <div class="right2">
       <Pie></Pie>
@@ -10,15 +10,11 @@
       <Map v-if="mapData.length" title="车流量" :geoCoordMap="heifei" :data="mapData"></Map>
     </div>
     <div class="right3">
-      <Line></Line>
+
+      <Zoom v-bind="zoomData"></Zoom>
     </div>
     <div class="left2">
-      <Bar
-        title="当前车流量"
-        yTitle="车流量"
-        :categories="[1, 2, 3, 4, 5, 6, 7, 8, 9]"
-        :value="[10, 11, 11, 12, 13, 14, 21, 19, 10]"
-      ></Bar>
+      <Bar v-bind="idData"></Bar>
     </div>
     <div class="left1">
       <Table :data="mapData"></Table>
@@ -40,30 +36,75 @@ import walden from '/src/assets/walden.json'
 import heifei from '/src/assets/hei_fei.json'
 import { onMounted, ref } from "vue"
 echarts.registerTheme('walden', walden)
+
 const mapData = ref([])
-const base = process.env.NODE_ENV === "development" ? "/api/get-flow-by-ts/" : "http://101.200.207.137:8000/get-flow-by-ts/";
-const requestTimeData = (interval) => {
-  let params = {
+const idData = ref({})
+const zoomData = ref({})
+const baseTs = process.env.NODE_ENV === "development" ? "/api/get-flow-by-ts/" : "http://101.200.207.137:8000/get-flow-by-ts/";
+const baseId = process.env.NODE_ENV === "development" ? "/api/get-flow-by-id/" : "http://101.200.207.137:8000/get-flow-by-id/";
+const roll = (interval) => {
+  let ts = {
     bus_timestamp: 1644659598
   }
-  const doOnce = async () => {
-    let { data } = await utils.requestData(base, params)
-    processTimeData(data.flow)
-    params.bus_timestamp += 30
+  let id = {
+    flow_id: 4
   }
-  doOnce()
-  setInterval(() => doOnce(), interval);
+  const requestByTs = async () => {
+    let { data } = await utils.requestData(baseTs, ts)
+    ts.bus_timestamp += 30
+    if (!data.flow) return
+    processTimeData(data.flow, ts.bus_timestamp)
+  }
+  const requestById = async () => {
+    let { data } = await utils.requestData(baseId, id)
+    id.flow_id += 1
+    if (!data.flow) return
+    processIdData(data.flow, id.flow_id)
+  }
+  requestById()
+  requestByTs()
+  setInterval(() => {
+    requestById()
+    requestByTs()
+  }, interval);
 }
 const processTimeData = (flow) => {
   let ret = []
+  let zoom = {
+    categories: [],
+    value: [],
+    yTitle: '车流量',
+    title: '当前时刻车流量分布'
+  }
   for (let bus of flow) {
     let tmp = { name: bus.flow_id, value: bus.bus_flow }
+    zoom.categories.push(bus.flow_id)
+    zoom.value.push(bus.bus_flow)
     ret.push(tmp)
   }
+  zoomData.value = zoom
   mapData.value = ret
 }
+const processIdData = (flow, flow_id) => {
+  let ret = {
+    categories: [],
+    categories2: [],
+    value: [],
+    value2: [],
+    yTitle: '',
+    yTitle2: '车流量',
+    title: ''
+  }
+  ret.title = `Road ${flow_id} 历史车流量`
+  for (let bus of flow) {
+    let tmp = new Date(parseInt(bus.bus_timestamp) * 1000)
+    ret.categories.push(tmp.toLocaleString())
+    ret.value.push(bus.bus_flow)
+  }
+  idData.value = ret
+}
 onMounted(() => {
-  requestTimeData(10000)
+  roll(10000)
 })
 </script>
 

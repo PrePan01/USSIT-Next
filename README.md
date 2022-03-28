@@ -33,3 +33,5 @@ http://101.200.207.137:8000/get-flow-by-id/?flow_id=4
 http://101.200.207.137:8000/get-flow-by-ts/?bus_timestamp=1644659758
 
 http://101.200.207.137:8000/get-flow-api/
+
+http://101.200.207.137:8000/get-average-flow/
