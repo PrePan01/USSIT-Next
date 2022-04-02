@@ -121,7 +121,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
-  gap: 10px 20px;
+  gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
     "left1 left1 center center center center right1 right1"

@@ -1,6 +1,6 @@
 <template>
   <n-card hoverable>
-    <n-data-table :columns="columns" :data="props.data" :bordered="false" :max-height="500" />
+    <n-data-table :columns="columns" :data="props.data" :bordered="false" :max-height="450" />
   </n-card>
 </template>
 
