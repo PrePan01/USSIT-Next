@@ -34,4 +34,4 @@ http://101.200.207.137:8000/get-flow-by-ts/?bus_timestamp=1644659758
 
 http://101.200.207.137:8000/get-flow/
 
-http://101.200.207.137:8000/get-average-flow/
+http://101.200.207.137:8000/ta-flow-average/
