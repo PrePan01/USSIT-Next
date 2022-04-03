@@ -49,7 +49,7 @@ const idData = ref({})
 const zoomData = ref({})
 const lineData = ref({})
 const pieData = ref([])
-const base = process.env.NODE_ENV === "development" ? "" : "http://101.200.207.137:8000";
+const base = process.env.NODE_ENV === "development" ? "/api" : "http://101.200.207.137:8000";
 const center = [117.18273050985574, 36.179513092993666]
 const roll = (interval) => {
   let ts = {
@@ -70,21 +70,21 @@ const roll = (interval) => {
 }
 
 const requestByTs = async (ts) => {
-  let { data } = await utils.requestData(base + '/api/ta-flow-by-ts/', ts)
+  let { data } = await utils.requestData(base + '/ta-flow-by-ts/', ts)
   ts.bus_timestamp += 10
   if (!data.flow) return
   processTimeData(data.flow, ts.bus_timestamp)
 }
 
 const requestById = async (id) => {
-  let { data } = await utils.requestData(base + '/api/ta-flow-by-id/', id)
+  let { data } = await utils.requestData(base + '/ta-flow-by-id/', id)
   id.flow_id += 1
   if (!data.flow) return
   processIdData(data.flow, id.flow_id - 1)
 }
 
 const requestAverage = async () => {
-  let { data } = await utils.requestData(base + '/api/ta-flow-average/')
+  let { data } = await utils.requestData(base + '/ta-flow-average/')
   if (!data) return
   processAverageData(data)
 }
