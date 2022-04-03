@@ -42,7 +42,6 @@ import utils from '/src/utils/index.js'
 import walden from '/src/assets/walden.json'
 import heifei from '/src/assets/he_fei.json'
 import { onMounted, ref } from "vue"
-import { d } from "../../dist/assets/vendor.50388ebf"
 import process from "process"
 echarts.registerTheme('walden', walden)
 const nowChose = ref({})
