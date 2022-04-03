@@ -1,19 +1,19 @@
 <template>
   <div class="container">
     <div class="right1">
-      <Line></Line>
+      <Line v-bind="lineData"></Line>
     </div>
     <div class="right2">
-      <Pie></Pie>
+      <Pie :data="pieData"></Pie>
     </div>
     <div class="center">
       <Map
         v-if="mapData.length"
         title="车流量"
-        :geoCoordMap="heifei"
+        :geoCoordMap="taian"
         :data="mapData"
         :center="center"
-        :zoom="3"
+        :zoom="2"
         @reportData="changeSelect"
       ></Map>
     </div>
@@ -40,15 +40,16 @@ import * as echarts from 'echarts'
 import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
-import heifei from '/src/assets/taian.json'
+import taian from '/src/assets/tai_an.json'
 import { onMounted, ref } from "vue"
 echarts.registerTheme('walden', walden)
 const nowChose = ref({})
 const mapData = ref([])
 const idData = ref({})
 const zoomData = ref({})
-const baseTs = process.env.NODE_ENV === "development" ? "/api/ta-flow-by-ts/" : "http://101.200.207.137:8000/get-flow-by-ts/";
-const baseId = process.env.NODE_ENV === "development" ? "/api/ta-flow-by-id/" : "http://101.200.207.137:8000/get-flow-by-id/";
+const lineData = ref({})
+const pieData = ref([])
+const base = process.env.NODE_ENV === "development" ? "" : "http://101.200.207.137:8000";
 const center = [117.18273050985574, 36.179513092993666]
 const roll = (interval) => {
   let ts = {
@@ -60,24 +61,32 @@ const roll = (interval) => {
   // request part
   requestById(id)
   requestByTs(ts)
+  requestAverage()
   setInterval(() => {
     requestById(id)
     requestByTs(ts)
+    requestAverage()
   }, interval);
 }
 
 const requestByTs = async (ts) => {
-  let { data } = await utils.requestData(baseTs, ts)
+  let { data } = await utils.requestData(base + '/api/ta-flow-by-ts/', ts)
   ts.bus_timestamp += 10
   if (!data.flow) return
   processTimeData(data.flow, ts.bus_timestamp)
 }
 
 const requestById = async (id) => {
-  let { data } = await utils.requestData(baseId, id)
+  let { data } = await utils.requestData(base + '/api/ta-flow-by-id/', id)
   id.flow_id += 1
   if (!data.flow) return
   processIdData(data.flow, id.flow_id - 1)
+}
+
+const requestAverage = async () => {
+  let { data } = await utils.requestData(base + '/api/ta-flow-average/')
+  if (!data) return
+  processAverageData(data)
 }
 
 const processTimeData = (flow) => {
@@ -88,14 +97,34 @@ const processTimeData = (flow) => {
     yTitle: '车流量',
     title: '当前时刻车流量分布'
   }
+  let pieTmp = {
+    '通畅': 0,
+    '平衡': 0,
+    '拥挤': 0,
+  }
   for (let bus of flow) {
     let tmp = { name: bus.flow_id, value: bus.bus_flow }
     zoom.categories.push(bus.flow_id)
     zoom.value.push(bus.bus_flow)
     ret.push(tmp)
   }
+  let level = (Math.max(...zoom.value) - Math.min(...zoom.value)) / 3
+  for (let bus of flow) {
+    if (0 <= bus.bus_flow && bus.bus_flow < level) {
+      pieTmp['通畅'] += 1
+    } else if (level <= bus.bus_flow && bus.bus_flow < 2 * level) {
+      pieTmp['平衡'] += 1
+    } else if (2 * level <= bus.bus_flow && bus.bus_flow < 3 * level) {
+      pieTmp['拥挤'] += 1
+    }
+  }
+  let pie = []
+  for (let item in pieTmp) {
+    pie.push({value: pieTmp[item], name: item})
+  }
   zoomData.value = zoom
   mapData.value = ret
+  pieData.value = pie
 }
 
 const processIdData = (flow, flow_id) => {
@@ -115,6 +144,19 @@ const processIdData = (flow, flow_id) => {
     ret.value.push(bus.bus_flow)
   }
   idData.value = ret
+}
+const processAverageData = (data) => {
+  let ret = {
+    categories: [],
+    value: data.average,
+    title: '平均车流量',
+    title2: '车流量'
+  }
+  for (let t of data.bus_timestamp) {
+    let tmp = new Date(parseInt(t) * 1000)
+    ret.categories.push(tmp.toLocaleString())
+  }
+  lineData.value = ret
 }
 
 const changeSelect = (data) => {
@@ -177,5 +219,7 @@ body {
   grid-area: left1;
 }
 </style>
+
+
 
 

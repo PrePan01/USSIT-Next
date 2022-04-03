@@ -5,64 +5,43 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, onUpdated } from 'vue'
 import { NCard } from 'naive-ui'
 import * as echarts from 'echarts'
 import _ from 'lodash'
 const line = ref(null)
-let data = [];
-let now = new Date(1997, 9, 3);
-let oneDay = 24 * 3600 * 1000;
-let value = Math.random() * 1000;
-for (var i = 0; i < 1000; i++) {
-  data.push(randomData());
-}
-function randomData() {
-  now = new Date(+now + oneDay);
-  value = value + Math.random() * 21 - 10;
-  return {
-    name: now.toString(),
-    value: [
-      [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-      Math.round(value)
-    ]
-  };
-}
+let myChart
+const props = defineProps(
+  {
+    categories: Array,
+    value: Array,
+    title: String,
+    title2: String
+  }
+)
 const option = {
   title: {
-    text: 'Dynamic Data & Time Axis'
+    text: props.title
   },
   tooltip: {
     trigger: 'axis',
-    formatter: function (params) {
-      params = params[0];
-      var date = new Date(params.name);
-      return (
-        date.getDate() +
-        '/' +
-        (date.getMonth() + 1) +
-        '/' +
-        date.getFullYear() +
-        ' : ' +
-        params.value[1]
-      );
-    },
     axisPointer: {
       animation: false
     }
   },
   xAxis: {
-    type: 'time',
+    type: 'category',
     splitLine: {
       show: false
-    }
+    },
+    data: props.categories
   },
   yAxis: {
     type: 'value',
-    boundaryGap: [0, '100%'],
     splitLine: {
       show: false
-    }
+    },
+    scale: true
   },
   grid: {
     bottom: 20,
@@ -70,10 +49,10 @@ const option = {
   },
   series: [
     {
-      name: 'Fake Data',
+      name: props.title2,
       type: 'line',
       showSymbol: false,
-      data: data
+      data: props.value
     }
   ]
 };
@@ -87,30 +66,30 @@ const resizeHandler = _.debounce(() => {
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
-  let myChart = echarts.init(line.value, 'walden')
+  myChart = echarts.init(line.value, 'walden')
   myChart.setOption(option)
-  rollup(myChart)
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", resizeHandler);
 });
 
-const rollup = (myChart) => {
-  setInterval(function () {
-    for (var i = 0; i < 5; i++) {
-      data.shift();
-      data.push(randomData());
-    }
-    myChart.setOption({
-      series: [
-        {
-          data: data
-        }
-      ]
-    });
-  }, 1000);
-}
+onUpdated(() => {
+  myChart.setOption({
+    title: {
+      text: props.title
+    },
+    series: [
+      {
+        name: props.title2,
+        data: props.value
+      }
+    ],
+    xAxis: {
+      data: props.categories
+    },
+  });
+})
 </script>
 
 

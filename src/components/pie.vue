@@ -5,14 +5,20 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, onUpdated} from 'vue'
 import { NCard } from 'naive-ui'
 import * as echarts from 'echarts'
 import _ from 'lodash'
+let myChart
 const pie = ref(null)
+const props = defineProps(
+  {
+    data: Array
+  }
+)
 const option = {
   title: {
-    text: 'Dynamic Data'
+    text: '当前流量情况'
   },
   tooltip: {
     trigger: 'item'
@@ -26,7 +32,7 @@ const option = {
       type: 'pie',
       avoidLabelOverlap: false,
       itemStyle: {
-        borderRadius: 20,
+        borderRadius: 5,
         borderColor: '#fff',
         borderWidth: 2
       },
@@ -44,11 +50,7 @@ const option = {
       labelLine: {
         show: false
       },
-      data: [
-        { value: 1048, name: 'Search Engine' },
-        { value: 735, name: 'Direct' },
-        { value: 580, name: 'Email' },
-      ]
+      data: props.data
     }
   ],
 };
@@ -62,15 +64,26 @@ const resizeHandler = _.debounce(() => {
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
-  let myChart = echarts.init(pie.value, 'walden')
+  myChart = echarts.init(pie.value, 'walden')
+  console.log(props.data)
   myChart.setOption(option)
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", resizeHandler);
 });
-</script>
 
+onUpdated(() => {
+  myChart.setOption({
+    series: [
+      {
+        data: props.data
+      }
+    ],
+  });
+})
+
+</script>
 
 <style scoped>
 .pie-chart {
