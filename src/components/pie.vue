@@ -65,7 +65,6 @@ const resizeHandler = _.debounce(() => {
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
   myChart = echarts.init(pie.value, 'walden')
-  console.log(props.data)
   myChart.setOption(option)
 });
 
