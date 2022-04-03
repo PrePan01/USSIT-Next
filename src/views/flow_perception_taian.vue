@@ -13,7 +13,7 @@
         :geoCoordMap="heifei"
         :data="mapData"
         :center="center"
-        :zoom="100"
+        :zoom="3"
         @reportData="changeSelect"
       ></Map>
     </div>
@@ -40,19 +40,19 @@ import * as echarts from 'echarts'
 import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
-import heifei from '/src/assets/he_fei.json'
+import heifei from '/src/assets/taian.json'
 import { onMounted, ref } from "vue"
 echarts.registerTheme('walden', walden)
 const nowChose = ref({})
 const mapData = ref([])
 const idData = ref({})
 const zoomData = ref({})
-const baseTs = process.env.NODE_ENV === "development" ? "/api/hf-flow-by-ts/" : "http://101.200.207.137:8000/get-flow-by-ts/";
-const baseId = process.env.NODE_ENV === "development" ? "/api/hf-flow-by-id/" : "http://101.200.207.137:8000/get-flow-by-id/";
-const center = [117.280338325, 31.84974485]
+const baseTs = process.env.NODE_ENV === "development" ? "/api/ta-flow-by-ts/" : "http://101.200.207.137:8000/get-flow-by-ts/";
+const baseId = process.env.NODE_ENV === "development" ? "/api/ta-flow-by-id/" : "http://101.200.207.137:8000/get-flow-by-id/";
+const center = [117.18273050985574, 36.179513092993666]
 const roll = (interval) => {
   let ts = {
-    bus_timestamp: 1644659576
+    bus_timestamp: 1641914107
   }
   let id = {
     flow_id: 4
@@ -68,7 +68,7 @@ const roll = (interval) => {
 
 const requestByTs = async (ts) => {
   let { data } = await utils.requestData(baseTs, ts)
-  ts.bus_timestamp += 30
+  ts.bus_timestamp += 10
   if (!data.flow) return
   processTimeData(data.flow, ts.bus_timestamp)
 }

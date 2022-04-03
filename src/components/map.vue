@@ -14,6 +14,8 @@ const props = defineProps(
     title: String,
     data: Array,
     geoCoordMap: Object,
+    center: Array,
+    zoom: Number
   }
 )
 const map = ref(null)
@@ -38,7 +40,7 @@ const option = {
     trigger: 'item'
   },
   bmap: {
-    center: ["117.280338325", "31.84974485"],
+    center: props.center,
     zoom: 13,
     roam: true,
     mapStyle: {
@@ -172,7 +174,7 @@ const option = {
       coordinateSystem: 'bmap',
       data: convertData(data),
       symbolSize: function (val) {
-        return val[2] / 100;
+        return val[2] / props.zoom;
       },
       encode: {
         value: 2
@@ -206,7 +208,7 @@ const option = {
           .slice(0, 6)
       ),
       symbolSize: function (val) {
-        return val[2] / 100;
+        return val[2] / props.zoom;
       },
       encode: {
         value: 2
@@ -260,9 +262,6 @@ onUpdated(() => {
         type: 'scatter',
         coordinateSystem: 'bmap',
         data: convertData(data),
-        symbolSize: function (val) {
-          return val[2] / 100;
-        },
         encode: {
           value: 2
         },
@@ -291,9 +290,6 @@ onUpdated(() => {
             })
             .slice(0, 6)
         ),
-        symbolSize: function (val) {
-          return val[2] / 100;
-        },
         encode: {
           value: 2
         },

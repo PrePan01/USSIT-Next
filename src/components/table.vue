@@ -1,8 +1,9 @@
 <template>
   <n-card hoverable>
     <n-data-table
+      :key="Math.random()"
       :columns="columns"
-      :data="props.data"
+      :data="data"
       :bordered="false"
       :max-height="430"
       :row-props="rowProps"
@@ -12,13 +13,17 @@
 
 <script setup>
 import { NCard, NDataTable } from "naive-ui";
-import { onMounted, ref, h } from 'vue'
+import { onMounted, ref, h, onUpdated } from 'vue'
 const emit = defineEmits(['reportData'])
 const props = defineProps(
   {
     data: Array,
   }
 )
+const data = ref([])
+onUpdated(() => {
+  data.value = props.data
+})
 const rowProps = (row) => {
   return {
     style: 'cursor: pointer;',
@@ -33,7 +38,8 @@ const columns = [
     key: "name",
     render(row, index) {
       return h('span', ['Road ', row.name])
-    }
+    },
+    sorter: (row1, row2) => row1.name - row2.name
   },
   {
     title: "flow",

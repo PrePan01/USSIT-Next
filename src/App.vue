@@ -1,12 +1,12 @@
 <template>
   <n-config-provider :theme="darkTheme" style="height: 100%;" :theme-overrides="themeOverrides">
-    <flow_perception_hefei></flow_perception_hefei>
+    <router-view></router-view>
   </n-config-provider>
 </template>
 
 <script setup>
 import flow_perception_hefei from './views/flow_perception_hefei.vue';
-import { NConfigProvider } from 'naive-ui'
+import { NButton, NConfigProvider } from 'naive-ui'
 import { darkTheme } from 'naive-ui'
 // Theme Config
 const themeOverrides =
