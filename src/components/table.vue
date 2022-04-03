@@ -1,18 +1,32 @@
 <template>
   <n-card hoverable>
-    <n-data-table :columns="columns" :data="props.data" :bordered="false" :max-height="450" />
+    <n-data-table
+      :columns="columns"
+      :data="props.data"
+      :bordered="false"
+      :max-height="450"
+      :row-props="rowProps"
+    />
   </n-card>
 </template>
 
 <script setup>
-import { NButton, NCard, NDataTable } from "naive-ui";
+import { NCard, NDataTable } from "naive-ui";
 import { onMounted, ref, h } from 'vue'
+const emit = defineEmits(['reportData'])
 const props = defineProps(
   {
     data: Array,
   }
 )
-const pagination = { pageSize: 10 }
+const rowProps = (row) => {
+  return {
+    style: 'cursor: pointer;',
+    onClick: () => {
+      reportData(row)
+    }
+  }
+}
 const columns = [
   {
     title: "Name",
@@ -27,6 +41,11 @@ const columns = [
     sorter: (row1, row2) => row1.value - row2.value
   }
 ]
+
+const reportData = (data) => {
+  emit('reportData', data)
+}
+
 
 </script>
 

@@ -8,6 +8,7 @@ import { onMounted, onBeforeUnmount, ref, onUpdated } from 'vue'
 import * as echarts from 'echarts'
 import 'echarts/extension/bmap/bmap'
 import _ from 'lodash'
+const emit = defineEmits(['reportData'])
 const props = defineProps(
   {
     title: String,
@@ -184,6 +185,9 @@ const option = {
           color: '#fff'
         }
       },
+      itemStyle: {
+        color: '#3fb1e3'
+      },
       emphasis: {
         label: {
           show: true
@@ -220,6 +224,7 @@ const option = {
         }
       },
       itemStyle: {
+        color: '#6be6c1',
         shadowBlur: 10,
         shadowColor: '#333'
       },
@@ -243,7 +248,7 @@ onMounted(() => {
   myChart = echarts.init(map.value)
   myChart.setOption(option)
   myChart.on('click', function (params) {
-    console.log(params)
+    reportData(params.data)
   });
 });
 
@@ -320,6 +325,11 @@ onUpdated(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("resize", resizeHandler);
 });
+
+const reportData = (data) => {
+  emit('reportData', data)
+}
+
 </script>
 
 

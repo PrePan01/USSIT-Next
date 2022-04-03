@@ -100,7 +100,6 @@ onMounted(() => {
 });
 
 onUpdated(() => {
-  console.log(props)
   myChart.setOption(
     {
       title: {
@@ -122,7 +121,10 @@ onUpdated(() => {
         {
           name: props.yTitle,
           type: 'bar',
-          data: props.value
+          data: props.value,
+          itemStyle: {
+            color: '#6be6c1'
+          }
         }
       ]
     }

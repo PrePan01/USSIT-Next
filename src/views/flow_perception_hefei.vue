@@ -7,17 +7,22 @@
       <Pie></Pie>
     </div>
     <div class="center">
-      <Map v-if="mapData.length" title="车流量" :geoCoordMap="heifei" :data="mapData"></Map>
+      <Map
+        v-if="mapData.length"
+        title="车流量"
+        :geoCoordMap="heifei"
+        :data="mapData"
+        @reportData="changeSelect"
+      ></Map>
     </div>
     <div class="right3">
-
       <Zoom v-bind="zoomData"></Zoom>
     </div>
     <div class="left2">
       <Bar v-bind="idData"></Bar>
     </div>
     <div class="left1">
-      <Table :data="mapData"></Table>
+      <Table :data="mapData" @reportData="changeSelect"></Table>
     </div>
   </div>
 </template>
@@ -36,12 +41,13 @@ import walden from '/src/assets/walden.json'
 import heifei from '/src/assets/hei_fei.json'
 import { onMounted, ref } from "vue"
 echarts.registerTheme('walden', walden)
-
+const nowChose = ref({})
 const mapData = ref([])
 const idData = ref({})
 const zoomData = ref({})
 const baseTs = process.env.NODE_ENV === "development" ? "/api/get-flow-by-ts/" : "http://101.200.207.137:8000/get-flow-by-ts/";
 const baseId = process.env.NODE_ENV === "development" ? "/api/get-flow-by-id/" : "http://101.200.207.137:8000/get-flow-by-id/";
+
 const roll = (interval) => {
   let ts = {
     bus_timestamp: 1644659598
@@ -49,25 +55,29 @@ const roll = (interval) => {
   let id = {
     flow_id: 4
   }
-  const requestByTs = async () => {
-    let { data } = await utils.requestData(baseTs, ts)
-    ts.bus_timestamp += 30
-    if (!data.flow) return
-    processTimeData(data.flow, ts.bus_timestamp)
-  }
-  const requestById = async () => {
-    let { data } = await utils.requestData(baseId, id)
-    id.flow_id += 1
-    if (!data.flow) return
-    processIdData(data.flow, id.flow_id)
-  }
-  requestById()
-  requestByTs()
+  // request part
+  requestById(id)
+  requestByTs(ts)
   setInterval(() => {
-    requestById()
-    requestByTs()
+    requestById(id)
+    requestByTs(ts)
   }, interval);
 }
+
+const requestByTs = async (ts) => {
+  let { data } = await utils.requestData(baseTs, ts)
+  ts.bus_timestamp += 30
+  if (!data.flow) return
+  processTimeData(data.flow, ts.bus_timestamp)
+}
+
+const requestById = async (id) => {
+  let { data } = await utils.requestData(baseId, id)
+  id.flow_id += 1
+  if (!data.flow) return
+  processIdData(data.flow, id.flow_id-1)
+}
+
 const processTimeData = (flow) => {
   let ret = []
   let zoom = {
@@ -85,6 +95,7 @@ const processTimeData = (flow) => {
   zoomData.value = zoom
   mapData.value = ret
 }
+
 const processIdData = (flow, flow_id) => {
   let ret = {
     categories: [],
@@ -103,6 +114,14 @@ const processIdData = (flow, flow_id) => {
   }
   idData.value = ret
 }
+
+const changeSelect = (data) => {
+  let id = {
+    flow_id: data.name
+  }
+  requestById(id)
+}
+
 onMounted(() => {
   roll(10000)
 })
