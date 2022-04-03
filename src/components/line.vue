@@ -64,11 +64,10 @@ const option = {
       show: false
     }
   },
-  grid: [
-    {
-      bottom: 20
-    }
-  ],
+  grid: {
+    bottom: 20,
+    left: 50
+  },
   series: [
     {
       name: 'Fake Data',

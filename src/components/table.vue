@@ -4,7 +4,7 @@
       :columns="columns"
       :data="props.data"
       :bordered="false"
-      :max-height="450"
+      :max-height="430"
       :row-props="rowProps"
     />
   </n-card>
