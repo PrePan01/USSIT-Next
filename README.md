@@ -52,3 +52,25 @@ http://101.200.207.137:8000/ns-park-statistics/
 http://101.200.207.137:8000/ns-park-show/
 http://101.200.207.137:8000/ns-park-prediction/
 http://101.200.207.137:8000/ta-taxi-congestion/
+
+## he fei
+/hf-flow-by-id/
+/hf-flow-by-ts/
+/hf-flow/
+/hf-flow-average/
+/hf-flow-prediction/
+
+## tai an
+/ta-flow-by-id/
+/ta-flow-by-ts/
+/ta-flow/
+/ta-flow-average/
+/ta-flow-prediction/
+
+## nan shan
+/ns-park-statistics/
+/ns-park-show/
+/ns-park-prediction/
+
+## ta taxi
+/ta-taxi-congestion/
