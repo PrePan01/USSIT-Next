@@ -27,7 +27,8 @@ export default {
     this.processTimeData(TotalData, data.flow, ts.bus_timestamp)
   },
 
-  async requestById(TotalData, base, id, api) {
+  async requestById(TotalData, base, _id, api) {
+    let id = JSON.parse(JSON.stringify(_id))
     let { data } = await this.requestData(base + api, id)
     id.flow_id += 1
     if (!data.flow) return
@@ -40,8 +41,14 @@ export default {
     this.processAverageData(TotalData, data)
   },
 
+  async requestPredict(TotalData, base, id, api) {
+    let { data } = await this.requestData(base + api)
+    if (!data.flow) return
+    this.processPredictData(TotalData, data.flow, id)
+  },
+
   processTimeData(TotalData, flow) {
-    let [mapData, idData, zoomData, lineData, pieData] = TotalData
+    let [mapData, idData, zoomData, lineData, pieData, gaugeData] = TotalData
     let ret = []
     let zoom = {
       categories: [],
@@ -54,7 +61,7 @@ export default {
       '平衡': 0,
       '拥挤': 0,
     }
-    flow.sort((a,b) => a.flow_id - b.flow_id)
+    flow.sort((a, b) => a.flow_id - b.flow_id)
     for (let bus of flow) {
       let tmp = { name: bus.flow_id, value: bus.bus_flow }
       zoom.categories.push(bus.flow_id)
@@ -81,7 +88,7 @@ export default {
   },
 
   processIdData(TotalData, flow, flow_id) {
-    let [mapData, idData, zoomData, lineData, pieData] = TotalData
+    let [mapData, idData, zoomData, lineData, pieData, gaugeData] = TotalData
     let ret = {
       categories: [],
       categories2: [],
@@ -101,7 +108,7 @@ export default {
   },
 
   processAverageData(TotalData, data) {
-    let [mapData, idData, zoomData, lineData, pieData] = TotalData
+    let [mapData, idData, zoomData, lineData, pieData, gaugeData] = TotalData
     let ret = {
       categories: [],
       value: data.average,
@@ -115,11 +122,24 @@ export default {
     lineData.value = ret
   },
 
-  changeSelect(TotalData, base, api, data) {
+  processPredictData(TotalData, flow, _id) {
+    let id = JSON.parse(JSON.stringify(_id))
+    let [mapData, idData, zoomData, lineData, pieData, gaugeData] = TotalData
+    let max = Math.max.apply(Math, flow.map(item => item.bus_flow))
+    let v = flow.filter((f) => f.flow_id === id.flow_id)[0]
+    let ret = {
+      range: max,
+      data: v?.bus_flow,
+      title: '预测流量'
+    }
+    gaugeData.value = ret
+  },
+  changeSelect(TotalData, base, city, data) {
     let id = {
       flow_id: data.name
     }
-    this.requestById(TotalData, base, id, api)
+    this.requestById(TotalData, base, id, `/${city}-flow-by-id/`)
+    this.requestPredict(TotalData, base, id, `/${city}-flow-prediction/`)
   },
 
   async requestData(url, params) {

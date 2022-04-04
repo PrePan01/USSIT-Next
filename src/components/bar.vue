@@ -24,41 +24,6 @@ const props = defineProps(
 const bar = ref(null)
 let myChart
 let app = {}
-// const categories = (function () {
-//   let now = new Date();
-//   let res = [];
-//   let len = 10;
-//   while (len--) {
-//     res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
-//     now = new Date(+now - 2000);
-//   }
-//   return res;
-// })();
-// const categories2 = (function () {
-//   let res = [];
-//   let len = 10;
-//   while (len--) {
-//     res.push(10 - len - 1);
-//   }
-//   return res;
-// })();
-// const data = (function () {
-//   let res = [];
-//   let len = 10;
-//   while (len--) {
-//     res.push(Math.round(Math.random() * 1000));
-//   }
-//   return res;
-// })();
-// const data2 = (function () {
-//   let res = [];
-//   let len = 0;
-//   while (len < 10) {
-//     res.push(+(Math.random() * 10 + 5).toFixed(1));
-//     len++;
-//   }
-//   return res;
-// })();
 const option = {
   title: {
     text: props.title

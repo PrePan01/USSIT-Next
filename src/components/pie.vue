@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref, onUpdated} from 'vue'
+import { onMounted, onBeforeUnmount, ref, onUpdated } from 'vue'
 import { NCard } from 'naive-ui'
 import * as echarts from 'echarts'
 import _ from 'lodash'
@@ -26,6 +26,11 @@ const option = {
   legend: {
     top: 'bottom'
   },
+  color: [
+    '#6be6c1',
+    '#3fb1e3',
+    '#626c91'
+  ],
   series: [
     {
       name: 'Access From',

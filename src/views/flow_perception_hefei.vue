@@ -16,6 +16,7 @@
         :zoom="100"
         @reportData="changeSelect"
       ></Map>
+      <gauge v-bind="gaugeData"></gauge>
     </div>
     <div class="right3">
       <Zoom v-bind="zoomData"></Zoom>
@@ -36,6 +37,7 @@ import Line from "/src/components/line.vue"
 import Map from "/src/components/map.vue"
 import Zoom from "/src/components/zoom.vue"
 import Table from "/src/components/table.vue"
+import gauge from "/src/components/gauge.vue"
 import * as echarts from 'echarts'
 import utils from '/src/utils/index.js'
 // Theme Config
@@ -49,11 +51,12 @@ const idData = ref({})
 const zoomData = ref({})
 const lineData = ref({})
 const pieData = ref([])
-const TotalData = [mapData, idData, zoomData, lineData, pieData]
+const gaugeData = ref({})
+const TotalData = [mapData, idData, zoomData, lineData, pieData, gaugeData]
 const base = process.env.NODE_ENV === "development" ? "/api" : "http://101.200.207.137:8000";
 const center = [117.280338325, 31.84974485]
 const city = 'hf'
-const changeSelect = (data) => utils.changeSelect(TotalData, base, `/${city}-flow-by-id/`, data)
+const changeSelect = (data) => utils.changeSelect(TotalData, base, city, data)
 onMounted(() => {
   utils.requestApi(TotalData, base, city, 1644659576, 10000)
 })
@@ -93,6 +96,7 @@ body {
 
 .center {
   grid-area: center;
+  position: relative;
 }
 
 .right3 {
