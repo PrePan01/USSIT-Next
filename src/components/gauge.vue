@@ -1,13 +1,10 @@
 <template>
-  <n-card hoverable class="float-card">
     <div class="gauge-chart" ref="gauge"></div>
-  </n-card>
 </template>
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref, onBeforeUpdate, onUpdated } from 'vue'
 import * as echarts from 'echarts'
-import { NCard } from 'naive-ui'
 import _ from 'lodash'
 const props = defineProps(
   {
@@ -74,18 +71,13 @@ const option = {
           return '';
         }
       },
-      title: {
-        offsetCenter: [0, '-10%'],
-        fontSize: 18,
-        color: '#fff'
-      },
       data: [
         {
           value: props.data / props.range,
           name: props.title
         }
       ],
-      radius: '95%'
+      radius: '100%'
     }
   ]
 };
@@ -108,12 +100,17 @@ onUpdated (()=> {
     series: {
       detail: {
         fontSize: 20,
-        offsetCenter: [0, '30%'],
+        offsetCenter: [0, '-20%'],
         valueAnimation: true,
         formatter: function (value) {
           return Math.round(value * props.range);
         },
         color: 'auto'
+      },
+      title: {
+        offsetCenter: [0, '22%'],
+        fontSize: 18,
+        color: '#fff'
       },
       data: [
         {
@@ -134,10 +131,6 @@ onBeforeUnmount(() => {
 .gauge-chart {
   width: 90%;
   height: 90%;
-}
-.float-card {
-  position: absolute;
-  height: 40%;
-  bottom: 0;
+  transform: translateY(-10%);
 }
 </style>

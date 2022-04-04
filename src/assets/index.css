@@ -2,6 +2,7 @@
   --n-td-color: #202934;
 }
 .n-card {
+  border: none !important;
   width: 100%;
   height: 100%;
   background-color: #202934;
@@ -27,7 +28,11 @@
 .anchorBL {
   display: none;
 }
-
+.n-card-header {
+  height: 0px;
+  padding: 20px !important;
+}
 html {
   background-color: #293441;
+  border: none !important;
 }

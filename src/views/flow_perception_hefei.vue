@@ -16,7 +16,12 @@
         :zoom="100"
         @reportData="changeSelect"
       ></Map>
-      <gauge v-bind="gaugeData"></gauge>
+
+      <n-card hoverable closable  class="float-card" v-if="clickData.name" @close="handleClose">
+        <Gauge v-bind="gaugeDataCur"></Gauge>
+        <Text :text="`Road ${clickData.name}`"></Text>
+        <Gauge v-bind="gaugeDataPre"></Gauge>
+      </n-card>
     </div>
     <div class="right3">
       <Zoom v-bind="zoomData"></Zoom>
@@ -37,26 +42,30 @@ import Line from "/src/components/line.vue"
 import Map from "/src/components/map.vue"
 import Zoom from "/src/components/zoom.vue"
 import Table from "/src/components/table.vue"
-import gauge from "/src/components/gauge.vue"
+import Gauge from "/src/components/gauge.vue"
+import Text from "/src/components/text.vue"
 import * as echarts from 'echarts'
 import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
 import hefei from '/src/assets/he_fei.json'
 import { onMounted, ref } from "vue"
+import { NCard } from 'naive-ui'
 echarts.registerTheme('walden', walden)
-const nowChose = ref({})
+const clickData = ref({})
 const mapData = ref([])
 const idData = ref({})
 const zoomData = ref({})
 const lineData = ref({})
 const pieData = ref([])
-const gaugeData = ref({})
-const TotalData = [mapData, idData, zoomData, lineData, pieData, gaugeData]
+const gaugeDataPre = ref({})
+const gaugeDataCur = ref({})
+const TotalData = [mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData]
 const base = process.env.NODE_ENV === "development" ? "/api" : "http://101.200.207.137:8000";
 const center = [117.280338325, 31.84974485]
 const city = 'hf'
 const changeSelect = (data) => utils.changeSelect(TotalData, base, city, data)
+const handleClose = () => clickData.value = {}
 onMounted(() => {
   utils.requestApi(TotalData, base, city, 1644659576, 10000)
 })
@@ -97,6 +106,9 @@ body {
 .center {
   grid-area: center;
   position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  border: none;
 }
 
 .right3 {
@@ -109,5 +121,20 @@ body {
 
 .left1 {
   grid-area: left1;
+}
+
+.float-card {
+  position: absolute;
+  height: 40%;
+  transform: translateY(45%);
+  bottom: 0;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  border: none !important;
+}
+.float-card:hover {
+  height: 40%;
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
 }
 </style>
