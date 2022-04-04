@@ -40,7 +40,6 @@ const option = {
     trigger: 'item'
   },
   bmap: {
-    center: props.center,
     zoom: 13,
     roam: true,
     mapStyle: {
@@ -256,6 +255,9 @@ onMounted(() => {
 
 onUpdated(() => {
   myChart.setOption({
+    bmap: {
+      center: props.center,
+    },
     series: [
       {
         name: props.title,
