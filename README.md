@@ -35,3 +35,20 @@ http://101.200.207.137:8000/get-flow-by-ts/?bus_timestamp=1644659758
 http://101.200.207.137:8000/get-flow/
 
 http://101.200.207.137:8000/ta-flow-average/
+http://101.200.207.137:8000/
+
+http://101.200.207.137:8000/admin/
+http://101.200.207.137:8000/hf-flow-by-id/
+http://101.200.207.137:8000/hf-flow-by-ts/
+http://101.200.207.137:8000/hf-flow/
+http://101.200.207.137:8000/hf-flow-average/
+http://101.200.207.137:8000/hf-flow-prediction/
+http://101.200.207.137:8000/ta-flow-by-id/
+http://101.200.207.137:8000/ta-flow-by-ts/
+http://101.200.207.137:8000/ta-flow/
+http://101.200.207.137:8000/ta-flow-average/
+http://101.200.207.137:8000/ta-flow-prediction/
+http://101.200.207.137:8000/ns-park-statistics/
+http://101.200.207.137:8000/ns-park-show/
+http://101.200.207.137:8000/ns-park-prediction/
+http://101.200.207.137:8000/ta-taxi-congestion/
