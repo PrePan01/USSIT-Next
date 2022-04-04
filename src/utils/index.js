@@ -54,6 +54,7 @@ export default {
       '平衡': 0,
       '拥挤': 0,
     }
+    flow.sort((a,b) => a.flow_id - b.flow_id)
     for (let bus of flow) {
       let tmp = { name: bus.flow_id, value: bus.bus_flow }
       zoom.categories.push(bus.flow_id)
