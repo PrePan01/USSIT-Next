@@ -3,23 +3,6 @@ import axios from 'axios'
 export default {
   /* this is a function to roll the data */
   /* fn must be a function that take url res as params and return a tuple of nx and ny */
-  async requestByTs(TotalData, base, ts, api) {
-    let { data } = await this.requestData(base + api, ts)
-    ts.bus_timestamp += 30
-    if (!data.flow) return
-    this.processTimeData(TotalData, data.flow, ts.bus_timestamp)
-  },
-  async requestById(TotalData, base, id, api) {
-    let { data } = await this.requestData(base + api, id)
-    id.flow_id += 1
-    if (!data.flow) return
-    this.processIdData(TotalData, data.flow, id.flow_id - 1)
-  },
-  async requestAverage(TotalData, base, api) {
-    let { data } = await this.requestData(base + api)
-    if (!data) return
-    this.processAverageData(TotalData, data)
-  },
   requestApi(TotalData, base, city, initTS, interval) {
     let ts = {
       bus_timestamp: initTS
@@ -37,6 +20,25 @@ export default {
     }, interval);
   },
 
+  async requestByTs(TotalData, base, ts, api) {
+    let { data } = await this.requestData(base + api, ts)
+    ts.bus_timestamp += 30
+    if (!data.flow) return
+    this.processTimeData(TotalData, data.flow, ts.bus_timestamp)
+  },
+
+  async requestById(TotalData, base, id, api) {
+    let { data } = await this.requestData(base + api, id)
+    id.flow_id += 1
+    if (!data.flow) return
+    this.processIdData(TotalData, data.flow, id.flow_id - 1)
+  },
+
+  async requestAverage(TotalData, base, api) {
+    let { data } = await this.requestData(base + api)
+    if (!data) return
+    this.processAverageData(TotalData, data)
+  },
 
   processTimeData(TotalData, flow) {
     let [mapData, idData, zoomData, lineData, pieData] = TotalData
@@ -96,6 +98,7 @@ export default {
     }
     idData.value = ret
   },
+
   processAverageData(TotalData, data) {
     let [mapData, idData, zoomData, lineData, pieData] = TotalData
     let ret = {
@@ -110,12 +113,14 @@ export default {
     }
     lineData.value = ret
   },
+
   changeSelect(TotalData, base, api, data) {
     let id = {
       flow_id: data.name
     }
     this.requestById(TotalData, base, id, api)
   },
+
   async requestData(url, params) {
     let res = await axios.get(url, { 'params': params })
     return res
