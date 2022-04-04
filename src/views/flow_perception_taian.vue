@@ -49,125 +49,13 @@ const idData = ref({})
 const zoomData = ref({})
 const lineData = ref({})
 const pieData = ref([])
+const TotalData = [mapData, idData, zoomData, lineData, pieData]
 const base = process.env.NODE_ENV === "development" ? "/api" : "http://101.200.207.137:8000";
 const center = [117.18273050985574, 36.179513092993666]
-const roll = (interval) => {
-  let ts = {
-    bus_timestamp: 1641914107
-  }
-  let id = {
-    flow_id: 4
-  }
-  // request part
-  requestById(id)
-  requestByTs(ts)
-  requestAverage()
-  setInterval(() => {
-    requestById(id)
-    requestByTs(ts)
-    requestAverage()
-  }, interval);
-}
-
-const requestByTs = async (ts) => {
-  let { data } = await utils.requestData(base + '/ta-flow-by-ts/', ts)
-  ts.bus_timestamp += 10
-  if (!data.flow) return
-  processTimeData(data.flow, ts.bus_timestamp)
-}
-
-const requestById = async (id) => {
-  let { data } = await utils.requestData(base + '/ta-flow-by-id/', id)
-  id.flow_id += 1
-  if (!data.flow) return
-  processIdData(data.flow, id.flow_id - 1)
-}
-
-const requestAverage = async () => {
-  let { data } = await utils.requestData(base + '/ta-flow-average/')
-  if (!data) return
-  processAverageData(data)
-}
-
-const processTimeData = (flow) => {
-  let ret = []
-  let zoom = {
-    categories: [],
-    value: [],
-    yTitle: '车流量',
-    title: '当前时刻车流量分布'
-  }
-  let pieTmp = {
-    '通畅': 0,
-    '平衡': 0,
-    '拥挤': 0,
-  }
-  for (let bus of flow) {
-    let tmp = { name: bus.flow_id, value: bus.bus_flow }
-    zoom.categories.push(bus.flow_id)
-    zoom.value.push(bus.bus_flow)
-    ret.push(tmp)
-  }
-  let level = (Math.max(...zoom.value) - Math.min(...zoom.value)) / 3
-  for (let bus of flow) {
-    if (0 <= bus.bus_flow && bus.bus_flow < level) {
-      pieTmp['通畅'] += 1
-    } else if (level <= bus.bus_flow && bus.bus_flow < 2 * level) {
-      pieTmp['平衡'] += 1
-    } else if (2 * level <= bus.bus_flow && bus.bus_flow < 3 * level) {
-      pieTmp['拥挤'] += 1
-    }
-  }
-  let pie = []
-  for (let item in pieTmp) {
-    pie.push({value: pieTmp[item], name: item})
-  }
-  zoomData.value = zoom
-  mapData.value = ret
-  pieData.value = pie
-}
-
-const processIdData = (flow, flow_id) => {
-  let ret = {
-    categories: [],
-    categories2: [],
-    value: [],
-    value2: [],
-    yTitle: '',
-    yTitle2: '车流量',
-    title: ''
-  }
-  ret.title = `Road ${flow_id} 历史车流量`
-  for (let bus of flow) {
-    let tmp = new Date(parseInt(bus.bus_timestamp) * 1000)
-    ret.categories.push(tmp.toLocaleString())
-    ret.value.push(bus.bus_flow)
-  }
-  idData.value = ret
-}
-const processAverageData = (data) => {
-  let ret = {
-    categories: [],
-    value: data.average,
-    title: '平均车流量',
-    title2: '车流量'
-  }
-  for (let t of data.bus_timestamp) {
-    let tmp = new Date(parseInt(t) * 1000)
-    ret.categories.push(tmp.toLocaleString())
-  }
-  lineData.value = ret
-}
-
-const changeSelect = (data) => {
-  let id = {
-    flow_id: data.name
-  }
-  requestById(id)
-}
-
+const city = 'ta'
+const changeSelect = (data) => utils.changeSelect(TotalData, base, `/${city}-flow-by-id/`, data)
 onMounted(() => {
-  roll(10000)
+  utils.requestApi(TotalData, base, city, 1641914107, 10000)
 })
 </script>
 
@@ -219,7 +107,3 @@ body {
   grid-area: left1;
 }
 </style>
-
-
-
-
