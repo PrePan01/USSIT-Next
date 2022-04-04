@@ -52,7 +52,10 @@ const option = {
       name: props.title2,
       type: 'line',
       showSymbol: false,
-      data: props.value
+      data: props.value,
+      itemStyle: {
+        color: '#626c91'
+      }
     }
   ]
 };
