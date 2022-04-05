@@ -16,6 +16,11 @@
         :zoom="2"
         @reportData="changeSelect"
       ></Map>
+      <n-card hoverable closable class="float-card" v-if="clickData.name" @close="handleClose">
+        <Gauge v-bind="gaugeDataCur"></Gauge>
+        <Text :text="`Road ${clickData.name}`"></Text>
+        <Gauge v-bind="gaugeDataPre"></Gauge>
+      </n-card>
     </div>
     <div class="right3">
       <Zoom v-bind="zoomData"></Zoom>
@@ -36,25 +41,30 @@ import Line from "/src/components/line.vue"
 import Map from "/src/components/map.vue"
 import Zoom from "/src/components/zoom.vue"
 import Table from "/src/components/table.vue"
+import Gauge from "/src/components/gauge.vue"
+import Text from "/src/components/text.vue"
 import * as echarts from 'echarts'
 import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
 import taian from '/src/assets/tai_an.json'
 import { onMounted, ref } from "vue"
+import { NCard } from 'naive-ui'
 echarts.registerTheme('walden', walden)
-const nowChose = ref({})
+const clickData = ref({})
 const mapData = ref([])
 const idData = ref({})
 const zoomData = ref({})
 const lineData = ref({})
 const pieData = ref([])
-const gaugeData = ref({})
-const TotalData = { mapData, idData, zoomData, lineData, pieData, gaugeData }
+const gaugeDataPre = ref({})
+const gaugeDataCur = ref({})
+const TotalData = {mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData}
 const base = process.env.NODE_ENV === "development" ? "/api" : "http://101.200.207.137:8000";
 const center = [117.18273050985574, 36.179513092993666]
 const city = 'ta'
-const changeSelect = (data) => utils.changeSelect(TotalData, base, `/${city}-flow-by-id/`, data)
+const changeSelect = (data) => utils.changeSelect(TotalData, base, city, data)
+const handleClose = () => clickData.value = {}
 onMounted(() => {
   utils.requestApi(TotalData, base, city, 1641914107, 10000)
 })
@@ -94,6 +104,10 @@ body {
 
 .center {
   grid-area: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  border: none;
 }
 
 .right3 {

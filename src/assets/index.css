@@ -32,6 +32,21 @@
   height: 0px;
   padding: 20px !important;
 }
+
+.float-card {
+  position: absolute;
+  height: 40%;
+  transform: translateY(45%);
+  bottom: 0;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  border: none !important;
+}
+.float-card:hover {
+  height: 40%;
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
+}
 html {
   background-color: #293441;
   border: none !important;

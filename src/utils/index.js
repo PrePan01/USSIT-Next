@@ -17,6 +17,7 @@ export default {
       this.requestById(TotalData, base, id, `/${city}-flow-by-id/`)
       this.requestByTs(TotalData, base, ts, `/${city}-flow-by-ts/`)
       this.requestAverage(TotalData, base, `/${city}-flow-average/`)
+      id.flow_id += 1
     }, interval);
   },
 
@@ -30,9 +31,8 @@ export default {
   async requestById(TotalData, base, _id, api) {
     let id = JSON.parse(JSON.stringify(_id))
     let { data } = await this.requestData(base + api, id)
-    id.flow_id += 1
     if (!data.flow) return
-    this.processIdData(TotalData, data.flow, id.flow_id - 1)
+    this.processIdData(TotalData, data.flow, id.flow_id)
   },
 
   async requestAverage(TotalData, base, api) {
@@ -124,7 +124,7 @@ export default {
 
   processPredictData(TotalData, flow, _id, data) {
     let id = JSON.parse(JSON.stringify(_id))
-    let {gaugeDataPre, gaugeDataCur} = TotalData
+    let { gaugeDataPre, gaugeDataCur } = TotalData
     let max = Math.max.apply(Math, flow.map(item => item.bus_flow))
     let v = flow.filter((f) => f.flow_id === id.flow_id)[0]
     let retPre = {

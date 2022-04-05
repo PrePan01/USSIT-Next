@@ -31,7 +31,7 @@ const option = {
           lineWidth: 1
         },
         keyframeAnimation: {
-          duration: 2000,
+          duration: 1800,
           keyframes: [
             {
               percent: 0.7,
@@ -94,7 +94,7 @@ onUpdated(() => {
             lineWidth: 1,
           },
           keyframeAnimation: {
-            duration: 2000,
+            duration: 1800,
             keyframes: [
               {
                 percent: 0.7,
@@ -106,7 +106,7 @@ onUpdated(() => {
               },
               {
                 // Stop for a while.
-                percent: 0.9,
+                percent: 0.8,
                 style: {
                   fill: 'transparent'
                 }

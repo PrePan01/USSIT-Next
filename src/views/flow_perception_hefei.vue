@@ -16,8 +16,7 @@
         :zoom="100"
         @reportData="changeSelect"
       ></Map>
-
-      <n-card hoverable closable  class="float-card" v-if="clickData.name" @close="handleClose">
+      <n-card hoverable closable class="float-card" v-if="clickData.name" @close="handleClose">
         <Gauge v-bind="gaugeDataCur"></Gauge>
         <Text :text="`Road ${clickData.name}`"></Text>
         <Gauge v-bind="gaugeDataPre"></Gauge>
@@ -60,7 +59,7 @@ const lineData = ref({})
 const pieData = ref([])
 const gaugeDataPre = ref({})
 const gaugeDataCur = ref({})
-const TotalData = {mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData}
+const TotalData = { mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData }
 const base = process.env.NODE_ENV === "development" ? "/api" : "http://101.200.207.137:8000";
 const center = [117.280338325, 31.84974485]
 const city = 'hf'
@@ -121,20 +120,5 @@ body {
 
 .left1 {
   grid-area: left1;
-}
-
-.float-card {
-  position: absolute;
-  height: 40%;
-  transform: translateY(45%);
-  bottom: 0;
-  transition: all 0.2s ease-in-out;
-  overflow: hidden;
-  border: none !important;
-}
-.float-card:hover {
-  height: 40%;
-  transform: translateY(0);
-  transition: all 0.2s ease-in-out;
 }
 </style>
