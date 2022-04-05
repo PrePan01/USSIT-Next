@@ -60,7 +60,7 @@ const lineData = ref({})
 const pieData = ref([])
 const gaugeDataPre = ref({})
 const gaugeDataCur = ref({})
-const TotalData = [mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData]
+const TotalData = {mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData}
 const base = process.env.NODE_ENV === "development" ? "/api" : "http://101.200.207.137:8000";
 const center = [117.280338325, 31.84974485]
 const city = 'hf'

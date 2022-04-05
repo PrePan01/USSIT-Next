@@ -48,7 +48,7 @@ export default {
   },
 
   processTimeData(TotalData, flow) {
-    let [mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData] = TotalData
+    let { mapData, zoomData, pieData } = TotalData
     let ret = []
     let zoom = {
       categories: [],
@@ -88,7 +88,7 @@ export default {
   },
 
   processIdData(TotalData, flow, flow_id) {
-    let [mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData] = TotalData
+    let { idData } = TotalData
     let ret = {
       categories: [],
       categories2: [],
@@ -108,7 +108,7 @@ export default {
   },
 
   processAverageData(TotalData, data) {
-    let [mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData] = TotalData
+    let { lineData } = TotalData
     let ret = {
       categories: [],
       value: data.average,
@@ -124,7 +124,7 @@ export default {
 
   processPredictData(TotalData, flow, _id, data) {
     let id = JSON.parse(JSON.stringify(_id))
-    let [mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData] = TotalData
+    let {gaugeDataPre, gaugeDataCur} = TotalData
     let max = Math.max.apply(Math, flow.map(item => item.bus_flow))
     let v = flow.filter((f) => f.flow_id === id.flow_id)[0]
     let retPre = {
@@ -144,7 +144,7 @@ export default {
     if (data.value.length == 3) {
       data.value = data.value[2]
     }
-    let [mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData] = TotalData
+    let { clickData } = TotalData
     clickData.value = data
     let id = {
       flow_id: data.name
