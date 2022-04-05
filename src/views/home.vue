@@ -4,6 +4,7 @@
   <router-link to="/"> home </router-link>
   <router-link to="/flow_perception_hefei"> hefei </router-link>
   <router-link to="/flow_perception_taian"> taian </router-link>
+  <router-link to="/park_nanshan"> nanshan </router-link>
 </n-space>
 
 </template>
