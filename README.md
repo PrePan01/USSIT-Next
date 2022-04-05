@@ -68,8 +68,11 @@ http://101.200.207.137:8000/ta-taxi-congestion/
 /ta-flow-prediction/
 
 ## nan shan
+平均
 /ns-park-statistics/
+各路段
 /ns-park-show/
+预测
 /ns-park-prediction/
 
 ## ta taxi
