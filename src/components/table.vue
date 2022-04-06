@@ -18,6 +18,9 @@ const emit = defineEmits(['reportData'])
 const props = defineProps(
   {
     data: Array,
+    prefix: String,
+    title1: String,
+    title2: String,
   }
 )
 const data = ref([])
@@ -42,7 +45,7 @@ const columns = [
     sorter: (row1, row2) => row1.name - row2.name
   },
   {
-    title: "flow",
+    title: props.title1,
     key: "value",
     sorter: (row1, row2) => row1.value - row2.value
   }

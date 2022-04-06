@@ -78,30 +78,30 @@ http://101.200.207.137:8000/ta-taxi-congestion/
 ## ta taxi
 /ta-taxi-congestion/
 
-hf-flow-by-id/
-hf-flow-by-ts/
-hf-flow/
-hf-flow-average/
-hf-flow-prediction/
-hf-flow-prediction-by-id/
-hf-flow-prediction-by-ts/
+http://101.200.207.137:8000/hf-flow-by-id/
+http://101.200.207.137:8000/hf-flow-by-ts/
+http://101.200.207.137:8000/hf-flow/
+http://101.200.207.137:8000/hf-flow-average/
+http://101.200.207.137:8000/hf-flow-prediction/
+http://101.200.207.137:8000/hf-flow-prediction-by-id/
+http://101.200.207.137:8000/hf-flow-prediction-by-ts/
 
-ta-flow-by-id/
-ta-flow-by-ts/
-ta-flow/
-ta-flow-average/
-ta-flow-prediction/
-ta-flow-prediction-by-id/
-ta-flow-prediction-by-ts/
+http://101.200.207.137:8000/ta-flow-by-id/
+http://101.200.207.137:8000/ta-flow-by-ts/
+http://101.200.207.137:8000/ta-flow/
+http://101.200.207.137:8000/ta-flow-average/
+http://101.200.207.137:8000/ta-flow-prediction/
+http://101.200.207.137:8000/ta-flow-prediction-by-id/
+http://101.200.207.137:8000/ta-flow-prediction-by-ts/
 
-ns-park-statistics/
-ns-park-statistics-by-ts/
-ns-park-show/
-ns-park-show-by-id/
-ns-park-show-by-ts/
-ns-park-prediction/
-ns-park-prediction-by-id/
-ns-park-prediction-by-ts/
+http://101.200.207.137:8000/ns-park-statistics/
+http://101.200.207.137:8000/ns-park-statistics-by-ts/
+http://101.200.207.137:8000/ns-park-show/
+http://101.200.207.137:8000/ns-park-show-by-id/
+http://101.200.207.137:8000/ns-park-show-by-ts/
+http://101.200.207.137:8000/ns-park-prediction/
+http://101.200.207.137:8000/ns-park-prediction-by-id/
+http://101.200.207.137:8000/ns-park-prediction-by-ts/
 
-ta-taxi-congestion/
-ta-taxi-congestion-by-id/
+http://101.200.207.137:8000/ta-taxi-congestion/
+http://101.200.207.137:8000/ta-taxi-congestion-by-id/

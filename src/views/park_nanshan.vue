@@ -10,10 +10,10 @@
       <Map
         v-if="mapData.length"
         title="车流量"
-        :geoCoordMap="hefei"
+        :geoCoordMap="nanshan"
         :data="mapData"
         :center="center"
-        :zoom="100"
+        :zoom="3"
         @reportData="changeSelect"
       ></Map>
       <n-card hoverable closable class="float-card" v-if="clickData.name" @close="handleClose">
@@ -47,7 +47,7 @@ import * as echarts from 'echarts'
 import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
-import hefei from '/src/assets/he_fei.json'
+import nanshan from '/src/assets/nan_shan.json'
 import { onMounted, ref } from "vue"
 import { NCard } from 'naive-ui'
 echarts.registerTheme('walden', walden)
@@ -61,8 +61,8 @@ const gaugeDataPre = ref({})
 const gaugeDataCur = ref({})
 const TotalData = { mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData }
 const base = process.env.NODE_ENV === "development" ? "/api" : "http://101.200.207.137:8000";
-const center = [117.280338325, 31.84974485]
-const city = 'hf'
+const center = [113.947657, 22.509065]
+const city = 'ns'
 const changeSelect = (data) => utils.changeSelect(TotalData, base, city, data)
 const handleClose = () => clickData.value = {}
 onMounted(() => {
