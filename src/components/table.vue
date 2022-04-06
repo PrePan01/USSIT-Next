@@ -18,9 +18,7 @@ const emit = defineEmits(['reportData'])
 const props = defineProps(
   {
     data: Array,
-    prefix: String,
     title1: String,
-    title2: String,
   }
 )
 const data = ref([])

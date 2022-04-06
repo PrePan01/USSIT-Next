@@ -29,7 +29,7 @@
       <Bar v-bind="idData"></Bar>
     </div>
     <div class="left1">
-      <Table :data="mapData" @reportData="changeSelect"></Table>
+      <Table :data="mapData" @reportData="changeSelect" :title1="'flow'"></Table>
     </div>
   </div>
 </template>
