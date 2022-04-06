@@ -77,3 +77,31 @@ http://101.200.207.137:8000/ta-taxi-congestion/
 
 ## ta taxi
 /ta-taxi-congestion/
+
+hf-flow-by-id/
+hf-flow-by-ts/
+hf-flow/
+hf-flow-average/
+hf-flow-prediction/
+hf-flow-prediction-by-id/
+hf-flow-prediction-by-ts/
+
+ta-flow-by-id/
+ta-flow-by-ts/
+ta-flow/
+ta-flow-average/
+ta-flow-prediction/
+ta-flow-prediction-by-id/
+ta-flow-prediction-by-ts/
+
+ns-park-statistics/
+ns-park-statistics-by-ts/
+ns-park-show/
+ns-park-show-by-id/
+ns-park-show-by-ts/
+ns-park-prediction/
+ns-park-prediction-by-id/
+ns-park-prediction-by-ts/
+
+ta-taxi-congestion/
+ta-taxi-congestion-by-id/
