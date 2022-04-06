@@ -18,7 +18,7 @@
       ></Map>
       <n-card hoverable closable class="float-card" v-if="clickData.name" @close="handleClose">
         <Gauge v-bind="gaugeDataCur"></Gauge>
-        <Text :text="`Road ${clickData.name}`"></Text>
+        <Text :text="`${nanshanRoadMap[clickData.name].name}`" :fontSize="20"></Text>
         <Gauge v-bind="gaugeDataPre"></Gauge>
       </n-card>
     </div>
@@ -48,6 +48,7 @@ import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
 import nanshan from '/src/assets/nan_shan.json'
+import nanshanRoadMap from '/src/assets/nan_shanMap.json'
 import { onMounted, ref } from "vue"
 import { NCard } from 'naive-ui'
 echarts.registerTheme('walden', walden)

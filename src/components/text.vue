@@ -8,7 +8,8 @@ import * as echarts from 'echarts'
 import _ from 'lodash'
 const props = defineProps(
   {
-    text: String
+    text: String,
+    fontSize: Number
   }
 )
 const text = ref(null)
@@ -22,8 +23,8 @@ const option = {
         top: 'center',
         style: {
           text: props.text,
-          fontSize: 48,
-          fontWeight: 'bold',
+          fontSize: props.fontSize,
+          fontWeight: props.fontSize > 30 ? 'bold' : '',
           lineDash: [0, 200],
           lineDashOffset: 0,
           fill: 'transparent',
@@ -75,7 +76,6 @@ onMounted(() => {
 });
 
 onUpdated(() => {
-  console.log(props.text)
   myChart.setOption({
     graphic: {
       elements: [
@@ -85,8 +85,8 @@ onUpdated(() => {
           top: 'center',
           style: {
             text: props.text,
-            fontSize: 48,
-            fontWeight: 'bold',
+            fontSize: props.fontSize,
+            fontWeight: props.fontSize > 30 ? 'bold' : '',
             lineDash: [0, 200],
             lineDashOffset: 0,
             fill: 'transparent',

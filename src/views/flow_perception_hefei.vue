@@ -18,7 +18,7 @@
       ></Map>
       <n-card hoverable closable class="float-card" v-if="clickData.name" @close="handleClose">
         <Gauge v-bind="gaugeDataCur"></Gauge>
-        <Text :text="`Road ${clickData.name}`"></Text>
+        <Text :text="`Road ${clickData.name}`" :fontSize="48"></Text>
         <Gauge v-bind="gaugeDataPre"></Gauge>
       </n-card>
     </div>
