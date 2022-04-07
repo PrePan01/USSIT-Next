@@ -4,7 +4,15 @@
   <router-link to="/"> home </router-link>
   <router-link to="/flow_perception_hefei"> hefei </router-link>
   <router-link to="/flow_perception_taian"> taian </router-link>
-  <router-link to="/park_nanshan"> nanshan </router-link>
+  <router-link to="flow_2_3"> flow_2_3 </router-link>
+  <router-link to="flow_1_1"> flow_1_1 </router-link>
+  <router-link to="flow_2_1"> flow_2_1 </router-link>
+  <router-link to="flow_2_4"> flow_2_4 </router-link>
+  <router-link to="flow_3_1"> flow_3_1 </router-link>
+  <router-link to="flow_3_2"> flow_3_2 </router-link>
+  <router-link to="flow_3_4"> flow_3_4 </router-link>
+  <router-link to="flow_3_5"> flow_3_5 </router-link>
+  <router-link to="flow_4_1"> flow_4_1 </router-link>
 </n-space>
 
 </template>
