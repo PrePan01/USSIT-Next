@@ -42,6 +42,7 @@ const option = {
   bmap: {
     zoom: 13,
     roam: true,
+    center: props.center,
     mapStyle: {
       styleJson: [
         {

@@ -18,7 +18,7 @@ const props = defineProps(
 )
 const option = {
   title: {
-    text: '当前流量情况'
+    text:'当前流量情况'
   },
   tooltip: {
     trigger: 'item'
@@ -79,6 +79,9 @@ onBeforeUnmount(() => {
 
 onUpdated(() => {
   myChart.setOption({
+    title: {
+      text: '当前流量情况'
+    },
     series: [
       {
         data: props.data

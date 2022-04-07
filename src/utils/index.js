@@ -120,6 +120,7 @@ export default {
       pie.push({ value: pieTmp[item], name: item })
     }
     zoomData.value = zoom
+    console.log(ret)
     mapData.value = ret
     pieData.value = pie
   },

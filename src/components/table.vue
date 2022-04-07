@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+import { processSlotOutlet } from "@vue/compiler-core";
 import { NCard, NDataTable } from "naive-ui";
 import { onMounted, ref, h, onUpdated } from 'vue'
 const emit = defineEmits(['reportData'])
@@ -23,6 +24,9 @@ const props = defineProps(
 )
 const data = ref([])
 onUpdated(() => {
+  data.value = props.data
+})
+onMounted(() => {
   data.value = props.data
 })
 const rowProps = (row) => {
