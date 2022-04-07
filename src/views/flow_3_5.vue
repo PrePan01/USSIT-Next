@@ -805,8 +805,8 @@ mapData.value = [
   }
 ]
 lineData1.value = {
-  categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  value: [2.0, 2.2, 9.1, 3.4, 12.0, 3.0, 3.2],
+  categories: ['Way1', 'Way2', 'Way3', 'Way4', 'Way5', 'Way6', 'Way7'],
+  value: [1.2, 1.3, 1.5, 1.9, 2.3, 3.1, 4.2],
   title: '速度优先图',
   title2: '速度优先'
 }

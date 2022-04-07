@@ -837,13 +837,13 @@ mapData.value = [
 ]
 lineData1.value = {
   categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  value: [2.0, 2.2, 9.1, 3.4, 12.0, 3.0, 3.2],
+  value: [1.4, 1.3, 2.2, 4.1,3.3, 7.6,7.9],
   title: '南山区占用指数图',
   title2: '南山区平均占用率'
 }
 lineData2.value = {
   categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  value: [2.0, 2.2, 9.1, 3.4, 12.0, 3.0, 3.2],
+  value: [1.5, 1.1, 3.3, 3.4, 6.0, 8.8, 8.2],
   title: '区块占用指数',
   title2: '区块占用率'
 }
@@ -855,7 +855,7 @@ lineData3.value = {
 }
 lineData4.value = {
   categories: ['Road1', 'Road2', 'Road3', 'Road4', 'Road5', 'Road6', 'Road7'],
-  value: [2.0, 2.2, 9.1, 3.4, 12.0, 3.0, 3.2],
+  value: [9.5, 8.3, 8.1, 7.0, 5.5, 3.1, 1.2],
   title: '路段占用图',
   title2: '路段占用'
 }
