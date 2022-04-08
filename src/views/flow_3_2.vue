@@ -1,11 +1,23 @@
 <template>
 <div class="container">
-  <div class="header1"> <n-button type="primary" size="large">交通状况感知</n-button></div>
-  <div class="header2"> <n-button type="primary" size="large">交通状况感知</n-button></div>
-  <div class="header3"> <n-button type="primary" size="large">交通状况感知</n-button></div>
-  <div class="header4"> <n-button type="primary" size="large">交通状况感知</n-button></div>
-  <div class="header5"> <n-button type="primary" size="large">交通状况感知</n-button></div>
-  <div class="header6"> <n-button type="primary" size="large">交通状况感知</n-button></div>
+ <div class="header1">
+     <n-button type="primary" size="large"><router-link to="flow_3">交通实时预测</router-link></n-button>
+    </div>
+    <div class="header2">
+      <n-button type="primary" size="large">路况预测</n-button>
+    </div>
+    <div class="header3">
+      <n-button type="primary" size="large"><router-link to="flow_3_1">路口流量预测</router-link></n-button>
+    </div>
+    <div class="header4">
+      <n-button type="primary" size="large"><router-link to="flow_3_4">车辆轨迹预测</router-link></n-button>
+    </div>
+    <div class="header5">
+      <n-button type="primary" size="large"><router-link to="flow_3_5">公交流量预测</router-link></n-button>
+    </div>
+    <div class="header6">
+      <n-button type="primary" size="large"><router-link to="flow_3_2">事故预测</router-link></n-button>
+    </div>
   <div class="left2"> <Table :data="mapData" :title1="'路段状态'"></Table></div>
   <div class="left3"><Line v-bind="lineData2"></Line></div>
   <div class="right"><Table :data="mapData" :title1="'过车量'"></Table></div>

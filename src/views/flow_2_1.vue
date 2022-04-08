@@ -1,9 +1,19 @@
 <template>
 <div class="container">
-  <div class="header1"> <n-button type="primary" size="large">交通状况感知</n-button></div>
-  <div class="header2"> <n-button type="primary" size="large">交通状况感知</n-button></div>
-  <div class="header3"> <n-button type="primary" size="large">交通状况感知</n-button></div>
-  <div class="header4"> <n-button type="primary" size="large">交通状况感知</n-button></div>
+  <div class="header1"> <n-button type="primary" size="large">
+     <router-link to="/flow_2">交通路况感知</router-link></n-button></div>
+   <div class="header2">
+      <n-button type="primary" size="large">
+        <router-link to="/flow_2_1">实时路况感知</router-link>
+        </n-button>
+    </div>
+ <div class="header3"> 
+    <n-button type="primary" size="large">
+       <router-link to="/flow_2_3">路口流量感知</router-link></n-button>
+    </div>
+ <div class="header4"> <n-button type="primary" size="large">
+          <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button>
+    </div>
   <div class="left1">    <Pie :data="pieData"></Pie></div>
   <div class="left2">      <Table :data="mapData" :title1="'过车量'"></Table></div>
   <div class="left3"></div>

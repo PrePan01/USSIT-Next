@@ -12,6 +12,8 @@ const flow_3_2 = () => import("../views/flow_3_2.vue")
 const flow_3_4 = () => import("../views/flow_3_4.vue")
 const flow_3_5 = () => import("../views/flow_3_5.vue")
 const flow_4_1 = () => import("../views/flow_4_1.vue")
+const flow_2 = () => import("../views/flow_2.vue")
+const flow_3 = () => import("../views/flow_3.vue")
 const routes = [
   {
     path: '/',
@@ -44,6 +46,11 @@ const routes = [
     component: flow_1_1
   },
   {
+    path: "/flow_2",
+    name: "flow_2",
+    component: flow_2
+  },
+  {
     path: "/flow_2_1",
     name: "flow_2_1",
     component: flow_2_1
@@ -52,6 +59,11 @@ const routes = [
     path: "/flow_2_4",
     name: "flow_2_4",
     component: flow_2_4
+  },
+  {
+    path: "/flow_3",
+    name: "flow_3",
+    component: flow_3
   },
   {
     path: "/flow_3_1",
