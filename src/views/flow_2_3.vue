@@ -1,22 +1,22 @@
 <template>
   <div class="container">
-    <div class="header-1">
-      <n-button type="primary" size="large">
+    <div class="header-1" >
+      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
         <router-link to="/flow_2">交通路况感知</router-link></n-button
       >
     </div>
     <div class="header-2">
-      <n-button type="primary" size="large">
+      <n-button type="primary" icon="n-icon-edit" block class="edit_btn" size="large">
         <router-link to="/flow_2_1">实时路况感知</router-link>
       </n-button>
     </div>
     <div class="header-3">
-      <n-button type="primary" size="large">
+      <n-button type="primary" icon="n-icon-edit" class="edit_btn" block size="large">
         <router-link to="/flow_2_3">路口流量感知</router-link></n-button
       >
     </div>
     <div class="header-4">
-      <n-button type="primary" size="large">
+      <n-button type="primary" icon="n-icon-edit" class="edit_btn" block size="large">
         <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button
       >
     </div>
@@ -107,24 +107,31 @@ onMounted(async () => {
     "left-2 left-2 center center center center right-2 right-2";
 }
 
+.edit_btn {
+  min-height: 100px;
+  font-size: 30px;
+  min-width: 150px;
+  background: #e6a23c 80%;
+  border:#e6a23c;
+}
 .header-1 {
   grid-area: header-1;
-  background-color: red;
+
 }
 
 .header-2 {
   grid-area: header-2;
-  background-color: blue;
+
 }
 
 .header-3 {
   grid-area: header-3;
-  background-color: pink;
+
 }
 
 .header-4 {
   grid-area: header-4;
-  background-color: purple;
+  
 }
 
 .left-1 {
