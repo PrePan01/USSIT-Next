@@ -25,8 +25,3 @@ Mock.mock('/mapData2_3', {
     }
   ]
 })
-Mock.mock('/lineData12_4', {
-  "data|7": [
-
-  ]
-})
