@@ -51,3 +51,9 @@ html {
   background-color: #293441;
   border: none !important;
 }
+
+a {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}

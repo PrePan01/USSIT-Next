@@ -27,10 +27,6 @@ import { NSpace, NButton } from 'naive-ui';
 </script>
 
 <style>
-a {
-  color: white;
-  font-size: 30px;
-  text-decoration: none;
-}
+
 </style>
 
