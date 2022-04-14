@@ -1079,4 +1079,7 @@ lineData1.value = {
 h1 {
   font-size: 48px;
 }
+a {
+  font-size: 26px;
+}
 </style>
