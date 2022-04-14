@@ -18,6 +18,11 @@ const routes = [
   {
     path: '/',
     name:'home',
+    component: flow_1_1
+  },
+  {
+    path: '/home',
+    name:'homepage',
     component: home
   },
   {
