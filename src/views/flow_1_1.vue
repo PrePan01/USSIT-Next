@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header-1">
          <n-space>
-        <div>面向智慧出行的城市群智感知验证系统</div>
+        <div class="edit_btn">面向智慧出行的城市群智感知验证系统</div>
       </n-space>
     </div>
     <div class="left1"><Pie :data="pieData"></Pie></div>
@@ -969,10 +969,30 @@ lineData1.value = {
     "left3 left3 center3 center3 center4 center4 right3 right3"
     "left3 left3 center3 center3 center4 center4 right3 right3";
 }
+.edit_btn {
 
+
+font-size: 30px;
+
+
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+height: 31px;
+margin-left: 380px;
+margin-top: 18px;
+
+color: #87878a;
+
+white-space: normal;
+}
 .header-1 {
   grid-area: header-1;
-  background-color: red;
+ background-color: bisque;
 }
 
 .left1 {
@@ -992,30 +1012,36 @@ lineData1.value = {
 
 .center1 {
   grid-area: center1;
-  background-color: gray;
+
 }
 
 .center2 {
   grid-area: center2;
+  
 }
 
 .center3 {
   grid-area: center3;
+   background-color: gray;
 }
 
 .center4 {
   grid-area: center4;
+
 }
 
 .right1 {
   grid-area: right1;
+   background-color: gray;
 }
 
 .right2 {
   grid-area: right2;
+   background-color: gray;
 }
 
 .right3 {
   grid-area: right3;
+   background-color: gray;
 }
 </style>

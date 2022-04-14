@@ -1,22 +1,22 @@
 <template>
   <div class="container">
-    <div class="header1">
-      <n-button type="primary" size="large">
+     <div class="header1" >
+      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
         <router-link to="/flow_2">交通路况感知</router-link></n-button
       >
     </div>
     <div class="header2">
-      <n-button type="primary" size="large">
+      <n-button type="primary" icon="n-icon-edit" block class="edit_btn" size="large">
         <router-link to="/flow_2_1">实时路况感知</router-link>
       </n-button>
     </div>
     <div class="header3">
-      <n-button type="primary" size="large">
+      <n-button type="primary" icon="n-icon-edit" class="edit_btn" block size="large">
         <router-link to="/flow_2_3">路口流量感知</router-link></n-button
       >
     </div>
     <div class="header4">
-      <n-button type="primary" size="large">
+      <n-button type="primary" icon="n-icon-edit" class="edit_btn" block size="large">
         <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button
       >
     </div>
@@ -25,16 +25,16 @@
     </div>
     <div class="center">
       <n-space>
-        <n-button type="primary" size="large" @click="clickMethod('today')"
+        <n-button type="primary" size="large" icon="n-icon-edit" block class="edit_btn2" @click="clickMethod('today')"
           >今天</n-button
         >
-        <n-button type="primary" size="large" @click="clickMethod('yesterday')"
+        <n-button type="primary" size="large" icon="n-icon-edit" block class="edit_btn2" @click="clickMethod('yesterday')"
           >昨天</n-button
         >
-        <n-button type="primary" size="large" @click="clickMethod('sevenDays')"
+        <n-button type="primary" size="large" icon="n-icon-edit" block class="edit_btn2" @click="clickMethod('sevenDays')"
           >近一周</n-button
         >
-        <n-button type="primary" size="large" @click="clickMethod('thirtyDays')"
+        <n-button type="primary" size="large" icon="n-icon-edit" block class="edit_btn2" @click="clickMethod('thirtyDays')"
           >近一个月</n-button
         >
       </n-space>
@@ -241,7 +241,20 @@ onMounted(async () => {
     "left left center3 center3 center3 right2 right2 right2"
     "left left center3 center3 center3 right2 right2 right2";
 }
-
+.edit_btn {
+  min-height: 100px;
+  font-size: 30px;
+  min-width: 150px;
+  background:aquamarine 80%;
+  border:#e6a23c;
+}
+.edit_btn2 {
+  min-height: 70px;
+  font-size: 30px;
+  min-width: 90px;
+  background:burlywood 80%;
+  border:#e6a23c;
+}
 .header1 {
   grid-area: header1;
   background-color: red;
@@ -269,7 +282,7 @@ onMounted(async () => {
 
 .center {
   grid-area: center;
-  background-color: yellow;
+
 }
 
 .center2 {

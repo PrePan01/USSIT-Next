@@ -1,22 +1,22 @@
 <template>
 <div class="container">
- <div class="header1">
-     <n-button type="primary" size="large"><router-link to="flow_3">交通实时预测</router-link></n-button>
+   <div class="header1">
+        <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large"><router-link to="flow_3">交通实时预测</router-link></n-button>
     </div>
     <div class="header2">
-      <n-button type="primary" size="large">路况预测</n-button>
+      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">路况预测</n-button>
     </div>
     <div class="header3">
-      <n-button type="primary" size="large"><router-link to="flow_3_1">路口流量预测</router-link></n-button>
+      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large"><router-link to="flow_3_1">路口流量预测</router-link></n-button>
     </div>
     <div class="header4">
-      <n-button type="primary" size="large"><router-link to="flow_3_4">车辆轨迹预测</router-link></n-button>
+      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large"><router-link to="flow_3_4">车辆轨迹预测</router-link></n-button>
     </div>
     <div class="header5">
-      <n-button type="primary" size="large"><router-link to="flow_3_5">公交流量预测</router-link></n-button>
+     <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large"><router-link to="flow_3_5">公交流量预测</router-link></n-button>
     </div>
     <div class="header6">
-      <n-button type="primary" size="large"><router-link to="flow_3_2">事故预测</router-link></n-button>
+     <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large"><router-link to="flow_3_2">事故预测</router-link></n-button>
     </div>
   <div class="left2"> <Table :data="mapData" :title1="'路段状态'"></Table></div>
   <div class="left3"><Line v-bind="lineData2"></Line></div>
@@ -859,14 +859,20 @@ lineData2.value = {
     "left3 left3 left3 center2 center2 center2 center2 center2 center2 right right right"
     "left3 left3 left3 center2 center2 center2 center2 center2 center2 right right right";
 }
+.edit_btn {
+  min-height: 70px;
+  font-size: 20px;
+  min-width: 70px;
+  background:burlywood 80%;
+  border:#e6a23c;
+}
+.header1 { grid-area: header1; }
 
-.header1 { grid-area: header1; background-color: aqua;}
+.header2 { grid-area: header2; }
 
-.header2 { grid-area: header2;background-color:bisque }
+.header3 { grid-area: header3; }
 
-.header3 { grid-area: header3;background-color:blue }
-
-.header4 { grid-area: header4; background-color:chocolate}
+.header4 { grid-area: header4; }
 
 .header5 { grid-area: header5; }
 

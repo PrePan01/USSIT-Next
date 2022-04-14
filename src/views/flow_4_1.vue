@@ -14,7 +14,7 @@
   </div>
   <div class="center1">    
       <n-space>
-        <div>深圳市南山区泊车数据可视化</div>
+        <div class="edit_btn">深圳市南山区泊车数据可视化</div>
       </n-space>
       </div>
   <div class="center3"> 
@@ -877,23 +877,43 @@ lineData4.value = {
     "left3 left3 left3 center4 center4 center4 center4 center4 right2 right2 right2 ."
     "left3 left3 left3 center4 center4 center4 center4 center4 right2 right2 right2 .";
 }
+.edit_btn {
 
+
+font-size: 30px;
+
+
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+height: 70px;
+margin-left: 70px;
+margin-top: 40px;
+
+color:black;
+
+white-space: normal;
+}
 .left1 { grid-area: left1; background-color: aqua;}
 
-.left2 { grid-area: left2; }
+.left2 { grid-area: left2;  background-color: aqua;}
 
-.left3 { grid-area: left3; }
+.left3 { grid-area: left3;  background-color: aqua;}
 
 .center2 { grid-area: center2; }
 
-.center1 { grid-area: center1; }
+.center1 { grid-area: center1;  background-color: aqua;}
 
 .center3 { grid-area: center3; }
 
-.center4 { grid-area: center4; }
+.center4 { grid-area: center4; background-color: aqua; }
 
-.right1 { grid-area: right1; }
+.right1 { grid-area: right1; background-color: aqua; }
 
-.right2 { grid-area: right2; }
+.right2 { grid-area: right2;  background-color: aqua;}
 
 </style>

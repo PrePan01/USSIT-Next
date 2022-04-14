@@ -1,24 +1,18 @@
 <template>
   <div class="container">
-    <div class="header1">
-      <n-button type="primary" size="large">
-        <router-link to="/flow_2">交通路况感知</router-link></n-button
-      >
-    </div>
-    <div class="header2">
-      <n-button type="primary" size="large">
+   <div class="header1"> <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
+     <router-link to="/flow_2">交通路况感知</router-link></n-button></div>
+   <div class="header2">
+      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
         <router-link to="/flow_2_1">实时路况感知</router-link>
-      </n-button>
+        </n-button>
     </div>
-    <div class="header3">
-      <n-button type="primary" size="large">
-        <router-link to="/flow_2_3">路口流量感知</router-link></n-button
-      >
+ <div class="header3"> 
+   <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
+       <router-link to="/flow_2_3">路口流量感知</router-link></n-button>
     </div>
-    <div class="header4">
-      <n-button type="primary" size="large">
-        <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button
-      >
+ <div class="header4"> <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
+          <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button>
     </div>
     <div class="left1"><Pie :data="pieData"></Pie></div>
     <div class="left2"><Table :data="mapData" :title1="'过车量'"></Table></div>
@@ -850,20 +844,26 @@ mapData.value = [
     "left3 left3 center center center center right right"
     "left3 left3 center center center center right right";
 }
-
+.edit_btn {
+  min-height: 100px;
+  font-size: 30px;
+  min-width: 150px;
+  background:burlywood 80%;
+  border:#e6a23c;
+}
 .header1 {
   grid-area: header1;
-  background-color: red;
+
 }
 
 .header2 {
   grid-area: header2;
-  background-color: blue;
+
 }
 
 .header3 {
   grid-area: header3;
-  background-color: blue;
+
 }
 
 .header4 {
