@@ -1,17 +1,17 @@
 <template>
 <div class="container">
- <div class="header1"> <n-button type="primary" size="large">
+ <div class="header1"> <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
      <router-link to="/flow_2">交通路况感知</router-link></n-button></div>
    <div class="header2">
-      <n-button type="primary" size="large">
+      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
         <router-link to="/flow_2_1">实时路况感知</router-link>
         </n-button>
     </div>
  <div class="header3"> 
-    <n-button type="primary" size="large">
+   <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
        <router-link to="/flow_2_3">路口流量感知</router-link></n-button>
     </div>
- <div class="header4"> <n-button type="primary" size="large">
+ <div class="header4"> <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
           <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button>
     </div>
   <div class="center"> <Map
@@ -831,6 +831,13 @@ mapData.value = [
     "center center center center center center center center center center center .";
 }
 
+.edit_btn {
+  min-height: 100px;
+  font-size: 30px;
+  min-width: 150px;
+  background:burlywood 80%;
+  border:#e6a23c;
+}
 .header1 { grid-area: header1; }
 
 .header2 { grid-area: header2; }

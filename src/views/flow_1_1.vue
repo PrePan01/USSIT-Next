@@ -1016,10 +1016,30 @@ lineData1.value = {
     "left3 left3 center3 center3 center4 center4 right3 right3"
     "left3 left3 center3 center3 center4 center4 right3 right3";
 }
+.edit_btn {
 
+
+font-size: 30px;
+
+
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+height: 31px;
+margin-left: 380px;
+margin-top: 18px;
+
+color: #87878a;
+
+white-space: normal;
+}
 .header-1 {
   grid-area: header-1;
-  text-align: center;
+ background-color: bisque;
 }
 
 .left1 {
@@ -1040,30 +1060,35 @@ lineData1.value = {
 .center1 {
   grid-area: center1;
   display:flex;
-
 }
 
 .center2 {
   grid-area: center2;
+
 }
 
 .center3 {
   grid-area: center3;
+   background-color: gray;
 }
 
 .center4 {
   grid-area: center4;
+
 }
 
 .right1 {
   grid-area: right1;
+   background-color: gray;
 }
 
 .right2 {
   grid-area: right2;
+   background-color: gray;
 }
 
 .right3 {
   grid-area: right3;
+   background-color: gray;
 }
 </style>
