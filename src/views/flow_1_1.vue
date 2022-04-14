@@ -8,18 +8,25 @@
     <div class="left1"><Pie :data="pieData"></Pie></div>
     <div class="left2"><Line v-bind="lineData1"></Line></div>
     <div class="left3"><Table :data="mapData" :title1="'过车量'"></Table></div>
-    <div class="center1">
-      <n-space>
-        <n-button type="primary" size="large">
-          <router-link to="flow_2">交通状况感知</router-link>
-        </n-button>
-        <n-button type="primary" size="large">
-          <router-link to="flow_3">交通实时预测</router-link>
-        </n-button>
-        <n-button type="primary" size="large">
-          <router-link to="flow_4_1">交通调控引导</router-link>
-        </n-button>
-      </n-space>
+    <div class="center1_1">
+      <n-card hoverable>
+        <router-link to="flow_2">交通状况感知</router-link>
+      </n-card>
+    </div>
+    <div class="center1_2">
+      <n-card hoverable>
+        <router-link to="flow_3">交通实时预测</router-link>
+      </n-card>
+    </div>
+    <div class="center1_3">
+      <n-card hoverable>
+        <router-link to="flow_4_1">交通调控引导</router-link>
+      </n-card>
+    </div>
+    <div class="center1_4">
+      <n-card hoverable>
+        <router-link to="flow_4_1">基础设施规划</router-link>
+      </n-card>
     </div>
     <div class="center2">
       <Map
@@ -1009,86 +1016,67 @@ lineData1.value = {
   grid-auto-flow: row;
   grid-template-areas:
     "header-1 header-1 header-1 header-1 header-1 header-1 header-1 header-1"
-    "left1 left1 center1 center1 center1 center1 right1 right1"
+    "left1 left1 center1_1 center1_2 center1_3 center1_4 right1 right1"
     "left1 left1 center2 center2 center2 center2 right1 right1"
     "left2 left2 center2 center2 center2 center2 right2 right2"
     "left2 left2 center2 center2 center2 center2 right2 right2"
     "left3 left3 center3 center3 center4 center4 right3 right3"
     "left3 left3 center3 center3 center4 center4 right3 right3";
 }
-.edit_btn {
 
-
-font-size: 30px;
-
-
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-height: 31px;
-margin-left: 380px;
-margin-top: 18px;
-
-color: #87878a;
-
-white-space: normal;
-}
 .header-1 {
   grid-area: header-1;
- background-color: bisque;
 }
 
 .left1 {
   grid-area: left1;
-  background-color: blue;
 }
 
 .left2 {
   grid-area: left2;
-  background-color: green;
 }
 
 .left3 {
   grid-area: left3;
-  background-color: yellow;
 }
 
-.center1 {
-  grid-area: center1;
-  display:flex;
+.center1_1 {
+  grid-area: center1_1;
+}
+.center1_2 {
+  grid-area: center1_2;
+}
+.center1_3 {
+  grid-area: center1_3;
+}
+.center1_4 {
+  grid-area: center1_4;
 }
 
 .center2 {
   grid-area: center2;
-
 }
 
 .center3 {
   grid-area: center3;
-   background-color: gray;
 }
 
 .center4 {
   grid-area: center4;
-
 }
 
 .right1 {
   grid-area: right1;
-   background-color: gray;
 }
 
 .right2 {
   grid-area: right2;
-   background-color: gray;
 }
 
 .right3 {
   grid-area: right3;
-   background-color: gray;
+}
+h1 {
+  font-size: 48px;
 }
 </style>

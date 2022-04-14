@@ -1,23 +1,23 @@
 <template>
   <div class="container">
-    <div class="header-1" >
-      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
-        <router-link to="/flow_2">交通路况感知</router-link></n-button
+    <div class="header-1">
+      <n-card hoverable>
+        <router-link to="/flow_2">交通路况感知</router-link></n-card
       >
     </div>
     <div class="header-2">
-      <n-button type="primary" icon="n-icon-edit" block class="edit_btn" size="large">
+      <n-card hoverable>
         <router-link to="/flow_2_1">实时路况感知</router-link>
-      </n-button>
+      </n-card>
     </div>
     <div class="header-3">
-      <n-button type="primary" icon="n-icon-edit" class="edit_btn" block size="large">
-        <router-link to="/flow_2_3">路口流量感知</router-link></n-button
+      <n-card class="active">
+        <router-link to="/flow_2_3">路口流量感知</router-link></n-card
       >
     </div>
     <div class="header-4">
-      <n-button type="primary" icon="n-icon-edit" class="edit_btn" block size="large">
-        <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button
+      <n-card hoverable>
+        <router-link to="/flow_2_4">拥塞时空分析</router-link></n-card
       >
     </div>
     <div class="left-1">
@@ -61,7 +61,7 @@ import utils from "/src/utils/index.js";
 import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
 import { onMounted, ref } from "vue";
-import { NButton } from "naive-ui";
+import { NButton, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);
 const clickData = ref({});
 const idData = ref({});
@@ -112,50 +112,41 @@ onMounted(async () => {
   font-size: 30px;
   min-width: 150px;
   background: #e6a23c 80%;
-  border:#e6a23c;
+  border: #e6a23c;
 }
 .header-1 {
   grid-area: header-1;
-
 }
 
 .header-2 {
   grid-area: header-2;
-
 }
 
 .header-3 {
   grid-area: header-3;
-
 }
 
 .header-4 {
   grid-area: header-4;
-  
 }
 
 .left-1 {
   grid-area: left-1;
-  background-color: green;
 }
 
 .left-2 {
   grid-area: left-2;
-  background-color: greenyellow;
 }
 
 .center {
   grid-area: center;
-  background-color: black;
 }
 
 .right-1 {
   grid-area: right-1;
-  background-color: black;
 }
 
 .right-2 {
   grid-area: right-2;
-  background-color: black;
 }
 </style>

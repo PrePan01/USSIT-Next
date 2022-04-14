@@ -1,22 +1,27 @@
 <template>
   <div class="container">
-   <div class="header1"> <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
-     <router-link to="/flow_2">交通路况感知</router-link></n-button></div>
-   <div class="header2">
-      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
+    <div class="header1">
+      <n-card hoverable>
+        <router-link to="/flow_2">交通路况感知</router-link>
+      </n-card>
+    </div>
+    <div class="header2">
+      <n-card class="active">
         <router-link to="/flow_2_1">实时路况感知</router-link>
-        </n-button>
+      </n-card>
     </div>
- <div class="header3"> 
-   <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
-       <router-link to="/flow_2_3">路口流量感知</router-link></n-button>
+    <div class="header3">
+      <n-card hoverable>
+        <router-link to="/flow_2_3">路口流量感知</router-link>
+      </n-card>
     </div>
- <div class="header4"> <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
-          <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button>
+    <div class="header4">
+      <n-card hoverable>
+        <router-link to="/flow_2_4">拥塞时空分析</router-link>
+      </n-card>
     </div>
     <div class="left1"><Pie :data="pieData"></Pie></div>
     <div class="left2"><Table :data="mapData" :title1="'过车量'"></Table></div>
-    <div class="left3"></div>
     <div class="center">
       <Map
         v-if="mapData.length"
@@ -50,7 +55,7 @@ import utils from "/src/utils/index.js";
 import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
 import { onMounted, ref } from "vue";
-import { NButton, NSpace } from "naive-ui";
+import { NButton, NSpace, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);
 const clickData = ref({});
 const idData = ref({});
@@ -841,29 +846,26 @@ mapData.value = [
     "left1 left1 center center center center right right"
     "left2 left2 center center center center right right"
     "left2 left2 center center center center right right"
-    "left3 left3 center center center center right right"
-    "left3 left3 center center center center right right";
+    "left2 left2 center center center center right right"
+    "left2 left2 center center center center right right";
 }
 .edit_btn {
   min-height: 100px;
   font-size: 30px;
   min-width: 150px;
-  background:burlywood 80%;
-  border:#e6a23c;
+  background: burlywood 80%;
+  border: #e6a23c;
 }
 .header1 {
   grid-area: header1;
-
 }
 
 .header2 {
   grid-area: header2;
-
 }
 
 .header3 {
   grid-area: header3;
-
 }
 
 .header4 {
@@ -878,10 +880,6 @@ mapData.value = [
   grid-area: left2;
 }
 
-.left3 {
-  grid-area: left3;
-}
-
 .center {
   grid-area: center;
 }
@@ -889,4 +887,6 @@ mapData.value = [
 .right {
   grid-area: right;
 }
+
+
 </style>

@@ -1,43 +1,50 @@
 <template>
   <div class="container">
-     <div class="header1" >
-      <n-button type="primary"  icon="n-icon-edit" class="edit_btn"  block  size="large">
-        <router-link to="/flow_2">交通路况感知</router-link></n-button
+    <div class="header1">
+      <n-card hoverable>
+        <router-link to="/flow_2">交通路况感知</router-link></n-card
       >
     </div>
     <div class="header2">
-      <n-button type="primary" icon="n-icon-edit" block class="edit_btn" size="large">
+      <n-card hoverable>
         <router-link to="/flow_2_1">实时路况感知</router-link>
-      </n-button>
+      </n-card>
     </div>
     <div class="header3">
-      <n-button type="primary" icon="n-icon-edit" class="edit_btn" block size="large">
-        <router-link to="/flow_2_3">路口流量感知</router-link></n-button
+      <n-card hoverable>
+        <router-link to="/flow_2_3">路口流量感知</router-link></n-card
       >
     </div>
     <div class="header4">
-      <n-button type="primary" icon="n-icon-edit" class="edit_btn" block size="large">
-        <router-link to="/flow_2_4">拥塞时空分析</router-link></n-button
+      <n-card class="active">
+        <router-link to="/flow_2_4">拥塞时空分析</router-link></n-card
       >
     </div>
     <div class="left">
       <Table :data="mapData" :title1="'过车量'"></Table>
     </div>
-    <div class="center">
-      <n-space>
-        <n-button type="primary" size="large" icon="n-icon-edit" block class="edit_btn2" @click="clickMethod('today')"
-          >今天</n-button
-        >
-        <n-button type="primary" size="large" icon="n-icon-edit" block class="edit_btn2" @click="clickMethod('yesterday')"
-          >昨天</n-button
-        >
-        <n-button type="primary" size="large" icon="n-icon-edit" block class="edit_btn2" @click="clickMethod('sevenDays')"
-          >近一周</n-button
-        >
-        <n-button type="primary" size="large" icon="n-icon-edit" block class="edit_btn2" @click="clickMethod('thirtyDays')"
-          >近一个月</n-button
-        >
-      </n-space>
+    <div class="center1_1">
+      <n-card hoverable @click="clickMethod('today')">
+        <h2>今天</h2>
+      </n-card>
+    </div>
+
+    <div class="center1_2">
+      <n-card hoverable @click="clickMethod('yesterday')">
+        <h2>昨天</h2>
+      </n-card>
+    </div>
+
+    <div class="center1_3">
+      <n-card hoverable @click="clickMethod('sevenDays')">
+        <h2>近一周</h2>
+      </n-card>
+    </div>
+
+    <div class="center1_4">
+      <n-card hoverable @click="clickMethod('thirtyDays')">
+        <h2>近一个月</h2>
+      </n-card>
     </div>
     <div class="center2">
       <Line v-bind="lineData2"></Line>
@@ -70,7 +77,7 @@ import utils from "/src/utils/index.js";
 import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
 import { onMounted, ref } from "vue";
-import { NButton, NSpace } from "naive-ui";
+import { NButton, NSpace, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);
 const clickData = ref({});
 const idData = ref({});
@@ -234,7 +241,7 @@ onMounted(async () => {
   grid-auto-flow: row;
   grid-template-areas:
     "header1 header1 header2 header2 header3 header3 header4 header4"
-    "left left center center center center center center"
+    "left left center1_1 center1_2 center1_3 center1_4 center1_5 center1_6"
     "left left center2 center2 center2 right1 right1 right1"
     "left left center2 center2 center2 right1 right1 right1"
     "left left center2 center2 center2 right1 right1 right1"
@@ -245,63 +252,53 @@ onMounted(async () => {
   min-height: 100px;
   font-size: 30px;
   min-width: 150px;
-  background:aquamarine 80%;
-  border:#e6a23c;
+  background: aquamarine 80%;
+  border: #e6a23c;
 }
 .edit_btn2 {
   min-height: 70px;
   font-size: 30px;
   min-width: 90px;
-  background:burlywood 80%;
-  border:#e6a23c;
+  background: burlywood 80%;
+  border: #e6a23c;
 }
 .header1 {
   grid-area: header1;
-  background-color: red;
 }
 
 .header2 {
   grid-area: header2;
-  background-color: blue;
 }
 
 .header3 {
   grid-area: header3;
-  background-color: blue;
 }
 
 .header4 {
   grid-area: header4;
-  background-color: pink;
 }
 
 .left {
   grid-area: left;
-  background-color: pink;
 }
 
 .center {
   grid-area: center;
-
 }
 
 .center2 {
   grid-area: center2;
-  background-color: brown;
 }
 
 .center3 {
   grid-area: center3;
-  background-color: green;
 }
 
 .right1 {
   grid-area: right1;
-  background-color: pink;
 }
 
 .right2 {
   grid-area: right2;
-  background-color: pink;
 }
 </style>

@@ -56,4 +56,14 @@ a {
   color: white;
   font-size: 30px;
   text-decoration: none;
+  transition: all 0.8s;
+}
+a:hover {
+  color: aquamarine;
+}
+.active {
+  background: #031628;
+}
+.active a:hover {
+  color: #fff;
 }
