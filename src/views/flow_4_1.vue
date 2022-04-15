@@ -76,23 +76,23 @@ const pieData = [
 mapData.value = [
   {
     "name": 74,
-    "value": 32
+    "value": 36
   },
   {
     "name": 119,
-    "value": 32
+    "value": 36
   },
   {
     "name": 91,
-    "value": 31
+    "value": 35
   },
   {
     "name": 64,
-    "value": 28
+    "value": 33
   },
   {
     "name": 72,
-    "value": 25
+    "value": 28
   },
   {
     "name": 130,
