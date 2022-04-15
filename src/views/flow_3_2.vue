@@ -1,88 +1,6 @@
 <template>
-  <div class="container">
-    <div class="header1">
-      <n-button
-        type="primary"
-        icon="n-icon-edit"
-        class="edit_btn"
-        block
-        size="large"
-        ><router-link to="flow_3">交通实时预测</router-link></n-button
-      >
-    </div>
-    <div class="header2">
-      <n-button
-        type="primary"
-        icon="n-icon-edit"
-        class="edit_btn"
-        block
-        size="large"
-        >路况预测</n-button
-      >
-    </div>
-    <div class="header3">
-      <n-button
-        type="primary"
-        icon="n-icon-edit"
-        class="edit_btn"
-        block
-        size="large"
-        ><router-link to="flow_3_1">路口流量预测</router-link></n-button
-      >
-    </div>
-    <div class="header4">
-      <n-button
-        type="primary"
-        icon="n-icon-edit"
-        class="edit_btn"
-        block
-        size="large"
-        ><router-link to="flow_3_4">车辆轨迹预测</router-link></n-button
-      >
-    </div>
-    <div class="header5">
-      <n-button
-        type="primary"
-        icon="n-icon-edit"
-        class="edit_btn"
-        block
-        size="large"
-        ><router-link to="flow_3_5">公交流量预测</router-link></n-button
-      >
-    </div>
-    <div class="header6">
-      <n-button
-        type="primary"
-        icon="n-icon-edit"
-        class="edit_btn"
-        block
-        size="large"
-        ><router-link to="flow_3_2">事故预测</router-link></n-button
-      >
-    </div>
-    <div class="left2">
-      <Table :data="mapData" :title1="'路段状态'"></Table>
-    </div>
-    <div class="left3"><Line v-bind="lineData2"></Line></div>
-    <div class="right"><Table :data="mapData" :title1="'过车量'"></Table></div>
-    <div class="left1"><Line v-bind="lineData1"></Line></div>
-    <div class="center1">
-      <Map
-        v-if="mapData.length"
-        title="车流量"
-        :geoCoordMap="hefei"
-        :data="mapData"
-        :center="center"
-        :zoom="2"
-        @reportData="changeSelect"
-      ></Map>
-    </div>
-    <div class="center2">
-      <div>预测高风险路段:Road1</div>
-      <div>实际高风险路段:Road1&Road2</div>
-      <div>预测准确率:70%</div>
-    </div>
-  </div>
+  <iframe src="http://39.105.199.144:8001/visualization/test/" width="100%" height="100%">
+  </iframe>
 </template>
 
 <script setup>
@@ -907,6 +825,9 @@ lineData2.value = {
 </script>
 
 <style>
+.n-layout-scroll-container {
+  padding: 0px !important;
+}
 .container {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
