@@ -15,6 +15,8 @@
 import { processSlotOutlet } from "@vue/compiler-core";
 import { NCard, NDataTable } from "naive-ui";
 import { onMounted, ref, h, onUpdated } from 'vue'
+import he_feiMap from '/src/assets/he_feiMap.json'
+import tai_anMap from '/src/assets/tai_anMap.json'
 const emit = defineEmits(['reportData'])
 const props = defineProps(
   {
@@ -42,7 +44,7 @@ const columns = [
     title: "Name",
     key: "name",
     render(row, index) {
-      return h('span', ['Road ', row.name])
+      return h('span', {}, [tai_anMap[row.name]?.name || '无名路'] )
     },
     sorter: (row1, row2) => row1.name - row2.name
   },

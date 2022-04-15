@@ -1,35 +1,37 @@
-
 <template>
   <div class="map-chart" ref="map"></div>
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref, onUpdated } from 'vue'
-import * as echarts from 'echarts'
-import 'echarts/extension/bmap/bmap'
-import _ from 'lodash'
-const emit = defineEmits(['reportData'])
-const props = defineProps(
-  {
-    title: String,
-    data: Array,
-    geoCoordMap: Object,
-    center: Array,
-    zoom: Number
-  }
-)
-const map = ref(null)
-const data = props.data || []
-const geoCoordMap = props.geoCoordMap
-let myChart
+import { onMounted, onBeforeUnmount, ref, onUpdated } from "vue";
+import * as echarts from "echarts";
+import "echarts/extension/bmap/bmap";
+import _ from "lodash";
+import he_feiMap from "/src/assets/he_feiMap.json";
+import tai_anMap from "/src/assets/tai_anMap.json";
+const emit = defineEmits(["reportData"]);
+const props = defineProps({
+  title: String,
+  data: Array,
+  geoCoordMap: Object,
+  center: Array,
+  zoom: Number,
+});
+const map = ref(null);
+const data = props.data || [];
+const geoCoordMap = props.geoCoordMap;
+let myChart;
 const convertData = function (data) {
   var res = [];
   for (var i = 0; i < data.length; i++) {
     var geoCoord = geoCoordMap[data[i].name];
     if (geoCoord) {
       res.push({
-        name: data[i].name,
-        value: geoCoord.concat(data[i].value)
+        name:
+          Object.getOwnPropertyNames(geoCoordMap).length < 1000
+            ? tai_anMap[data[i].name]?.name || "无名路"
+            : he_feiMap[data[i].name]?.name || "无名路",
+        value: geoCoord.concat(data[i].value),
       });
     }
   }
@@ -37,7 +39,7 @@ const convertData = function (data) {
 };
 const option = {
   tooltip: {
-    trigger: 'item'
+    trigger: "item",
   },
   bmap: {
     zoom: 13,
@@ -46,160 +48,160 @@ const option = {
     mapStyle: {
       styleJson: [
         {
-          featureType: 'water',
-          elementType: 'all',
+          featureType: "water",
+          elementType: "all",
           stylers: {
-            color: '#031628'
-          }
+            color: "#031628",
+          },
         },
         {
-          featureType: 'land',
-          elementType: 'geometry',
+          featureType: "land",
+          elementType: "geometry",
           stylers: {
-            color: '#293441'
-          }
+            color: "#293441",
+          },
         },
         {
-          featureType: 'highway',
-          elementType: 'all',
+          featureType: "highway",
+          elementType: "all",
           stylers: {
-            visibility: 'off'
-          }
+            visibility: "off",
+          },
         },
         {
-          featureType: 'arterial',
-          elementType: 'geometry.fill',
+          featureType: "arterial",
+          elementType: "geometry.fill",
           stylers: {
-            color: '#000000'
-          }
+            color: "#000000",
+          },
         },
         {
-          featureType: 'arterial',
-          elementType: 'geometry.stroke',
+          featureType: "arterial",
+          elementType: "geometry.stroke",
           stylers: {
-            color: '#0b3d51'
-          }
+            color: "#0b3d51",
+          },
         },
         {
-          featureType: 'local',
-          elementType: 'geometry',
+          featureType: "local",
+          elementType: "geometry",
           stylers: {
-            color: '#000000'
-          }
+            color: "#000000",
+          },
         },
         {
-          featureType: 'railway',
-          elementType: 'geometry.fill',
+          featureType: "railway",
+          elementType: "geometry.fill",
           stylers: {
-            color: '#000000'
-          }
+            color: "#000000",
+          },
         },
         {
-          featureType: 'railway',
-          elementType: 'geometry.stroke',
+          featureType: "railway",
+          elementType: "geometry.stroke",
           stylers: {
-            color: '#08304b'
-          }
+            color: "#08304b",
+          },
         },
         {
-          featureType: 'subway',
-          elementType: 'geometry',
+          featureType: "subway",
+          elementType: "geometry",
           stylers: {
-            lightness: -70
-          }
+            lightness: -70,
+          },
         },
         {
-          featureType: 'building',
-          elementType: 'geometry.fill',
+          featureType: "building",
+          elementType: "geometry.fill",
           stylers: {
-            color: '#000000'
-          }
+            color: "#000000",
+          },
         },
         {
-          featureType: 'all',
-          elementType: 'labels.text.fill',
+          featureType: "all",
+          elementType: "labels.text.fill",
           stylers: {
-            color: '#857f7f'
-          }
+            color: "#857f7f",
+          },
         },
         {
-          featureType: 'all',
-          elementType: 'labels.text.stroke',
+          featureType: "all",
+          elementType: "labels.text.stroke",
           stylers: {
-            color: '#000000'
-          }
+            color: "#000000",
+          },
         },
         {
-          featureType: 'building',
-          elementType: 'geometry',
+          featureType: "building",
+          elementType: "geometry",
           stylers: {
-            color: '#022338'
-          }
+            color: "#022338",
+          },
         },
         {
-          featureType: 'green',
-          elementType: 'geometry',
+          featureType: "green",
+          elementType: "geometry",
           stylers: {
-            color: '#062032'
-          }
+            color: "#062032",
+          },
         },
         {
-          featureType: 'boundary',
-          elementType: 'all',
+          featureType: "boundary",
+          elementType: "all",
           stylers: {
-            color: '#465b6c'
-          }
+            color: "#465b6c",
+          },
         },
         {
-          featureType: 'manmade',
-          elementType: 'all',
+          featureType: "manmade",
+          elementType: "all",
           stylers: {
-            color: '#022338'
-          }
+            color: "#022338",
+          },
         },
         {
-          featureType: 'label',
-          elementType: 'all',
+          featureType: "label",
+          elementType: "all",
           stylers: {
-            visibility: 'off'
-          }
-        }
-      ]
-    }
+            visibility: "off",
+          },
+        },
+      ],
+    },
   },
   series: [
     {
       name: props.title,
-      type: 'scatter',
-      coordinateSystem: 'bmap',
+      type: "scatter",
+      coordinateSystem: "bmap",
       data: convertData(data),
       symbolSize: function (val) {
         return val[2] / props.zoom;
       },
       encode: {
-        value: 2
+        value: 2,
       },
       label: {
-        formatter: '{b}',
-        position: 'right',
+        formatter: "{b}",
+        position: "right",
         show: false,
         textStyle: {
-          color: '#fff'
-        }
+          color: "#fff",
+        },
       },
       itemStyle: {
-        color: '#3fb1e3'
+        color: "#3fb1e3",
       },
       emphasis: {
         label: {
-          show: true
-        }
-      }
+          show: true,
+        },
+      },
     },
     {
-      name: 'Top 5',
-      type: 'effectScatter',
-      coordinateSystem: 'bmap',
+      name: "Top 5",
+      type: "effectScatter",
+      coordinateSystem: "bmap",
       data: convertData(
         data
           .sort(function (a, b) {
@@ -211,31 +213,31 @@ const option = {
         return val[2] / props.zoom;
       },
       encode: {
-        value: 2
+        value: 2,
       },
-      showEffectOn: 'render',
+      showEffectOn: "render",
       rippleEffect: {
-        brushType: 'stroke'
+        brushType: "stroke",
       },
       label: {
-        formatter: '{b}',
-        position: 'right',
+        formatter: "{b}",
+        position: "right",
         show: true,
         textStyle: {
-          color: '#fff'
-        }
+          color: "#fff",
+        },
       },
       itemStyle: {
-        color: '#6be6c1',
+        color: "#6be6c1",
         shadowBlur: 10,
-        shadowColor: '#333'
+        shadowColor: "#333",
       },
       emphasis: {
-        scale: true
+        scale: true,
       },
-      zlevel: 100
-    }
-  ]
+      zlevel: 100,
+    },
+  ],
 };
 
 // basic resize in echart
@@ -247,10 +249,10 @@ const resizeHandler = _.debounce(() => {
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
-  myChart = echarts.init(map.value)
-  myChart.setOption(option)
-  myChart.on('click', function (params) {
-    reportData(params.data)
+  myChart = echarts.init(map.value);
+  myChart.setOption(option);
+  myChart.on("click", function (params) {
+    reportData(params.data);
   });
 });
 
@@ -262,30 +264,30 @@ onUpdated(() => {
     series: [
       {
         name: props.title,
-        type: 'scatter',
-        coordinateSystem: 'bmap',
+        type: "scatter",
+        coordinateSystem: "bmap",
         data: convertData(data),
         encode: {
-          value: 2
+          value: 2,
         },
         label: {
-          formatter: '{b}',
-          position: 'right',
+          formatter: "{b}",
+          position: "right",
           show: false,
           textStyle: {
-            color: '#fff'
-          }
+            color: "#fff",
+          },
         },
         emphasis: {
           label: {
-            show: true
-          }
-        }
+            show: true,
+          },
+        },
       },
       {
-        name: 'Top 5',
-        type: 'effectScatter',
-        coordinateSystem: 'bmap',
+        name: "Top 5",
+        type: "effectScatter",
+        coordinateSystem: "bmap",
         data: convertData(
           data
             .sort(function (a, b) {
@@ -294,43 +296,41 @@ onUpdated(() => {
             .slice(0, 6)
         ),
         encode: {
-          value: 2
+          value: 2,
         },
-        showEffectOn: 'render',
+        showEffectOn: "render",
         rippleEffect: {
-          brushType: 'stroke'
+          brushType: "stroke",
         },
         label: {
-          formatter: '{b}',
-          position: 'right',
+          formatter: "{b}",
+          position: "right",
           show: true,
           textStyle: {
-            color: '#fff'
-          }
+            color: "#fff",
+          },
         },
         itemStyle: {
           shadowBlur: 10,
-          shadowColor: '#333'
+          shadowColor: "#333",
         },
         emphasis: {
-          scale: true
+          scale: true,
         },
-        zlevel: 100
-      }
-    ]
-  })
-})
+        zlevel: 100,
+      },
+    ],
+  });
+});
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", resizeHandler);
 });
 
 const reportData = (data) => {
-  emit('reportData', data)
-}
-
+  emit("reportData", data);
+};
 </script>
-
 
 <style scoped>
 .map-chart {

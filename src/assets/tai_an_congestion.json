@@ -1,0 +1,1717 @@
+{
+    "1": {
+        "name": "山东省泰安市泰山区泰山立交桥",
+        "current_congestion_rate": 1.2471268674955047,
+        "next_congestion_rate": 1.281156882976582,
+        "7days_congestion_rate": 1.1976266898367869,
+        "30days_congestion_rate": 1.4690346299784023
+    },
+    "2": {
+        "name": "山东省泰安市岱岳区货场路",
+        "current_congestion_rate": 1.1453285635359014,
+        "next_congestion_rate": 1.3500511014810521,
+        "7days_congestion_rate": 1.1563478020999487,
+        "30days_congestion_rate": 1.3652334280487848
+    },
+    "3": {
+        "name": "山东省泰安市泰山区长城路",
+        "current_congestion_rate": 1.280035103814019,
+        "next_congestion_rate": 1.3120178695905933,
+        "7days_congestion_rate": 1.3111294838169267,
+        "30days_congestion_rate": 1.0891032349034484
+    },
+    "4": {
+        "name": "山东省泰安市岱岳区泰山立交桥",
+        "current_congestion_rate": 1.2518666162741614,
+        "next_congestion_rate": 1.3786865388552927,
+        "7days_congestion_rate": 1.1156055281318777,
+        "30days_congestion_rate": 1.0646489236910006
+    },
+    "5": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.2669704106521444,
+        "next_congestion_rate": 1.470425481864644,
+        "7days_congestion_rate": 1.300645196475215,
+        "30days_congestion_rate": 1.3180705339788483
+    },
+    "6": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.097292217694556,
+        "next_congestion_rate": 1.111510751990287,
+        "7days_congestion_rate": 1.1517613489164367,
+        "30days_congestion_rate": 1.3829958322441191
+    },
+    "7": {
+        "name": "山东省泰安市岱岳区G341(泮河大街)",
+        "current_congestion_rate": 1.325045907323889,
+        "next_congestion_rate": 1.08058551454626,
+        "7days_congestion_rate": 1.0290786373593122,
+        "30days_congestion_rate": 1.3343430980283184
+    },
+    "8": {
+        "name": "山东省泰安市岱岳区英才街",
+        "current_congestion_rate": 1.1340109805159213,
+        "next_congestion_rate": 1.234169647445529,
+        "7days_congestion_rate": 1.4536288988774828,
+        "30days_congestion_rate": 1.2291924552878966
+    },
+    "9": {
+        "name": "山东省泰安市岱岳区光彩路",
+        "current_congestion_rate": 1.458776945098871,
+        "next_congestion_rate": 1.4488563254681868,
+        "7days_congestion_rate": 1.14448843063837,
+        "30days_congestion_rate": 1.3167210599189654
+    },
+    "10": {
+        "name": "山东省泰安市岱岳区光彩路",
+        "current_congestion_rate": 1.07570210690182,
+        "next_congestion_rate": 1.133787401135688,
+        "7days_congestion_rate": 1.1278859588995924,
+        "30days_congestion_rate": 1.0385985854945465
+    },
+    "11": {
+        "name": "山东省泰安市岱岳区泰山大街",
+        "current_congestion_rate": 1.4591896186111444,
+        "next_congestion_rate": 1.109172913688172,
+        "7days_congestion_rate": 1.059181540627383,
+        "30days_congestion_rate": 1.1122292592485898
+    },
+    "12": {
+        "name": "山东省泰安市岱岳区泰山大街",
+        "current_congestion_rate": 1.1066924290514233,
+        "next_congestion_rate": 1.3639132984221662,
+        "7days_congestion_rate": 1.2208304157828298,
+        "30days_congestion_rate": 1.4317502169769174
+    },
+    "13": {
+        "name": "山东省泰安市泰山区温泉路",
+        "current_congestion_rate": 1.2571402342125007,
+        "next_congestion_rate": 1.0934630719147291,
+        "7days_congestion_rate": 1.2438097576577312,
+        "30days_congestion_rate": 1.0036434210625522
+    },
+    "14": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.0699757058321075,
+        "next_congestion_rate": 1.2478248910727412,
+        "7days_congestion_rate": 1.0973768637326669,
+        "30days_congestion_rate": 1.018484255315396
+    },
+    "15": {
+        "name": "山东省泰安市泰山区佛光路",
+        "current_congestion_rate": 1.426486614614401,
+        "next_congestion_rate": 1.3996652149297406,
+        "7days_congestion_rate": 1.1606830942755186,
+        "30days_congestion_rate": 1.3982723315784507
+    },
+    "16": {
+        "name": "山东省泰安市泰山区虎山东路5",
+        "current_congestion_rate": 1.2158309927231374,
+        "next_congestion_rate": 1.3791854433366728,
+        "7days_congestion_rate": 1.0087393458620588,
+        "30days_congestion_rate": 1.3032592036651511
+    },
+    "17": {
+        "name": "山东省泰安市泰山区擂鼓石大街",
+        "current_congestion_rate": 1.0805390211743173,
+        "next_congestion_rate": 1.1165276737963852,
+        "7days_congestion_rate": 1.019420502516466,
+        "30days_congestion_rate": 1.0486526367455093
+    },
+    "18": {
+        "name": "山东省泰安市泰山区岱道庵路70号",
+        "current_congestion_rate": 1.1200917380172726,
+        "next_congestion_rate": 1.0407009870830093,
+        "7days_congestion_rate": 1.224756136985083,
+        "30days_congestion_rate": 1.4627794533040739
+    },
+    "19": {
+        "name": "山东省泰安市泰山区灵山大街102号",
+        "current_congestion_rate": 1.3115354278697993,
+        "next_congestion_rate": 1.293163121392797,
+        "7days_congestion_rate": 1.2953189387036026,
+        "30days_congestion_rate": 1.2182504517331028
+    },
+    "20": {
+        "name": "山东省泰安市泰山区南湖大街",
+        "current_congestion_rate": 1.4440263390163992,
+        "next_congestion_rate": 1.369415681530245,
+        "7days_congestion_rate": 1.38030017339718,
+        "30days_congestion_rate": 1.337298176857713
+    },
+    "21": {
+        "name": "山东省泰安市泰山区南湖大街",
+        "current_congestion_rate": 1.3186774281494098,
+        "next_congestion_rate": 1.1322852768517273,
+        "7days_congestion_rate": 1.3017767636486341,
+        "30days_congestion_rate": 1.449648918748057
+    },
+    "22": {
+        "name": "山东省泰安市岱岳区长城路",
+        "current_congestion_rate": 1.0489395770135337,
+        "next_congestion_rate": 1.211331353419157,
+        "7days_congestion_rate": 1.3546493857047697,
+        "30days_congestion_rate": 1.1040990166941183
+    },
+    "23": {
+        "name": "山东省泰安市泰山区龙潭路76号-1",
+        "current_congestion_rate": 1.0019147968996631,
+        "next_congestion_rate": 1.235587546320934,
+        "7days_congestion_rate": 1.4939069731121504,
+        "30days_congestion_rate": 1.1426645595467293
+    },
+    "24": {
+        "name": "山东省泰安市泰山区龙潭路51号",
+        "current_congestion_rate": 1.129892777014558,
+        "next_congestion_rate": 1.2600652014666476,
+        "7days_congestion_rate": 1.0510536934846175,
+        "30days_congestion_rate": 1.158807114712521
+    },
+    "25": {
+        "name": "山东省泰安市泰山区东岳大街83号",
+        "current_congestion_rate": 1.2704103748848128,
+        "next_congestion_rate": 1.018198237473554,
+        "7days_congestion_rate": 1.164114142562674,
+        "30days_congestion_rate": 1.4239732834384342
+    },
+    "26": {
+        "name": "山东省泰安市泰山区东岳大街80号-1",
+        "current_congestion_rate": 1.310359535848696,
+        "next_congestion_rate": 1.3058626235371007,
+        "7days_congestion_rate": 1.2815655956133454,
+        "30days_congestion_rate": 1.4782469819511626
+    },
+    "27": {
+        "name": "山东省泰安市岱岳区G341(泮河大街)",
+        "current_congestion_rate": 1.2082739962118616,
+        "next_congestion_rate": 1.0382588355839535,
+        "7days_congestion_rate": 1.4416768465174157,
+        "30days_congestion_rate": 1.348684954408822
+    },
+    "28": {
+        "name": "山东省泰安市岱岳区望岳西路",
+        "current_congestion_rate": 1.3690144848018548,
+        "next_congestion_rate": 1.3742107095959077,
+        "7days_congestion_rate": 1.199185679046663,
+        "30days_congestion_rate": 1.1349883817764657
+    },
+    "29": {
+        "name": "山东省泰安市泰山区万官大街",
+        "current_congestion_rate": 1.4674043701637385,
+        "next_congestion_rate": 1.0988389177141,
+        "7days_congestion_rate": 1.2084479943932476,
+        "30days_congestion_rate": 1.4656694689420005
+    },
+    "30": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.3269271528649835,
+        "next_congestion_rate": 1.4286048283413817,
+        "7days_congestion_rate": 1.4264302984423507,
+        "30days_congestion_rate": 1.439647204342227
+    },
+    "31": {
+        "name": "山东省泰安市泰山区迎春路15号",
+        "current_congestion_rate": 1.0062970336288215,
+        "next_congestion_rate": 1.3448465036223372,
+        "7days_congestion_rate": 1.1366111234717595,
+        "30days_congestion_rate": 1.3457382577929449
+    },
+    "32": {
+        "name": "山东省泰安市泰山区迎春路22",
+        "current_congestion_rate": 1.003733995811371,
+        "next_congestion_rate": 1.0456477515712899,
+        "7days_congestion_rate": 1.2040580035170259,
+        "30days_congestion_rate": 1.3107799036583483
+    },
+    "33": {
+        "name": "山东省泰安市泰山区岱道庵路602号",
+        "current_congestion_rate": 1.0912941666137603,
+        "next_congestion_rate": 1.4793603566145295,
+        "7days_congestion_rate": 1.1111923968020512,
+        "30days_congestion_rate": 1.398727778080823
+    },
+    "34": {
+        "name": "山东省泰安市泰山区岱道庵路508号",
+        "current_congestion_rate": 1.3987528815913872,
+        "next_congestion_rate": 1.3585948766064746,
+        "7days_congestion_rate": 1.1692182063405072,
+        "30days_congestion_rate": 1.313325310767075
+    },
+    "35": {
+        "name": "山东省泰安市泰山区北上高大街",
+        "current_congestion_rate": 1.1513044964837986,
+        "next_congestion_rate": 1.1841076445606724,
+        "7days_congestion_rate": 1.420602401217431,
+        "30days_congestion_rate": 1.225977507325895
+    },
+    "36": {
+        "name": "山东省泰安市泰山区北上高大街",
+        "current_congestion_rate": 1.2141828911495867,
+        "next_congestion_rate": 1.4407905267020369,
+        "7days_congestion_rate": 1.1664265645511689,
+        "30days_congestion_rate": 1.337810081414008
+    },
+    "37": {
+        "name": "山东省泰安市泰山区迎胜南路147号-2",
+        "current_congestion_rate": 1.0420336923101197,
+        "next_congestion_rate": 1.0517432429655513,
+        "7days_congestion_rate": 1.4517354230693371,
+        "30days_congestion_rate": 1.479318213258333
+    },
+    "38": {
+        "name": "山东省泰安市泰山区东岳大街126",
+        "current_congestion_rate": 1.0854372048494025,
+        "next_congestion_rate": 1.1488794294360727,
+        "7days_congestion_rate": 1.152862078026061,
+        "30days_congestion_rate": 1.2114278126353284
+    },
+    "39": {
+        "name": "山东省泰安市泰山区东岳大街147号",
+        "current_congestion_rate": 1.2120450039493391,
+        "next_congestion_rate": 1.2828342305412128,
+        "7days_congestion_rate": 1.3479750496358591,
+        "30days_congestion_rate": 1.235011634232099
+    },
+    "40": {
+        "name": "山东省泰安市泰山区南关大街75号",
+        "current_congestion_rate": 1.4288674257892222,
+        "next_congestion_rate": 1.4358214240170732,
+        "7days_congestion_rate": 1.065287555936397,
+        "30days_congestion_rate": 1.4645382479096494
+    },
+    "41": {
+        "name": "山东省泰安市泰山区南关大街83号",
+        "current_congestion_rate": 1.0125917892082401,
+        "next_congestion_rate": 1.3419621357840934,
+        "7days_congestion_rate": 1.3639565834317482,
+        "30days_congestion_rate": 1.3752958282882615
+    },
+    "42": {
+        "name": "山东省泰安市泰山区南关大街253号",
+        "current_congestion_rate": 1.4450237129645855,
+        "next_congestion_rate": 1.1132283951688124,
+        "7days_congestion_rate": 1.2756398525321835,
+        "30days_congestion_rate": 1.4381388333993899
+    },
+    "43": {
+        "name": "山东省泰安市泰山区财源大街19号",
+        "current_congestion_rate": 1.329149940210462,
+        "next_congestion_rate": 1.3081967218671127,
+        "7days_congestion_rate": 1.0584658407043155,
+        "30days_congestion_rate": 1.0880442904934604
+    },
+    "44": {
+        "name": "山东省泰安市泰山区灵山大街284号",
+        "current_congestion_rate": 1.0986369113499088,
+        "next_congestion_rate": 1.4589881279979486,
+        "7days_congestion_rate": 1.3979360097152997,
+        "30days_congestion_rate": 1.2735644019455674
+    },
+    "45": {
+        "name": "山东省泰安市泰山区岱宗大街110号",
+        "current_congestion_rate": 1.211124015894383,
+        "next_congestion_rate": 1.3670680334825402,
+        "7days_congestion_rate": 1.0523856488116219,
+        "30days_congestion_rate": 1.4863448551488925
+    },
+    "46": {
+        "name": "山东省泰安市泰山区岱宗大街121号",
+        "current_congestion_rate": 1.4834433784432313,
+        "next_congestion_rate": 1.2274173005878448,
+        "7days_congestion_rate": 1.4852227913891833,
+        "30days_congestion_rate": 1.4575433595326943
+    },
+    "47": {
+        "name": "山东省泰安市泰山区奈河西路13号",
+        "current_congestion_rate": 1.4773302856085162,
+        "next_congestion_rate": 1.385789486967687,
+        "7days_congestion_rate": 1.3353815231579067,
+        "30days_congestion_rate": 1.190954939664218
+    },
+    "48": {
+        "name": "山东省泰安市岱岳区东岳大街",
+        "current_congestion_rate": 1.2510600087321468,
+        "next_congestion_rate": 1.2968675128060232,
+        "7days_congestion_rate": 1.4788506922007896,
+        "30days_congestion_rate": 1.2261617516038181
+    },
+    "49": {
+        "name": "山东省泰安市岱岳区粥店路",
+        "current_congestion_rate": 1.3503214984973724,
+        "next_congestion_rate": 1.2464828065129203,
+        "7days_congestion_rate": 1.2494678557637338,
+        "30days_congestion_rate": 1.3188217660850752
+    },
+    "50": {
+        "name": "山东省泰安市泰山区岱宗大街284号",
+        "current_congestion_rate": 1.4893088239503955,
+        "next_congestion_rate": 1.3478401788170353,
+        "7days_congestion_rate": 1.3553239580924878,
+        "30days_congestion_rate": 1.2784641000826076
+    },
+    "51": {
+        "name": "山东省泰安市泰山区岱宗大街292号",
+        "current_congestion_rate": 1.342548003939887,
+        "next_congestion_rate": 1.444488626179726,
+        "7days_congestion_rate": 1.4064804016050008,
+        "30days_congestion_rate": 1.2644685380802003
+    },
+    "52": {
+        "name": "山东省泰安市岱岳区马湾路",
+        "current_congestion_rate": 1.1754174447834664,
+        "next_congestion_rate": 1.152500491207147,
+        "7days_congestion_rate": 1.3939835226781914,
+        "30days_congestion_rate": 1.2739604418559811
+    },
+    "53": {
+        "name": "山东省泰安市岱岳区高铁北街",
+        "current_congestion_rate": 1.0747489989320775,
+        "next_congestion_rate": 1.0538639027114836,
+        "7days_congestion_rate": 1.2241046598888234,
+        "30days_congestion_rate": 1.374882993424717
+    },
+    "54": {
+        "name": "山东省泰安市岱岳区高铁前路",
+        "current_congestion_rate": 1.425999561608141,
+        "next_congestion_rate": 1.2811494745167527,
+        "7days_congestion_rate": 1.3834725178864542,
+        "30days_congestion_rate": 1.3880363809277927
+    },
+    "55": {
+        "name": "山东省泰安市岱岳区高铁东路",
+        "current_congestion_rate": 1.2949809973331574,
+        "next_congestion_rate": 1.2480644822442102,
+        "7days_congestion_rate": 1.2922421473312893,
+        "30days_congestion_rate": 1.3650682108577874
+    },
+    "56": {
+        "name": "山东省泰安市泰山区G341(唐王街)",
+        "current_congestion_rate": 1.2722700911163636,
+        "next_congestion_rate": 1.1009747487238837,
+        "7days_congestion_rate": 1.2426628807007172,
+        "30days_congestion_rate": 1.410746316736322
+    },
+    "57": {
+        "name": "山东省泰安市泰山区泰莱路21",
+        "current_congestion_rate": 1.0138659688539313,
+        "next_congestion_rate": 1.2377418507319742,
+        "7days_congestion_rate": 1.0442440130010775,
+        "30days_congestion_rate": 1.077657897617611
+    },
+    "58": {
+        "name": "山东省泰安市泰山区佛光路南首",
+        "current_congestion_rate": 1.4136207984644387,
+        "next_congestion_rate": 1.143383350128725,
+        "7days_congestion_rate": 1.1938024631275899,
+        "30days_congestion_rate": 1.215230579440238
+    },
+    "59": {
+        "name": "山东省泰安市泰山区G341(唐王街)",
+        "current_congestion_rate": 1.1334978891359837,
+        "next_congestion_rate": 1.485454828952721,
+        "7days_congestion_rate": 1.4783190440743328,
+        "30days_congestion_rate": 1.2754170802188995
+    },
+    "60": {
+        "name": "山东省泰安市泰山区S103(天烛峰路)",
+        "current_congestion_rate": 1.0657214105487876,
+        "next_congestion_rate": 1.4707191486712035,
+        "7days_congestion_rate": 1.3481112982551604,
+        "30days_congestion_rate": 1.4351982455796801
+    },
+    "61": {
+        "name": "山东省泰安市岱岳区财兴街",
+        "current_congestion_rate": 1.0154891535497717,
+        "next_congestion_rate": 1.1811410141322507,
+        "7days_congestion_rate": 1.468405041045212,
+        "30days_congestion_rate": 1.1547549953951406
+    },
+    "62": {
+        "name": "山东省泰安市岱岳区泰山大街",
+        "current_congestion_rate": 1.4903086424336762,
+        "next_congestion_rate": 1.0082887854469382,
+        "7days_congestion_rate": 1.4441917066484238,
+        "30days_congestion_rate": 1.2310927784975103
+    },
+    "63": {
+        "name": "山东省泰安市泰山区东湖路1",
+        "current_congestion_rate": 1.0502167885937697,
+        "next_congestion_rate": 1.2209864139413265,
+        "7days_congestion_rate": 1.1351105735813762,
+        "30days_congestion_rate": 1.2866954915146425
+    },
+    "64": {
+        "name": "山东省泰安市泰山区五马街",
+        "current_congestion_rate": 1.1101471364819857,
+        "next_congestion_rate": 1.4250875634443834,
+        "7days_congestion_rate": 1.164345107553378,
+        "30days_congestion_rate": 1.3075883785046405
+    },
+    "65": {
+        "name": "山东省泰安市泰山区东湖路41号",
+        "current_congestion_rate": 1.2607432102470568,
+        "next_congestion_rate": 1.240812808185094,
+        "7days_congestion_rate": 1.0297219979063912,
+        "30days_congestion_rate": 1.367781766045711
+    },
+    "66": {
+        "name": "山东省泰安市泰山区东湖路",
+        "current_congestion_rate": 1.044558863062921,
+        "next_congestion_rate": 1.234655247296178,
+        "7days_congestion_rate": 1.2677293466721333,
+        "30days_congestion_rate": 1.0101504570800883
+    },
+    "67": {
+        "name": "山东省泰安市岱岳区高铁东路",
+        "current_congestion_rate": 1.4252265139587135,
+        "next_congestion_rate": 1.4338028903101323,
+        "7days_congestion_rate": 1.4327349520620976,
+        "30days_congestion_rate": 1.1249042504032645
+    },
+    "68": {
+        "name": "山东省泰安市泰山区东岳大街140号",
+        "current_congestion_rate": 1.4491937828610175,
+        "next_congestion_rate": 1.419377181475347,
+        "7days_congestion_rate": 1.4798501057660147,
+        "30days_congestion_rate": 1.3318468507199805
+    },
+    "69": {
+        "name": "山东省泰安市泰山区望岳西路",
+        "current_congestion_rate": 1.0904990605107823,
+        "next_congestion_rate": 1.2135003466984606,
+        "7days_congestion_rate": 1.2936043077629797,
+        "30days_congestion_rate": 1.1873243930526902
+    },
+    "70": {
+        "name": "山东省泰安市泰山区泰山大街632号",
+        "current_congestion_rate": 1.1125332654127185,
+        "next_congestion_rate": 1.0230682224967862,
+        "7days_congestion_rate": 1.3068381831912412,
+        "30days_congestion_rate": 1.1418457183703494
+    },
+    "71": {
+        "name": "山东省泰安市岱岳区杏坛路",
+        "current_congestion_rate": 1.3416968923336536,
+        "next_congestion_rate": 1.081402151193638,
+        "7days_congestion_rate": 1.1550639860772058,
+        "30days_congestion_rate": 1.4254939745004
+    },
+    "72": {
+        "name": "山东省泰安市泰山区泰山大街629号",
+        "current_congestion_rate": 1.142206461669879,
+        "next_congestion_rate": 1.3634343923602312,
+        "7days_congestion_rate": 1.3290044216637236,
+        "30days_congestion_rate": 1.2885385159393987
+    },
+    "73": {
+        "name": "山东省泰安市岱岳区望岳东路",
+        "current_congestion_rate": 1.1049101917249262,
+        "next_congestion_rate": 1.0482234321728787,
+        "7days_congestion_rate": 1.0694872038377272,
+        "30days_congestion_rate": 1.4523125570805389
+    },
+    "74": {
+        "name": "山东省泰安市岱岳区灵山大街",
+        "current_congestion_rate": 1.3537544998407007,
+        "next_congestion_rate": 1.0387377066439387,
+        "7days_congestion_rate": 1.026176086751149,
+        "30days_congestion_rate": 1.3089714281271492
+    },
+    "75": {
+        "name": "山东省泰安市泰山区东岳大街170号",
+        "current_congestion_rate": 1.0218731196846744,
+        "next_congestion_rate": 1.239156147498616,
+        "7days_congestion_rate": 1.4347116113328409,
+        "30days_congestion_rate": 1.2605995611657876
+    },
+    "76": {
+        "name": "山东省泰安市泰山区东岳大街197号",
+        "current_congestion_rate": 1.4888095224646125,
+        "next_congestion_rate": 1.471272580701676,
+        "7days_congestion_rate": 1.1593058091965884,
+        "30days_congestion_rate": 1.0208820564161027
+    },
+    "77": {
+        "name": "山东省泰安市泰山区东岳大街120-3号",
+        "current_congestion_rate": 1.0052381051290031,
+        "next_congestion_rate": 1.3641094173503179,
+        "7days_congestion_rate": 1.4472449662035083,
+        "30days_congestion_rate": 1.2614709574399665
+    },
+    "78": {
+        "name": "山东省泰安市泰山区龙潭路4-1",
+        "current_congestion_rate": 1.43626579903398,
+        "next_congestion_rate": 1.4899346144602843,
+        "7days_congestion_rate": 1.264854942301681,
+        "30days_congestion_rate": 1.2664966859552174
+    },
+    "79": {
+        "name": "山东省泰安市泰山区唐訾路",
+        "current_congestion_rate": 1.4570676822531712,
+        "next_congestion_rate": 1.2138147333710771,
+        "7days_congestion_rate": 1.2769122908900676,
+        "30days_congestion_rate": 1.15734931138245
+    },
+    "80": {
+        "name": "山东省泰安市泰山区花园路辅路",
+        "current_congestion_rate": 1.4761211496345354,
+        "next_congestion_rate": 1.195056625929936,
+        "7days_congestion_rate": 1.408807630748316,
+        "30days_congestion_rate": 1.4558604270082338
+    },
+    "81": {
+        "name": "山东省泰安市泰山区温泉路",
+        "current_congestion_rate": 1.0558783430927463,
+        "next_congestion_rate": 1.2591364327611667,
+        "7days_congestion_rate": 1.1339047795517987,
+        "30days_congestion_rate": 1.3213835871268282
+    },
+    "82": {
+        "name": "山东省泰安市泰山区万官大街",
+        "current_congestion_rate": 1.415529633151587,
+        "next_congestion_rate": 1.4762187447733839,
+        "7days_congestion_rate": 1.350980739607071,
+        "30days_congestion_rate": 1.3209482521460436
+    },
+    "83": {
+        "name": "山东省泰安市岱岳区英才街",
+        "current_congestion_rate": 1.1060113968251215,
+        "next_congestion_rate": 1.2858728314614971,
+        "7days_congestion_rate": 1.4217639917008156,
+        "30days_congestion_rate": 1.0745528317388926
+    },
+    "84": {
+        "name": "山东省泰安市岱岳区高铁东路",
+        "current_congestion_rate": 1.0567799805320646,
+        "next_congestion_rate": 1.3591423279123656,
+        "7days_congestion_rate": 1.2070361243689294,
+        "30days_congestion_rate": 1.0599803868863165
+    },
+    "85": {
+        "name": "山东省泰安市岱岳区高铁东路",
+        "current_congestion_rate": 1.4241903834743288,
+        "next_congestion_rate": 1.191334224768799,
+        "7days_congestion_rate": 1.404185175287366,
+        "30days_congestion_rate": 1.3742366206015055
+    },
+    "87": {
+        "name": "山东省泰安市泰山区五马街",
+        "current_congestion_rate": 1.0353388655163223,
+        "next_congestion_rate": 1.3064836292427247,
+        "7days_congestion_rate": 1.2529181090212864,
+        "30days_congestion_rate": 1.3114158941304965
+    },
+    "88": {
+        "name": "山东省泰安市泰山区东岳大街",
+        "current_congestion_rate": 1.0938890294108525,
+        "next_congestion_rate": 1.3661031759937863,
+        "7days_congestion_rate": 1.3431057502888468,
+        "30days_congestion_rate": 1.3328685983457365
+    },
+    "89": {
+        "name": "山东省泰安市泰山区唐王街",
+        "current_congestion_rate": 1.412896526031778,
+        "next_congestion_rate": 1.140067517287779,
+        "7days_congestion_rate": 1.1619195750529379,
+        "30days_congestion_rate": 1.399307779318289
+    },
+    "90": {
+        "name": "山东省泰安市泰山区岱宗大街426号",
+        "current_congestion_rate": 1.4745885097858964,
+        "next_congestion_rate": 1.1460949394900002,
+        "7days_congestion_rate": 1.227259603417568,
+        "30days_congestion_rate": 1.3289603977690307
+    },
+    "91": {
+        "name": "山东省泰安市泰山区青年路70号",
+        "current_congestion_rate": 1.4572800777870456,
+        "next_congestion_rate": 1.0171622163237761,
+        "7days_congestion_rate": 1.4973437774489942,
+        "30days_congestion_rate": 1.239301927413928
+    },
+    "92": {
+        "name": "山东省泰安市泰山区东岳大街15号",
+        "current_congestion_rate": 1.271992258360592,
+        "next_congestion_rate": 1.316274978785445,
+        "7days_congestion_rate": 1.0518533632351221,
+        "30days_congestion_rate": 1.2700366552061046
+    },
+    "93": {
+        "name": "山东省泰安市泰山区岱宗大街242号",
+        "current_congestion_rate": 1.1586298932296946,
+        "next_congestion_rate": 1.3918183298712155,
+        "7days_congestion_rate": 1.4413081602263846,
+        "30days_congestion_rate": 1.4198351291070697
+    },
+    "94": {
+        "name": "山东省泰安市泰山区岱宗大街273号",
+        "current_congestion_rate": 1.3059866907065345,
+        "next_congestion_rate": 1.308532042744102,
+        "7days_congestion_rate": 1.3041712509314427,
+        "30days_congestion_rate": 1.3091716900680903
+    },
+    "95": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.181511475701337,
+        "next_congestion_rate": 1.134936917545533,
+        "7days_congestion_rate": 1.4492507374686174,
+        "30days_congestion_rate": 1.0587934751833048
+    },
+    "96": {
+        "name": "山东省泰安市泰山区岱道庵路",
+        "current_congestion_rate": 1.4415838998585861,
+        "next_congestion_rate": 1.430473655913287,
+        "7days_congestion_rate": 1.0548806528669619,
+        "30days_congestion_rate": 1.1035399881807437
+    },
+    "97": {
+        "name": "山东省泰安市泰山区博城路",
+        "current_congestion_rate": 1.240845646729011,
+        "next_congestion_rate": 1.4678784100390248,
+        "7days_congestion_rate": 1.466655672410079,
+        "30days_congestion_rate": 1.2874179751910175
+    },
+    "98": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.1556746904032642,
+        "next_congestion_rate": 1.3819217785709286,
+        "7days_congestion_rate": 1.2286275760946106,
+        "30days_congestion_rate": 1.2320935473209886
+    },
+    "99": {
+        "name": "山东省泰安市泰山区温泉路",
+        "current_congestion_rate": 1.0013798216018008,
+        "next_congestion_rate": 1.181127170952351,
+        "7days_congestion_rate": 1.4745463615569665,
+        "30days_congestion_rate": 1.3233978205292845
+    },
+    "100": {
+        "name": "山东省泰安市泰山区虎山路79号",
+        "current_congestion_rate": 1.1920781397441331,
+        "next_congestion_rate": 1.1253083362532532,
+        "7days_congestion_rate": 1.3012886559932355,
+        "30days_congestion_rate": 1.4980642906225836
+    },
+    "101": {
+        "name": "山东省泰安市泰山区虎山路42号",
+        "current_congestion_rate": 1.0216289021781593,
+        "next_congestion_rate": 1.0615120237780706,
+        "7days_congestion_rate": 1.215245073383647,
+        "30days_congestion_rate": 1.285821256796378
+    },
+    "102": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.0563286142169155,
+        "next_congestion_rate": 1.4208516399032454,
+        "7days_congestion_rate": 1.0886760924936416,
+        "30days_congestion_rate": 1.3661274349505286
+    },
+    "103": {
+        "name": "山东省泰安市岱岳区长城路",
+        "current_congestion_rate": 1.0626873538293296,
+        "next_congestion_rate": 1.341660321401664,
+        "7days_congestion_rate": 1.4633973334620802,
+        "30days_congestion_rate": 1.3301508738489598
+    },
+    "104": {
+        "name": "山东省泰安市泰山区温泉路633",
+        "current_congestion_rate": 1.387880409627334,
+        "next_congestion_rate": 1.3514410078988814,
+        "7days_congestion_rate": 1.4196945018317129,
+        "30days_congestion_rate": 1.0934289930763286
+    },
+    "105": {
+        "name": "山东省泰安市泰山区迎喧大街218号",
+        "current_congestion_rate": 1.0746692774994184,
+        "next_congestion_rate": 1.3827669932103819,
+        "7days_congestion_rate": 1.084291018024369,
+        "30days_congestion_rate": 1.0554732498303308
+    },
+    "106": {
+        "name": "山东省泰安市泰山区迎暄大街220",
+        "current_congestion_rate": 1.0904499105913616,
+        "next_congestion_rate": 1.0223810207599784,
+        "7days_congestion_rate": 1.0795413828749572,
+        "30days_congestion_rate": 1.208684972644906
+    },
+    "107": {
+        "name": "山东省泰安市泰山区博城路",
+        "current_congestion_rate": 1.0431817218150183,
+        "next_congestion_rate": 1.1183553112146267,
+        "7days_congestion_rate": 1.1706492218956144,
+        "30days_congestion_rate": 1.184917958874992
+    },
+    "108": {
+        "name": "山东省泰安市泰山区龙潭路21",
+        "current_congestion_rate": 1.004514093363507,
+        "next_congestion_rate": 1.2638161015240217,
+        "7days_congestion_rate": 1.490311710467591,
+        "30days_congestion_rate": 1.1093501932277505
+    },
+    "109": {
+        "name": "山东省泰安市泰山区龙潭路17号-2",
+        "current_congestion_rate": 1.1412111854037148,
+        "next_congestion_rate": 1.2337615448356294,
+        "7days_congestion_rate": 1.4298356080336203,
+        "30days_congestion_rate": 1.3067384314011792
+    },
+    "110": {
+        "name": "山东省泰安市泰山区花园路",
+        "current_congestion_rate": 1.0122663820422826,
+        "next_congestion_rate": 1.1029561113813473,
+        "7days_congestion_rate": 1.152108935732421,
+        "30days_congestion_rate": 1.1285155537100593
+    },
+    "111": {
+        "name": "山东省泰安市泰山区花园路",
+        "current_congestion_rate": 1.05527832367572,
+        "next_congestion_rate": 1.4855919626932248,
+        "7days_congestion_rate": 1.2157223246036009,
+        "30days_congestion_rate": 1.3787265752639941
+    },
+    "112": {
+        "name": "山东省泰安市泰山区花园路266",
+        "current_congestion_rate": 1.4334227691302015,
+        "next_congestion_rate": 1.1277153938181494,
+        "7days_congestion_rate": 1.1122319963554725,
+        "30days_congestion_rate": 1.1145788449896687
+    },
+    "113": {
+        "name": "山东省泰安市泰山区岱道庵路300号",
+        "current_congestion_rate": 1.3222060424543094,
+        "next_congestion_rate": 1.403263499817575,
+        "7days_congestion_rate": 1.325214367966486,
+        "30days_congestion_rate": 1.3430890885504787
+    },
+    "114": {
+        "name": "山东省泰安市泰山区岱宗大街381号",
+        "current_congestion_rate": 1.391023186649313,
+        "next_congestion_rate": 1.2648690331310166,
+        "7days_congestion_rate": 1.4485131112583765,
+        "30days_congestion_rate": 1.388112748487695
+    },
+    "115": {
+        "name": "山东省泰安市泰山区文化路17号",
+        "current_congestion_rate": 1.0793071104161975,
+        "next_congestion_rate": 1.47158198477356,
+        "7days_congestion_rate": 1.2611649725479372,
+        "30days_congestion_rate": 1.2101934480023302
+    },
+    "116": {
+        "name": "山东省泰安市泰山区文化路35号",
+        "current_congestion_rate": 1.3758620537478465,
+        "next_congestion_rate": 1.4033541008589758,
+        "7days_congestion_rate": 1.3381913679046398,
+        "30days_congestion_rate": 1.1051865959654683
+    },
+    "117": {
+        "name": "山东省泰安市泰山区奈河西路",
+        "current_congestion_rate": 1.066550701328238,
+        "next_congestion_rate": 1.3613194681825846,
+        "7days_congestion_rate": 1.1022258944540642,
+        "30days_congestion_rate": 1.4119237391717163
+    },
+    "118": {
+        "name": "山东省泰安市泰山区龙潭路29号",
+        "current_congestion_rate": 1.0024244810556828,
+        "next_congestion_rate": 1.2593794650928802,
+        "7days_congestion_rate": 1.4299922381084214,
+        "30days_congestion_rate": 1.4733764637814386
+    },
+    "119": {
+        "name": "山东省泰安市泰山区迎胜东路6号",
+        "current_congestion_rate": 1.3336996067910794,
+        "next_congestion_rate": 1.3090663065374355,
+        "7days_congestion_rate": 1.2186989270205992,
+        "30days_congestion_rate": 1.4906734430789124
+    },
+    "120": {
+        "name": "山东省泰安市泰山区环山路66号",
+        "current_congestion_rate": 1.1806883962381658,
+        "next_congestion_rate": 1.3690894690500492,
+        "7days_congestion_rate": 1.2568429845059268,
+        "30days_congestion_rate": 1.1119241430485622
+    },
+    "121": {
+        "name": "山东省泰安市泰山区环山路73号",
+        "current_congestion_rate": 1.453756745932912,
+        "next_congestion_rate": 1.1356208386524094,
+        "7days_congestion_rate": 1.337756271912711,
+        "30days_congestion_rate": 1.373574556847557
+    },
+    "122": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.3605003830317917,
+        "next_congestion_rate": 1.0536863604585578,
+        "7days_congestion_rate": 1.3864232798467393,
+        "30days_congestion_rate": 1.3584915813603153
+    },
+    "123": {
+        "name": "山东省泰安市泰山区红门路67号",
+        "current_congestion_rate": 1.3599273139601178,
+        "next_congestion_rate": 1.2349772476176721,
+        "7days_congestion_rate": 1.4444833765699991,
+        "30days_congestion_rate": 1.1997566497526369
+    },
+    "124": {
+        "name": "山东省泰安市泰山区红门路30",
+        "current_congestion_rate": 1.0054206149670637,
+        "next_congestion_rate": 1.1605779168770993,
+        "7days_congestion_rate": 1.0510880723625946,
+        "30days_congestion_rate": 1.2707741094233307
+    },
+    "125": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.3425059823476646,
+        "next_congestion_rate": 1.0453106509878636,
+        "7days_congestion_rate": 1.430955735500386,
+        "30days_congestion_rate": 1.0859494649206756
+    },
+    "126": {
+        "name": "山东省泰安市泰山区环山路139号",
+        "current_congestion_rate": 1.1578795482474007,
+        "next_congestion_rate": 1.4633358657774709,
+        "7days_congestion_rate": 1.1142287484165168,
+        "30days_congestion_rate": 1.324216241391953
+    },
+    "127": {
+        "name": "山东省泰安市泰山区十二号街东首",
+        "current_congestion_rate": 1.3112340168510133,
+        "next_congestion_rate": 1.4504250980785613,
+        "7days_congestion_rate": 1.0599278805234251,
+        "30days_congestion_rate": 1.4404046120401384
+    },
+    "128": {
+        "name": "山东省泰安市泰山区泰山大街724号",
+        "current_congestion_rate": 1.1630291812032099,
+        "next_congestion_rate": 1.447699724556713,
+        "7days_congestion_rate": 1.2487973061687132,
+        "30days_congestion_rate": 1.4472932302948218
+    },
+    "129": {
+        "name": "山东省泰安市泰山区望岳东路",
+        "current_congestion_rate": 1.3346853918957362,
+        "next_congestion_rate": 1.4011066618696548,
+        "7days_congestion_rate": 1.4517790689041865,
+        "30days_congestion_rate": 1.4984129879464154
+    },
+    "130": {
+        "name": "山东省泰安市泰山区泰山大街735号",
+        "current_congestion_rate": 1.1083821818338955,
+        "next_congestion_rate": 1.1395759985893947,
+        "7days_congestion_rate": 1.238245804377422,
+        "30days_congestion_rate": 1.4591936100900924
+    },
+    "131": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.229615030841415,
+        "next_congestion_rate": 1.4265857016768666,
+        "7days_congestion_rate": 1.18739642097957,
+        "30days_congestion_rate": 1.0697628310176022
+    },
+    "132": {
+        "name": "山东省泰安市泰山区望岳东路",
+        "current_congestion_rate": 1.1086007093484032,
+        "next_congestion_rate": 1.0605045820876406,
+        "7days_congestion_rate": 1.3002915763678018,
+        "30days_congestion_rate": 1.2787096567769298
+    },
+    "133": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.0053456080679066,
+        "next_congestion_rate": 1.4613569632828667,
+        "7days_congestion_rate": 1.3991731856024865,
+        "30days_congestion_rate": 1.2851977512192325
+    },
+    "134": {
+        "name": "山东省泰安市岱岳区泰山大街",
+        "current_congestion_rate": 1.4010804348468744,
+        "next_congestion_rate": 1.2636038604931692,
+        "7days_congestion_rate": 1.2503097136861514,
+        "30days_congestion_rate": 1.4116539881228622
+    },
+    "135": {
+        "name": "山东省泰安市泰山区东岳大街97号",
+        "current_congestion_rate": 1.2315931906270312,
+        "next_congestion_rate": 1.3541465588106818,
+        "7days_congestion_rate": 1.1999848815846628,
+        "30days_congestion_rate": 1.1153057762503265
+    },
+    "136": {
+        "name": "山东省泰安市岱岳区S326(天平湖路)",
+        "current_congestion_rate": 1.3426306960471477,
+        "next_congestion_rate": 1.0742200078653545,
+        "7days_congestion_rate": 1.1596637918636479,
+        "30days_congestion_rate": 1.3722838938471242
+    },
+    "137": {
+        "name": "山东省泰安市岱岳区灵山大街",
+        "current_congestion_rate": 1.2107389426167006,
+        "next_congestion_rate": 1.4564866542314852,
+        "7days_congestion_rate": 1.253930353661473,
+        "30days_congestion_rate": 1.1925567198115172
+    },
+    "138": {
+        "name": "山东省泰安市泰山区望岳西路",
+        "current_congestion_rate": 1.2387776394816261,
+        "next_congestion_rate": 1.0578685448206748,
+        "7days_congestion_rate": 1.179576183651433,
+        "30days_congestion_rate": 1.2603522010151156
+    },
+    "139": {
+        "name": "山东省泰安市泰山区望岳西路",
+        "current_congestion_rate": 1.2142769505755011,
+        "next_congestion_rate": 1.4411200305903364,
+        "7days_congestion_rate": 1.4678965664592978,
+        "30days_congestion_rate": 1.3456220608072726
+    },
+    "140": {
+        "name": "山东省泰安市泰山区正大步行街1301号",
+        "current_congestion_rate": 1.2957088554313732,
+        "next_congestion_rate": 1.442184405335979,
+        "7days_congestion_rate": 1.164429213486294,
+        "30days_congestion_rate": 1.2285036812492403
+    },
+    "141": {
+        "name": "山东省泰安市泰山区东岳大街144号",
+        "current_congestion_rate": 1.286610757648251,
+        "next_congestion_rate": 1.389844452460165,
+        "7days_congestion_rate": 1.4964422252849765,
+        "30days_congestion_rate": 1.4980390522496299
+    },
+    "142": {
+        "name": "山东省泰安市岱岳区长城路",
+        "current_congestion_rate": 1.4463268923907806,
+        "next_congestion_rate": 1.1371733347085133,
+        "7days_congestion_rate": 1.2165971589888611,
+        "30days_congestion_rate": 1.0546580154366867
+    },
+    "143": {
+        "name": "山东省泰安市岱岳区G341(泮河大街)",
+        "current_congestion_rate": 1.3951696172268075,
+        "next_congestion_rate": 1.4413122654368111,
+        "7days_congestion_rate": 1.4652646633811606,
+        "30days_congestion_rate": 1.07897513882893
+    },
+    "144": {
+        "name": "山东省泰安市泰山区天烛峰路",
+        "current_congestion_rate": 1.1012475841895593,
+        "next_congestion_rate": 1.4581286708863308,
+        "7days_congestion_rate": 1.1951319203664699,
+        "30days_congestion_rate": 1.4695479508044713
+    },
+    "145": {
+        "name": "山东省泰安市泰山区温泉路",
+        "current_congestion_rate": 1.1142610481076523,
+        "next_congestion_rate": 1.3572012230346253,
+        "7days_congestion_rate": 1.1346991819857295,
+        "30days_congestion_rate": 1.3570186158729451
+    },
+    "146": {
+        "name": "山东省泰安市泰山区温泉路",
+        "current_congestion_rate": 1.477748050007064,
+        "next_congestion_rate": 1.1254269605683334,
+        "7days_congestion_rate": 1.071943534348976,
+        "30days_congestion_rate": 1.2522336033715022
+    },
+    "147": {
+        "name": "山东省泰安市泰山区泮河大街互通",
+        "current_congestion_rate": 1.4542885311837568,
+        "next_congestion_rate": 1.355206520755981,
+        "7days_congestion_rate": 1.066910888601057,
+        "30days_congestion_rate": 1.3082805961952912
+    },
+    "149": {
+        "name": "山东省泰安市泰山区灵山大街422号",
+        "current_congestion_rate": 1.1634256577105517,
+        "next_congestion_rate": 1.1013105788107629,
+        "7days_congestion_rate": 1.0186835605010196,
+        "30days_congestion_rate": 1.2316693050928813
+    },
+    "151": {
+        "name": "山东省泰安市泰山区迎春西路",
+        "current_congestion_rate": 1.2757758541793858,
+        "next_congestion_rate": 1.0100718847425343,
+        "7days_congestion_rate": 1.1913804298383868,
+        "30days_congestion_rate": 1.2185230410985435
+    },
+    "152": {
+        "name": "山东省泰安市泰山区灵山大街300号",
+        "current_congestion_rate": 1.1843831474011575,
+        "next_congestion_rate": 1.2758359385450224,
+        "7days_congestion_rate": 1.0674376101546155,
+        "30days_congestion_rate": 1.332634302803947
+    },
+    "153": {
+        "name": "山东省泰安市泰山区灵山大街368号",
+        "current_congestion_rate": 1.0891838321379088,
+        "next_congestion_rate": 1.079384574919755,
+        "7days_congestion_rate": 1.0772459630225446,
+        "30days_congestion_rate": 1.046021473486293
+    },
+    "154": {
+        "name": "山东省泰安市泰山区迎春路9号",
+        "current_congestion_rate": 1.478167150533676,
+        "next_congestion_rate": 1.053762956761042,
+        "7days_congestion_rate": 1.413283433020061,
+        "30days_congestion_rate": 1.4845107706165304
+    },
+    "155": {
+        "name": "山东省泰安市泰山区温泉路",
+        "current_congestion_rate": 1.4051727750676852,
+        "next_congestion_rate": 1.169404756265216,
+        "7days_congestion_rate": 1.3694874327528854,
+        "30days_congestion_rate": 1.3886484313755252
+    },
+    "156": {
+        "name": "山东省泰安市泰山区迎暄大街24号",
+        "current_congestion_rate": 1.4914635263377165,
+        "next_congestion_rate": 1.087637826408689,
+        "7days_congestion_rate": 1.274075371254782,
+        "30days_congestion_rate": 1.0631275038002261
+    },
+    "157": {
+        "name": "山东省泰安市泰山区岱宗大街390号",
+        "current_congestion_rate": 1.057446541310034,
+        "next_congestion_rate": 1.2385905720820591,
+        "7days_congestion_rate": 1.3962544006220747,
+        "30days_congestion_rate": 1.339789656003587
+    },
+    "158": {
+        "name": "山东省泰安市泰山区温泉路北段",
+        "current_congestion_rate": 1.4415050711536428,
+        "next_congestion_rate": 1.4374031840798493,
+        "7days_congestion_rate": 1.1582341716658024,
+        "30days_congestion_rate": 1.0314875930294376
+    },
+    "159": {
+        "name": "山东省泰安市泰山区花园路",
+        "current_congestion_rate": 1.2527981080353205,
+        "next_congestion_rate": 1.1160744820038282,
+        "7days_congestion_rate": 1.495367366322729,
+        "30days_congestion_rate": 1.123816952757357
+    },
+    "160": {
+        "name": "山东省泰安市岱岳区G341(迎胜路)",
+        "current_congestion_rate": 1.4557554729165967,
+        "next_congestion_rate": 1.1088811828081337,
+        "7days_congestion_rate": 1.4242263434332294,
+        "30days_congestion_rate": 1.2203286248233916
+    },
+    "161": {
+        "name": "山东省泰安市泰山区泰山大街408号",
+        "current_congestion_rate": 1.4315981612860806,
+        "next_congestion_rate": 1.157380070473493,
+        "7days_congestion_rate": 1.1684304999261246,
+        "30days_congestion_rate": 1.2148990521119911
+    },
+    "162": {
+        "name": "山东省泰安市泰山区迎胜路",
+        "current_congestion_rate": 1.2017927060282292,
+        "next_congestion_rate": 1.0297989653616741,
+        "7days_congestion_rate": 1.467177688891623,
+        "30days_congestion_rate": 1.2359356610814785
+    },
+    "163": {
+        "name": "山东省泰安市岱岳区环山路",
+        "current_congestion_rate": 1.4525461000637179,
+        "next_congestion_rate": 1.0738712536535802,
+        "7days_congestion_rate": 1.100825065201675,
+        "30days_congestion_rate": 1.4735488668984236
+    },
+    "164": {
+        "name": "山东省泰安市岱岳区环山路",
+        "current_congestion_rate": 1.2670662962401398,
+        "next_congestion_rate": 1.0694839153623048,
+        "7days_congestion_rate": 1.192959841218227,
+        "30days_congestion_rate": 1.4805565009568498
+    },
+    "165": {
+        "name": "山东省泰安市岱岳区环山路",
+        "current_congestion_rate": 1.4033953424417853,
+        "next_congestion_rate": 1.1451520143441651,
+        "7days_congestion_rate": 1.2922986196128052,
+        "30days_congestion_rate": 1.013959871539193
+    },
+    "166": {
+        "name": "山东省泰安市泰山区唐訾路2号",
+        "current_congestion_rate": 1.0001940827534819,
+        "next_congestion_rate": 1.4990477703688014,
+        "7days_congestion_rate": 1.2298453637995435,
+        "30days_congestion_rate": 1.2155322614903405
+    },
+    "167": {
+        "name": "山东省泰安市泰山区创业大街65号",
+        "current_congestion_rate": 1.1186429864859961,
+        "next_congestion_rate": 1.1082025126022867,
+        "7days_congestion_rate": 1.4648396980414047,
+        "30days_congestion_rate": 1.4700282773086664
+    },
+    "169": {
+        "name": "山东省泰安市泰山区擂鼓石北街",
+        "current_congestion_rate": 1.0305297351107345,
+        "next_congestion_rate": 1.2503336396474851,
+        "7days_congestion_rate": 1.2047211016313837,
+        "30days_congestion_rate": 1.384700555487487
+    },
+    "170": {
+        "name": "山东省泰安市泰山区谢过城街",
+        "current_congestion_rate": 1.0348576110873586,
+        "next_congestion_rate": 1.3039805998440266,
+        "7days_congestion_rate": 1.1601890463291875,
+        "30days_congestion_rate": 1.2891627840173323
+    },
+    "171": {
+        "name": "山东省泰安市泰山区佛光路",
+        "current_congestion_rate": 1.458043639951155,
+        "next_congestion_rate": 1.2162436612988994,
+        "7days_congestion_rate": 1.0842342930601583,
+        "30days_congestion_rate": 1.3770144081707458
+    },
+    "172": {
+        "name": "山东省泰安市泰山区灵山大街214号",
+        "current_congestion_rate": 1.1295803367398844,
+        "next_congestion_rate": 1.1726857395919206,
+        "7days_congestion_rate": 1.3938976043866955,
+        "30days_congestion_rate": 1.0089583684311059
+    },
+    "173": {
+        "name": "山东省泰安市泰山区灵山大街180号",
+        "current_congestion_rate": 1.0483850323859731,
+        "next_congestion_rate": 1.3641039384861702,
+        "7days_congestion_rate": 1.21124886319889,
+        "30days_congestion_rate": 1.2232774349611009
+    },
+    "174": {
+        "name": "山东省泰安市泰山区灵山大街205号",
+        "current_congestion_rate": 1.3191187553580492,
+        "next_congestion_rate": 1.193599502712844,
+        "7days_congestion_rate": 1.098273351840413,
+        "30days_congestion_rate": 1.3884799091653608
+    },
+    "175": {
+        "name": "山东省泰安市泰山区财源大街158号",
+        "current_congestion_rate": 1.1318087824645136,
+        "next_congestion_rate": 1.1630329473317118,
+        "7days_congestion_rate": 1.091990664352446,
+        "30days_congestion_rate": 1.390752542004321
+    },
+    "176": {
+        "name": "山东省泰安市泰山区财源大街112号",
+        "current_congestion_rate": 1.2011105207106767,
+        "next_congestion_rate": 1.4725889101207752,
+        "7days_congestion_rate": 1.0486639354958345,
+        "30days_congestion_rate": 1.3018799075381275
+    },
+    "177": {
+        "name": "山东省泰安市泰山区东岳大街46号",
+        "current_congestion_rate": 1.2449474353334993,
+        "next_congestion_rate": 1.2203990367201385,
+        "7days_congestion_rate": 1.1163397018919805,
+        "30days_congestion_rate": 1.3087221066074348
+    },
+    "178": {
+        "name": "山东省泰安市泰山区财源大街57号",
+        "current_congestion_rate": 1.4727596589714076,
+        "next_congestion_rate": 1.066976780661797,
+        "7days_congestion_rate": 1.124734926664677,
+        "30days_congestion_rate": 1.2212709999867761
+    },
+    "179": {
+        "name": "山东省泰安市泰山区升平街26号",
+        "current_congestion_rate": 1.3011870963003793,
+        "next_congestion_rate": 1.12848343618337,
+        "7days_congestion_rate": 1.3001250078470763,
+        "30days_congestion_rate": 1.184450063809312
+    },
+    "180": {
+        "name": "山东省泰安市泰山区岱庙北街10",
+        "current_congestion_rate": 1.3568574028234832,
+        "next_congestion_rate": 1.3072744328452532,
+        "7days_congestion_rate": 1.3897183907377157,
+        "30days_congestion_rate": 1.191528492779955
+    },
+    "181": {
+        "name": "山东省泰安市泰山区东岳大街109号",
+        "current_congestion_rate": 1.2210826023109993,
+        "next_congestion_rate": 1.3527717047833943,
+        "7days_congestion_rate": 1.2359930514221038,
+        "30days_congestion_rate": 1.45501061405513
+    },
+    "182": {
+        "name": "山东省泰安市泰山区傲徕峰路3-3",
+        "current_congestion_rate": 1.3151254210230634,
+        "next_congestion_rate": 1.2760252084076271,
+        "7days_congestion_rate": 1.330165715477912,
+        "30days_congestion_rate": 1.0227865248532435
+    },
+    "183": {
+        "name": "山东省泰安市泰山区东岳大街115号",
+        "current_congestion_rate": 1.3040820257174222,
+        "next_congestion_rate": 1.2144921598770795,
+        "7days_congestion_rate": 1.1461455476457263,
+        "30days_congestion_rate": 1.0922697394396832
+    },
+    "184": {
+        "name": "山东省泰安市泰山区升平街76号",
+        "current_congestion_rate": 1.0689857006452428,
+        "next_congestion_rate": 1.4297881949798752,
+        "7days_congestion_rate": 1.054480296935838,
+        "30days_congestion_rate": 1.1126844382662815
+    },
+    "185": {
+        "name": "山东省泰安市岱岳区乐园街",
+        "current_congestion_rate": 1.0471396994277409,
+        "next_congestion_rate": 1.439850598974017,
+        "7days_congestion_rate": 1.1524641637561426,
+        "30days_congestion_rate": 1.0402204215372879
+    },
+    "186": {
+        "name": "山东省泰安市泰山区东岳大街137号-1",
+        "current_congestion_rate": 1.1328916564710547,
+        "next_congestion_rate": 1.3792081101680638,
+        "7days_congestion_rate": 1.4453703097624948,
+        "30days_congestion_rate": 1.1027795735859975
+    },
+    "187": {
+        "name": "山东省泰安市泰山区东岳大街114-7号",
+        "current_congestion_rate": 1.1916217890919703,
+        "next_congestion_rate": 1.2684458996591566,
+        "7days_congestion_rate": 1.3813728380941106,
+        "30days_congestion_rate": 1.4468225428320483
+    },
+    "188": {
+        "name": "山东省泰安市泰山区岱宗大街63号",
+        "current_congestion_rate": 1.4730188140713685,
+        "next_congestion_rate": 1.0120440539439268,
+        "7days_congestion_rate": 1.4245476658032203,
+        "30days_congestion_rate": 1.1599080663420218
+    },
+    "189": {
+        "name": "山东省泰安市泰山区擂鼓石路56号",
+        "current_congestion_rate": 1.1189762343597995,
+        "next_congestion_rate": 1.0997545790855896,
+        "7days_congestion_rate": 1.1810650219156855,
+        "30days_congestion_rate": 1.1602245330759133
+    },
+    "190": {
+        "name": "山东省泰安市泰山区普照寺路74号",
+        "current_congestion_rate": 1.216160551770773,
+        "next_congestion_rate": 1.2947818886617577,
+        "7days_congestion_rate": 1.279881788091053,
+        "30days_congestion_rate": 1.1538716332558068
+    },
+    "191": {
+        "name": "山东省泰安市泰山区金山路7号",
+        "current_congestion_rate": 1.0712978480641218,
+        "next_congestion_rate": 1.4223434969248734,
+        "7days_congestion_rate": 1.3577384219369,
+        "30days_congestion_rate": 1.0283895820861035
+    },
+    "192": {
+        "name": "山东省泰安市泰山区青年路127号",
+        "current_congestion_rate": 1.0432713312254893,
+        "next_congestion_rate": 1.4632308856775005,
+        "7days_congestion_rate": 1.2047640092120089,
+        "30days_congestion_rate": 1.0083464143497285
+    },
+    "193": {
+        "name": "山东省泰安市泰山区岱宗大街199号",
+        "current_congestion_rate": 1.3869287791311304,
+        "next_congestion_rate": 1.1173559090264624,
+        "7days_congestion_rate": 1.3431750914526366,
+        "30days_congestion_rate": 1.0938117650415646
+    },
+    "194": {
+        "name": "山东省泰安市泰山区擂鼓石大街",
+        "current_congestion_rate": 1.2465198377190587,
+        "next_congestion_rate": 1.3152865336552515,
+        "7days_congestion_rate": 1.3220026238772706,
+        "30days_congestion_rate": 1.1026845540089825
+    },
+    "195": {
+        "name": "山东省泰安市泰山区望岳东路3号",
+        "current_congestion_rate": 1.047717083886142,
+        "next_congestion_rate": 1.0861750450434884,
+        "7days_congestion_rate": 1.3438714069996636,
+        "30days_congestion_rate": 1.312515700771179
+    },
+    "196": {
+        "name": "山东省泰安市泰山区普照寺路30号",
+        "current_congestion_rate": 1.1056512361108628,
+        "next_congestion_rate": 1.4050609182107843,
+        "7days_congestion_rate": 1.1541085177191899,
+        "30days_congestion_rate": 1.07470653673383
+    },
+    "197": {
+        "name": "山东省泰安市泰山区普照寺路94号",
+        "current_congestion_rate": 1.3055523856802123,
+        "next_congestion_rate": 1.3878773160853257,
+        "7days_congestion_rate": 1.3885324675033341,
+        "30days_congestion_rate": 1.0068687272596715
+    },
+    "199": {
+        "name": "山东省泰安市泰山区虎山东路6号",
+        "current_congestion_rate": 1.0601616060339618,
+        "next_congestion_rate": 1.4644806221531659,
+        "7days_congestion_rate": 1.3827106763906842,
+        "30days_congestion_rate": 1.2858336765303093
+    },
+    "200": {
+        "name": "山东省泰安市泰山区岱宗大街329号",
+        "current_congestion_rate": 1.478480196093181,
+        "next_congestion_rate": 1.0833068290176955,
+        "7days_congestion_rate": 1.0506605051368427,
+        "30days_congestion_rate": 1.3007070306301518
+    },
+    "201": {
+        "name": "山东省泰安市泰山区岱宗大街214号",
+        "current_congestion_rate": 1.2540062354245645,
+        "next_congestion_rate": 1.3068844443297245,
+        "7days_congestion_rate": 1.1257921024350446,
+        "30days_congestion_rate": 1.4491442408470956
+    },
+    "202": {
+        "name": "山东省泰安市泰山区虎山东路10-2号",
+        "current_congestion_rate": 1.2765182774658395,
+        "next_congestion_rate": 1.131373998127382,
+        "7days_congestion_rate": 1.4463162146724726,
+        "30days_congestion_rate": 1.2343047869546353
+    },
+    "203": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.4570250200616794,
+        "next_congestion_rate": 1.189088382465489,
+        "7days_congestion_rate": 1.2538939968328948,
+        "30days_congestion_rate": 1.1757946967085469
+    },
+    "204": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.3594074315460112,
+        "next_congestion_rate": 1.4351863312796829,
+        "7days_congestion_rate": 1.1048315078444984,
+        "30days_congestion_rate": 1.4046954674814551
+    },
+    "205": {
+        "name": "山东省泰安市泰山区泮河大街1",
+        "current_congestion_rate": 1.491821655065734,
+        "next_congestion_rate": 1.192213621170303,
+        "7days_congestion_rate": 1.2845246251918532,
+        "30days_congestion_rate": 1.3317193903143203
+    },
+    "206": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.2496157561520531,
+        "next_congestion_rate": 1.4505728949460326,
+        "7days_congestion_rate": 1.1799553814578165,
+        "30days_congestion_rate": 1.3314884980653443
+    },
+    "207": {
+        "name": "山东省泰安市岱岳区南黄路",
+        "current_congestion_rate": 1.4524899345357978,
+        "next_congestion_rate": 1.3690675362107565,
+        "7days_congestion_rate": 1.2447488829268991,
+        "30days_congestion_rate": 1.2223995312180322
+    },
+    "208": {
+        "name": "山东省泰安市岱岳区灵山大街",
+        "current_congestion_rate": 1.1455694370652467,
+        "next_congestion_rate": 1.177557990577207,
+        "7days_congestion_rate": 1.0009622598941914,
+        "30days_congestion_rate": 1.207464025710031
+    },
+    "209": {
+        "name": "山东省泰安市泰山区望岳西路",
+        "current_congestion_rate": 1.0748728044282276,
+        "next_congestion_rate": 1.442119543048334,
+        "7days_congestion_rate": 1.460136384246848,
+        "30days_congestion_rate": 1.1526473357606613
+    },
+    "210": {
+        "name": "山东省泰安市泰山区明堂路",
+        "current_congestion_rate": 1.3201921644834158,
+        "next_congestion_rate": 1.4715226991631385,
+        "7days_congestion_rate": 1.038852684825474,
+        "30days_congestion_rate": 1.278012603745822
+    },
+    "211": {
+        "name": "山东省泰安市泰山区G341(唐王街)",
+        "current_congestion_rate": 1.1066760730707483,
+        "next_congestion_rate": 1.4260921587877275,
+        "7days_congestion_rate": 1.3861266242122023,
+        "30days_congestion_rate": 1.4599219984025842
+    },
+    "212": {
+        "name": "山东省泰安市泰山区虎山路",
+        "current_congestion_rate": 1.3746655502801564,
+        "next_congestion_rate": 1.0473221764897795,
+        "7days_congestion_rate": 1.1884604271184869,
+        "30days_congestion_rate": 1.478475647560098
+    },
+    "213": {
+        "name": "山东省泰安市泰山区南关大街",
+        "current_congestion_rate": 1.3561714954746755,
+        "next_congestion_rate": 1.1996923888267166,
+        "7days_congestion_rate": 1.2002164452725301,
+        "30days_congestion_rate": 1.2459132341098398
+    },
+    "214": {
+        "name": "山东省泰安市泰山区万官大街",
+        "current_congestion_rate": 1.2022988094469438,
+        "next_congestion_rate": 1.1929219315684443,
+        "7days_congestion_rate": 1.363033486032849,
+        "30days_congestion_rate": 1.2974509961267988
+    },
+    "215": {
+        "name": "山东省泰安市岱岳区泮河西路",
+        "current_congestion_rate": 1.4661950769089995,
+        "next_congestion_rate": 1.3097775558602094,
+        "7days_congestion_rate": 1.2951366392874273,
+        "30days_congestion_rate": 1.106146667396056
+    },
+    "216": {
+        "name": "山东省泰安市岱岳区泮河西路",
+        "current_congestion_rate": 1.4065355997402011,
+        "next_congestion_rate": 1.3355673137076534,
+        "7days_congestion_rate": 1.1014524112000532,
+        "30days_congestion_rate": 1.4724167373793813
+    },
+    "217": {
+        "name": "山东省泰安市岱岳区S326(天平湖路)",
+        "current_congestion_rate": 1.3888293414585684,
+        "next_congestion_rate": 1.0813293805909838,
+        "7days_congestion_rate": 1.2178417767099399,
+        "30days_congestion_rate": 1.4758492148072047
+    },
+    "218": {
+        "name": "山东省泰安市岱岳区S326(天平湖路)",
+        "current_congestion_rate": 1.3714764882344004,
+        "next_congestion_rate": 1.3888347968098016,
+        "7days_congestion_rate": 1.39767249633095,
+        "30days_congestion_rate": 1.3110278632106542
+    },
+    "219": {
+        "name": "山东省泰安市泰山区龙潭路",
+        "current_congestion_rate": 1.1462912845011388,
+        "next_congestion_rate": 1.1712916340214892,
+        "7days_congestion_rate": 1.4844466408683556,
+        "30days_congestion_rate": 1.2588204851059692
+    },
+    "220": {
+        "name": "山东省泰安市泰山区龙潭路",
+        "current_congestion_rate": 1.436468719678187,
+        "next_congestion_rate": 1.36590192382793,
+        "7days_congestion_rate": 1.2498549075710739,
+        "30days_congestion_rate": 1.2951979247555157
+    },
+    "221": {
+        "name": "山东省泰安市泰山区岱阳大街",
+        "current_congestion_rate": 1.4572287967662232,
+        "next_congestion_rate": 1.4580086733650666,
+        "7days_congestion_rate": 1.1589031880678649,
+        "30days_congestion_rate": 1.249044134659698
+    },
+    "222": {
+        "name": "山东省泰安市泰山区灵山大街34号",
+        "current_congestion_rate": 1.049637639147355,
+        "next_congestion_rate": 1.4070551336172377,
+        "7days_congestion_rate": 1.0755676737669424,
+        "30days_congestion_rate": 1.1021743432345592
+    },
+    "223": {
+        "name": "山东省泰安市泰山区南湖大街",
+        "current_congestion_rate": 1.134520760963423,
+        "next_congestion_rate": 1.3128666018204405,
+        "7days_congestion_rate": 1.0016883077251766,
+        "30days_congestion_rate": 1.1920756993416854
+    },
+    "224": {
+        "name": "山东省泰安市泰山区灵山大街2号",
+        "current_congestion_rate": 1.2292407632200464,
+        "next_congestion_rate": 1.1319225414107943,
+        "7days_congestion_rate": 1.449755793247794,
+        "30days_congestion_rate": 1.147140260126278
+    },
+    "225": {
+        "name": "山东省泰安市岱岳区东岳大街",
+        "current_congestion_rate": 1.185080494790258,
+        "next_congestion_rate": 1.3621958904339198,
+        "7days_congestion_rate": 1.3275076063723616,
+        "30days_congestion_rate": 1.4494755028150978
+    },
+    "226": {
+        "name": "山东省泰安市岱岳区东岳大街",
+        "current_congestion_rate": 1.271823937221639,
+        "next_congestion_rate": 1.286942375145184,
+        "7days_congestion_rate": 1.2955644187663597,
+        "30days_congestion_rate": 1.3611715250548118
+    },
+    "227": {
+        "name": "山东省泰安市岱岳区环山路",
+        "current_congestion_rate": 1.1684493448857847,
+        "next_congestion_rate": 1.3186106074794424,
+        "7days_congestion_rate": 1.4975884098235692,
+        "30days_congestion_rate": 1.034596374276385
+    },
+    "228": {
+        "name": "山东省泰安市岱岳区东岳大街",
+        "current_congestion_rate": 1.2071090791933414,
+        "next_congestion_rate": 1.4305735241030608,
+        "7days_congestion_rate": 1.1684514858868564,
+        "30days_congestion_rate": 1.4610600589422185
+    },
+    "229": {
+        "name": "山东省泰安市岱岳区东岳大街",
+        "current_congestion_rate": 1.4067457658634492,
+        "next_congestion_rate": 1.2409029834730505,
+        "7days_congestion_rate": 1.2191168095501994,
+        "30days_congestion_rate": 1.450066165343331
+    },
+    "230": {
+        "name": "山东省泰安市泰山区泰山大街285号",
+        "current_congestion_rate": 1.4505029663954083,
+        "next_congestion_rate": 1.3611047485484637,
+        "7days_congestion_rate": 1.2474123962066304,
+        "30days_congestion_rate": 1.1689857434479274
+    },
+    "231": {
+        "name": "山东省泰安市岱岳区环山路",
+        "current_congestion_rate": 1.106436657278003,
+        "next_congestion_rate": 1.2397571943121721,
+        "7days_congestion_rate": 1.1371705011145914,
+        "30days_congestion_rate": 1.1027568171815683
+    },
+    "232": {
+        "name": "山东省泰安市岱岳区泰山大街",
+        "current_congestion_rate": 1.053209628307135,
+        "next_congestion_rate": 1.4851945866690275,
+        "7days_congestion_rate": 1.4943548604825536,
+        "30days_congestion_rate": 1.1724558712248947
+    },
+    "233": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.3114485966714036,
+        "next_congestion_rate": 1.0288824837267494,
+        "7days_congestion_rate": 1.3368949765719131,
+        "30days_congestion_rate": 1.190509961347844
+    },
+    "234": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.4129915087985312,
+        "next_congestion_rate": 1.2972994436564993,
+        "7days_congestion_rate": 1.02815906218398,
+        "30days_congestion_rate": 1.4560466445042823
+    },
+    "235": {
+        "name": "山东省泰安市泰山区佛光路",
+        "current_congestion_rate": 1.1853157470336222,
+        "next_congestion_rate": 1.1636758145115758,
+        "7days_congestion_rate": 1.4259636747678512,
+        "30days_congestion_rate": 1.2819835031402531
+    },
+    "236": {
+        "name": "山东省泰安市泰山区东岳大街149-20号",
+        "current_congestion_rate": 1.1109025956772514,
+        "next_congestion_rate": 1.1921957252714166,
+        "7days_congestion_rate": 1.0187637904053095,
+        "30days_congestion_rate": 1.2555273380926524
+    },
+    "237": {
+        "name": "山东省泰安市岱岳区G341(迎胜路)",
+        "current_congestion_rate": 1.118737934654379,
+        "next_congestion_rate": 1.4612317934476011,
+        "7days_congestion_rate": 1.0633291574110173,
+        "30days_congestion_rate": 1.2574839810986247
+    },
+    "238": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.3972718407772682,
+        "next_congestion_rate": 1.194569148998105,
+        "7days_congestion_rate": 1.4189114095050213,
+        "30days_congestion_rate": 1.0026605425099389
+    },
+    "239": {
+        "name": "山东省泰安市泰山区龙潭南路南段",
+        "current_congestion_rate": 1.0841516655541907,
+        "next_congestion_rate": 1.1757153278937906,
+        "7days_congestion_rate": 1.420691689505224,
+        "30days_congestion_rate": 1.4495824191466349
+    },
+    "240": {
+        "name": "山东省泰安市泰山区泮河大街",
+        "current_congestion_rate": 1.3975749931998482,
+        "next_congestion_rate": 1.1037294851764374,
+        "7days_congestion_rate": 1.3648440375227846,
+        "30days_congestion_rate": 1.4400668086762634
+    },
+    "241": {
+        "name": "山东省泰安市泰山区五马街",
+        "current_congestion_rate": 1.0503740478817964,
+        "next_congestion_rate": 1.3437671351519906,
+        "7days_congestion_rate": 1.0283644623333703,
+        "30days_congestion_rate": 1.3699470855126146
+    },
+    "242": {
+        "name": "山东省泰安市泰山区万官大街",
+        "current_congestion_rate": 1.0838425274501078,
+        "next_congestion_rate": 1.1096639017482992,
+        "7days_congestion_rate": 1.2236083320469375,
+        "30days_congestion_rate": 1.461254613727169
+    },
+    "243": {
+        "name": "山东省泰安市岱岳区曹家路",
+        "current_congestion_rate": 1.09624346685926,
+        "next_congestion_rate": 1.3075607847058028,
+        "7days_congestion_rate": 1.3164364281055987,
+        "30days_congestion_rate": 1.4861059086295603
+    },
+    "244": {
+        "name": "山东省泰安市岱岳区英才街",
+        "current_congestion_rate": 1.1650678830588328,
+        "next_congestion_rate": 1.4227753865041,
+        "7days_congestion_rate": 1.4810774628359697,
+        "30days_congestion_rate": 1.4159217596650029
+    },
+    "245": {
+        "name": "山东省泰安市泰山区龙潭路",
+        "current_congestion_rate": 1.493215904898178,
+        "next_congestion_rate": 1.4437522819002258,
+        "7days_congestion_rate": 1.4478264727804904,
+        "30days_congestion_rate": 1.4700801187038166
+    },
+    "246": {
+        "name": "山东省泰安市泰山区万官大街",
+        "current_congestion_rate": 1.121912859483909,
+        "next_congestion_rate": 1.0930118032640475,
+        "7days_congestion_rate": 1.1673380175036596,
+        "30days_congestion_rate": 1.2400444033356322
+    },
+    "247": {
+        "name": "山东省泰安市泰山区唐王街99号",
+        "current_congestion_rate": 1.3171096780296245,
+        "next_congestion_rate": 1.1943690443963813,
+        "7days_congestion_rate": 1.005438235209049,
+        "30days_congestion_rate": 1.4606543415129976
+    },
+    "248": {
+        "name": "山东省泰安市泰山区龙潭路229",
+        "current_congestion_rate": 1.0346162929801919,
+        "next_congestion_rate": 1.0289530381647072,
+        "7days_congestion_rate": 1.3597451581311688,
+        "30days_congestion_rate": 1.2910735423385957
+    },
+    "249": {
+        "name": "山东省泰安市泰山区环山路",
+        "current_congestion_rate": 1.083688069475079,
+        "next_congestion_rate": 1.068375446716528,
+        "7days_congestion_rate": 1.3832292813519993,
+        "30days_congestion_rate": 1.1780560884478934
+    },
+    "250": {
+        "name": "山东省泰安市岱岳区泰东路242号",
+        "current_congestion_rate": 1.46443141997043,
+        "next_congestion_rate": 1.2555903317752375,
+        "7days_congestion_rate": 1.098795978370468,
+        "30days_congestion_rate": 1.3474517270193953
+    }
+}

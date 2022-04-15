@@ -17,11 +17,11 @@
     </div>
     <div class="header4">
       <n-card class="active">
-        <router-link to="/flow_2_4">拥塞时空分析</router-link></n-card
+        <router-link to="/flow_2_4">拥堵时空分析</router-link></n-card
       >
     </div>
     <div class="left">
-      <Table :data="mapData" :title1="'过车量'"></Table>
+      <Table :data="mapData" title1="拥堵指数"></Table>
     </div>
     <div class="center1_1">
       <n-card hoverable @click="clickMethod('today')">
@@ -77,6 +77,7 @@ import utils from "/src/utils/index.js";
 import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
 import { onMounted, ref } from "vue";
+import fake from "/src/assets/tai_an_fake.json";
 import { NButton, NSpace, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);
 const clickData = ref({});
@@ -100,16 +101,16 @@ const randArray = (len, min, max) => {
 let click = "today";
 const lineTotal = {
   data1: {
-    today: randArray(7, 0, 1),
-    yesterday: randArray(7, 0, 1),
-    sevenDays: randArray(7, 0, 1),
-    thirtyDays: randArray(7, 0, 1),
+    today: randArray(7, 1, 2),
+    yesterday: randArray(7, 1, 2),
+    sevenDays: randArray(7, 1, 2),
+    thirtyDays: randArray(7, 1, 2),
   },
   data2: {
-    today: randArray(7, 3, 5),
-    yesterday: randArray(7, 3, 5),
-    sevenDays: randArray(7, 3, 5),
-    thirtyDays: randArray(7, 3, 5),
+    today: randArray(7, 70, 50),
+    yesterday: randArray(7, 70, 50),
+    sevenDays: randArray(7, 70, 50),
+    thirtyDays: randArray(7, 70, 50),
   },
   data3: {
     today: randArray(7, 80, 130),
@@ -137,6 +138,10 @@ const refreshLine = () => {
     title: "BCI",
     title2: "value",
   };
+  for (let item of fake) {
+    item.value = Math.random() * (2 - 1 + 1) + 1;
+  }
+  mapData.value = fake;
 };
 const hours = [
   "12a",
@@ -226,9 +231,13 @@ const clickMethod = (val) => {
   refreshLine();
 };
 onMounted(async () => {
-  let { data } = await utils.requestData("/mapData2_3");
-  mapData.value = [...data.small, ...data.medium, ...data.large];
-  refreshLine();
+  // let { data } = await utils.requestData("/mapData2_3");
+  // mapData.value = [...data.small, ...data.medium, ...data.large];
+  // refreshLine();
+  for (let item of fake) {
+    item.value = Math.random() * (2 - 1 + 1) + 1;
+  }
+  mapData.value = fake;
 });
 </script>
 

@@ -24,16 +24,16 @@
       <Pie :data="pieData"></Pie>
     </div>
     <div class="left-2">
-      <Table :data="mapData" :title1="'过车量'"></Table>
+      <Table :data="mapData" :title1="'过车量'" :geoCoordMap="he_fei"></Table>
     </div>
     <div class="center">
       <Map
         v-if="mapData.length"
         title="车流量"
-        :geoCoordMap="hefei"
+        :geoCoordMap="taian"
         :data="mapData"
         :center="center"
-        :zoom="30"
+        :zoom="100"
         @reportData="changeSelect"
       ></Map>
     </div>
@@ -60,8 +60,10 @@ import utils from "/src/utils/index.js";
 // Theme Config
 import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
+import taian from "/src/assets/tai_an.json";
 import { onMounted, ref } from "vue";
 import { NButton, NCard } from "naive-ui";
+import fake from "/src/assets/tai_an_fake.json";
 echarts.registerTheme("walden", walden);
 const clickData = ref({});
 const idData = ref({});
@@ -70,7 +72,7 @@ const lineData = ref({});
 const gaugeDataPre = ref({});
 const gaugeDataCur = ref({});
 const mapData = ref([]);
-const center = [117.280338325, 31.84974485];
+const center = [117.12932143951308, 36.19724062736381];
 const pieData = [
   { value: 160, name: "拥堵" },
   { value: 483, name: "平衡" },
@@ -82,13 +84,10 @@ lineData.value = {
   title: "重构准确率",
   title2: "准确率",
 };
-
-onMounted(async () => {
-  // setInterval(async () => {
-  let { data } = await utils.requestData("/mapData2_3");
-  mapData.value = [...data.small, ...data.medium, ...data.large];
-  // }, 20000);
-});
+for (let item of fake) {
+  item.value = Math.floor(Math.random() * (1000 - 10 + 1) + 10)
+}
+mapData.value = fake;
 </script>
 
 <style>
