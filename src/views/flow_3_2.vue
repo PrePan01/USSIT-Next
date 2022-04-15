@@ -1,10 +1,88 @@
 <template>
-  <iframe
-    style="border: none"
-    width="100%"
-    height="100%"
-    src="http://39.105.199.144:8001/visualization/test/"
-  ></iframe>
+  <div class="container">
+    <div class="header1">
+      <n-button
+        type="primary"
+        icon="n-icon-edit"
+        class="edit_btn"
+        block
+        size="large"
+        ><router-link to="flow_3">交通实时预测</router-link></n-button
+      >
+    </div>
+    <div class="header2">
+      <n-button
+        type="primary"
+        icon="n-icon-edit"
+        class="edit_btn"
+        block
+        size="large"
+        >路况预测</n-button
+      >
+    </div>
+    <div class="header3">
+      <n-button
+        type="primary"
+        icon="n-icon-edit"
+        class="edit_btn"
+        block
+        size="large"
+        ><router-link to="flow_3_1">路口流量预测</router-link></n-button
+      >
+    </div>
+    <div class="header4">
+      <n-button
+        type="primary"
+        icon="n-icon-edit"
+        class="edit_btn"
+        block
+        size="large"
+        ><router-link to="flow_3_4">车辆轨迹预测</router-link></n-button
+      >
+    </div>
+    <div class="header5">
+      <n-button
+        type="primary"
+        icon="n-icon-edit"
+        class="edit_btn"
+        block
+        size="large"
+        ><router-link to="flow_3_5">公交流量预测</router-link></n-button
+      >
+    </div>
+    <div class="header6">
+      <n-button
+        type="primary"
+        icon="n-icon-edit"
+        class="edit_btn"
+        block
+        size="large"
+        ><router-link to="flow_3_2">事故预测</router-link></n-button
+      >
+    </div>
+    <div class="left2">
+      <Table :data="mapData" :title1="'路段状态'"></Table>
+    </div>
+    <div class="left3"><Line v-bind="lineData2"></Line></div>
+    <div class="right"><Table :data="mapData" :title1="'过车量'"></Table></div>
+    <div class="left1"><Line v-bind="lineData1"></Line></div>
+    <div class="center1">
+      <Map
+        v-if="mapData.length"
+        title="车流量"
+        :geoCoordMap="hefei"
+        :data="mapData"
+        :center="center"
+        :zoom="2"
+        @reportData="changeSelect"
+      ></Map>
+    </div>
+    <div class="center2">
+      <div>预测高风险路段:Road1</div>
+      <div>实际高风险路段:Road1&Road2</div>
+      <div>预测准确率:70%</div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -848,61 +926,43 @@ lineData2.value = {
   min-height: 70px;
   font-size: 20px;
   min-width: 70px;
-  background: burlywood 80%;
-  border: #e6a23c;
+  background:burlywood 80%;
+  border:#e6a23c;
 }
 .header1 {
   grid-area: header1;
 }
-
 .header2 {
   grid-area: header2;
 }
-
 .header3 {
   grid-area: header3;
 }
-
 .header4 {
   grid-area: header4;
 }
-
 .header5 {
   grid-area: header5;
 }
-
 .header6 {
   grid-area: header6;
 }
-
 .left2 {
   grid-area: left2;
 }
-
 .left3 {
   grid-area: left3;
 }
-
 .right {
   grid-area: right;
 }
-
 .left1 {
   grid-area: left1;
 }
-
 .center1 {
   grid-area: center1;
 }
-
 .center2 {
   grid-area: center2;
-}
-iframe {
-  margin: 0;
-  padding: 0;
-}
-.n-layout-scroll-container {
-  padding: 0;
 }
 </style>
