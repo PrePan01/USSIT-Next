@@ -45,51 +45,51 @@ const center = [117.280338325, 31.84974485]
 mapData.value = [
   {
     "name": 74,
-    "value": 32
+    "value": 41
   },
   {
     "name": 119,
-    "value": 32
+    "value": 39
   },
   {
     "name": 91,
-    "value": 31
+    "value": 38
   },
   {
     "name": 64,
-    "value": 28
+    "value": 38
   },
   {
     "name": 72,
-    "value": 25
+    "value": 34
   },
   {
     "name": 130,
-    "value": 24
+    "value": 31
   },
   {
     "name": 29,
-    "value": 23
+    "value": 30
   },
   {
     "name": 57,
-    "value": 22
+    "value": 30
   },
   {
     "name": 50,
-    "value": 21
+    "value": 27
   },
   {
     "name": 63,
-    "value": 21
+    "value": 27
   },
   {
     "name": 99,
-    "value": 21
+    "value": 25
   },
   {
     "name": 37,
-    "value": 20
+    "value": 25
   },
   {
     "name": 20,
@@ -806,7 +806,7 @@ mapData.value = [
 ]
 lineData1.value = {
   categories: ['Way1', 'Way2', 'Way3', 'Way4', 'Way5', 'Way6', 'Way7'],
-  value: [1.2, 1.3, 1.5, 1.9, 2.3, 3.1, 4.2],
+  value: [1.2, 1.4, 1.5, 1.9, 2.3, 3.1, 4.2],
   title: '速度优先图',
   title2: '速度优先'
 }
