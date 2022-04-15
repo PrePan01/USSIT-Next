@@ -13,12 +13,13 @@ let myChart
 const pie = ref(null)
 const props = defineProps(
   {
-    data: Array
+    data: Array,
+    title: String
   }
 )
 const option = {
   title: {
-    text:'当前流量情况'
+    text: props.title
   },
   tooltip: {
     trigger: 'item'
@@ -78,9 +79,10 @@ onBeforeUnmount(() => {
 });
 
 onUpdated(() => {
+  console.log(props)
   myChart.setOption({
     title: {
-      text: '当前流量情况'
+      text: props.title
     },
     series: [
       {

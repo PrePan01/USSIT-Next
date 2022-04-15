@@ -5,9 +5,9 @@
         <h1>面向智慧出行的城市群智感知验证系统</h1>
       </n-card>
     </div>
-    <div class="left1"><Pie :data="pieData"></Pie></div>
+    <div class="left1"><Pie :data="pieData" title="当前流量情况"></Pie></div>
     <div class="left2"><Line v-bind="lineData1"></Line></div>
-    <div class="left3"><Table :data="mapData" :title1="'过车量'"></Table></div>
+    <div class="left3"><Table :data="mapData" title1="'过车量'"></Table></div>
     <div class="center1_1">
       <n-card hoverable>
         <router-link to="flow_2">交通状况感知</router-link>
@@ -32,14 +32,15 @@
       <Map
         v-if="mapData.length"
         title="车流量"
-        :geoCoordMap="hefei"
+        :geoCoordMap="taian"
+        geo="taian"
         :data="mapData"
         :center="center"
         :zoom="2"
         @reportData="changeSelect"
       ></Map>
     </div>
-    <div class="center3"><Pie :data="pieData2"></Pie></div>
+    <div class="center3"><Pie :data="pieData2" title="当前流量方向"></Pie></div>
     <div class="center4"></div>
     <div class="right1">
       <Table :data="mapData3" :title1="'数据接入'"></Table>
@@ -47,7 +48,7 @@
     <div class="right2">
       <Table :data="mapData2" :title1="'数据共享'"></Table>
     </div>
-    <div class="right3"><Pie :data="pieData3"></Pie></div>
+    <div class="right3"><Pie :data="pieData3" title="统计来源"></Pie></div>
   </div>
 </template>
 
@@ -66,6 +67,7 @@ import utils from "/src/utils/index.js";
 // Theme Config
 import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
+import taian from "/src/assets/tai_an.json";
 import { onMounted, ref } from "vue";
 import { NButton, NSpace, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);
@@ -80,7 +82,8 @@ const gaugeDataCur = ref({});
 const mapData = ref([]);
 const mapData2 = ref([]);
 const mapData3 = ref([]);
-const center = [117.280338325, 31.84974485];
+const center = [    117.22643291220883,
+    36.13816840720741];
 const pieData = [
   { value: 1048, name: "拥堵" },
   { value: 735, name: "平衡" },

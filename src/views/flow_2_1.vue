@@ -20,7 +20,7 @@
         <router-link to="/flow_2_4">拥塞时空分析</router-link>
       </n-card>
     </div>
-    <div class="left1"><Pie :data="pieData"></Pie></div>
+    <div class="left1"><Pie :data="pieData" title="当前流量情况"></Pie></div>
     <div class="left2"><Table :data="mapData" :title1="'过车量'"></Table></div>
     <div class="center">
       <Map

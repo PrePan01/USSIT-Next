@@ -3,8 +3,8 @@
     <div class="right1">
       <Line v-bind="lineData"></Line>
     </div>
-    <div class="right2">
-      <Pie :data="pieData"></Pie>
+    <div class="right2" >
+      <Pie :data="pieData" title="车流量情况"></Pie>
     </div>
     <div class="center">
       <Map

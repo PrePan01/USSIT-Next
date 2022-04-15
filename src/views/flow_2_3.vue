@@ -21,7 +21,7 @@
       >
     </div>
     <div class="left-1">
-      <Pie :data="pieData"></Pie>
+      <Pie :data="pieData" title="当前流量情况"></Pie>
     </div>
     <div class="left-2">
       <Table :data="mapData" :title1="'过车量'" :geoCoordMap="he_fei"></Table>

@@ -31,7 +31,7 @@
       >
     </div>
     <div class="left1">
-      <Pie :data="pieData"></Pie>
+      <Pie :data="pieData" title="车流量情况"></Pie>
     </div>
     <div class="left2">
       <Line v-bind="lineData1"></Line>

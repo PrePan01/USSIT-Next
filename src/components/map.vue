@@ -28,17 +28,19 @@ const convertData = function (data) {
   for (var i = 0; i < data.length; i++) {
     var geoCoord = geoCoordMap[data[i].name];
     if (geoCoord) {
-      if (props.geo) {
+      if (props.geo == "nanshan") {
         res.push({
           name: nan_shanMap[data[i].name]?.name || "无名路",
           value: geoCoord.concat(data[i].value),
         });
+      } else if (props.geo == "hefei") {
+        res.push({
+          name: he_feiMap[data[i].name]?.name || "无名路",
+          value: geoCoord.concat(data[i].value),
+        });
       } else {
         res.push({
-          name:
-            Object.getOwnPropertyNames(geoCoordMap).length < 1000
-              ? tai_anMap[data[i].name]?.name || "无名路"
-              : he_feiMap[data[i].name]?.name || "无名路",
+          name: tai_anMap[data[i].name]?.name || "无名路",
           value: geoCoord.concat(data[i].value),
         });
       }
