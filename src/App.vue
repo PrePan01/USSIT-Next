@@ -52,7 +52,7 @@ const menuOptions = [
         "a",
         {
           class: "title",
-          href: "/flow_1_1",
+          href: "/#/flow_1_1",
           rel: "noopenner noreferrer",
         },
         "城市群智感知验证系统"
@@ -73,7 +73,7 @@ const menuOptions = [
       h(
         "a",
         {
-          href: "/flow_2",
+          href: "/#/flow_2",
           rel: "noopenner noreferrer",
         },
         "交通状况感知"
@@ -85,7 +85,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_2_1",
+              href: "/#/flow_2_1",
               rel: "noopenner noreferrer",
             },
             "实时路况感知"
@@ -97,7 +97,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_2_3",
+              href: "/#/flow_2_3",
               rel: "noopenner noreferrer",
             },
             "路口流量感知"
@@ -109,7 +109,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_2_4",
+              href: "/#/flow_2_4",
               rel: "noopenner noreferrer",
             },
             "拥堵时空分析"
@@ -123,7 +123,7 @@ const menuOptions = [
       h(
         "a",
         {
-          href: "/flow_3",
+          href: "/#/flow_3",
           rel: "noopenner noreferrer",
         },
         "交通实时预测"
@@ -135,7 +135,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_3_1",
+              href: "/#/flow_3_1",
               rel: "noopenner noreferrer",
             },
             "路口流量预测"
@@ -147,7 +147,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_3_2",
+              href: "/#/flow_3_2",
               rel: "noopenner noreferrer",
             },
             "事故风险预测"
@@ -159,7 +159,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_perception_hefei",
+              href: "/#/flow_perception_hefei",
               rel: "noopenner noreferrer",
             },
             "路况预测"
@@ -171,7 +171,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_3_4",
+              href: "/#/flow_3_4",
               rel: "noopenner noreferrer",
             },
             "车辆轨迹预测"
@@ -183,7 +183,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_3_5",
+              href: "/#/flow_3_5",
               rel: "noopenner noreferrer",
             },
             "公交流量预测"
@@ -197,7 +197,7 @@ const menuOptions = [
       h(
         "a",
         {
-          href: "/flow_4_1",
+          href: "/#/flow_4_1",
           rel: "noopenner noreferrer",
         },
         "交通调控引导"
@@ -209,7 +209,7 @@ const menuOptions = [
           h(
             "a",
             {
-              href: "/flow_4_1",
+              href: "/#/flow_4_1",
               rel: "noopenner noreferrer",
             },
             "智慧停车引导"
@@ -223,7 +223,7 @@ const menuOptions = [
       h(
         "a",
         {
-          href: "/park_nanshan",
+          href: "/#/park_nanshan",
           rel: "noopenner noreferrer",
         },
         "基础设施建设"
