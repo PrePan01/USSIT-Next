@@ -93,7 +93,7 @@ const routes = [
   {
     path: "/flow_4_1",
     name: "flow_4_1",
-    component: flow_4_1
+    component: park_nanshan
   },
 ]
 

@@ -17,13 +17,22 @@ import { NCard, NDataTable } from "naive-ui";
 import { onMounted, ref, h, onUpdated } from 'vue'
 import he_feiMap from '/src/assets/he_feiMap.json'
 import tai_anMap from '/src/assets/tai_anMap.json'
+import nan_shanMap from "/src/assets/nan_shanMap.json";
+
 const emit = defineEmits(['reportData'])
 const props = defineProps(
   {
     data: Array,
     title1: String,
+    geo: String
   }
 )
+let whichMap
+if (props.geo == 'nanshan') {
+  whichMap = nan_shanMap
+} else {
+  whichMap = tai_anMap
+}
 const data = ref([])
 onUpdated(() => {
   data.value = props.data
@@ -41,10 +50,10 @@ const rowProps = (row) => {
 }
 const columns = [
   {
-    title: "Name",
+    title: "路名",
     key: "name",
     render(row, index) {
-      return h('span', {}, [tai_anMap[row.name]?.name || '无名路'] )
+      return h('span', {}, [whichMap[row.name]?.name || '无名路'] )
     },
     sorter: (row1, row2) => row1.name - row2.name
   },

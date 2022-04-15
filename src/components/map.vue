@@ -9,11 +9,13 @@ import "echarts/extension/bmap/bmap";
 import _ from "lodash";
 import he_feiMap from "/src/assets/he_feiMap.json";
 import tai_anMap from "/src/assets/tai_anMap.json";
+import nan_shanMap from "/src/assets/nan_shanMap.json";
 const emit = defineEmits(["reportData"]);
 const props = defineProps({
   title: String,
   data: Array,
   geoCoordMap: Object,
+  geo: String,
   center: Array,
   zoom: Number,
 });
@@ -26,13 +28,20 @@ const convertData = function (data) {
   for (var i = 0; i < data.length; i++) {
     var geoCoord = geoCoordMap[data[i].name];
     if (geoCoord) {
-      res.push({
-        name:
-          Object.getOwnPropertyNames(geoCoordMap).length < 1000
-            ? tai_anMap[data[i].name]?.name || "无名路"
-            : he_feiMap[data[i].name]?.name || "无名路",
-        value: geoCoord.concat(data[i].value),
-      });
+      if (props.geo) {
+        res.push({
+          name: nan_shanMap[data[i].name]?.name || "无名路",
+          value: geoCoord.concat(data[i].value),
+        });
+      } else {
+        res.push({
+          name:
+            Object.getOwnPropertyNames(geoCoordMap).length < 1000
+              ? tai_anMap[data[i].name]?.name || "无名路"
+              : he_feiMap[data[i].name]?.name || "无名路",
+          value: geoCoord.concat(data[i].value),
+        });
+      }
     }
   }
   return res;

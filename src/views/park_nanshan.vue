@@ -11,6 +11,7 @@
         v-if="mapData.length"
         title="车流量"
         :geoCoordMap="nanshan"
+        geo="nanshan"
         :data="mapData"
         :center="center"
         :zoom="3"
@@ -29,7 +30,7 @@
       <Bar v-bind="idData"></Bar>
     </div>
     <div class="left1">
-      <Table :data="mapData" @reportData="changeSelect" :title1="'占用数'"></Table>
+      <Table :data="mapData" @reportData="changeSelect" :title1="'占用数'" geo="nanshan"></Table>
     </div>
   </div>
 </template>
