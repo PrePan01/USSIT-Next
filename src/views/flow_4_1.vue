@@ -34,7 +34,7 @@
   <div class="right1">
     <Table :data="mapData" :title1="'过车量'"></Table>
     </div>
-  <div class="right2">  <Pie :data="pieData"></Pie></div>
+  <div class="right2">  <Pie :data="pieData" title="当前流量方向"></Pie></div>
 </div>
 </template>
 
@@ -69,9 +69,9 @@ const gaugeDataCur = ref({})
 const mapData = ref([])
 const center = [117.280338325, 31.84974485]
 const pieData = [
-  { value: 150, name: '拥堵' },
-  { value: 430, name: '平衡' },
-  { value: 980, name: '空闲' },
+  { value: 150, name: '拥堵' ,itemStyle:{color:'#ee0e3b'}},
+  { value: 430, name: '平衡' ,itemStyle:{color:'#f9d00b'}},
+  { value: 980, name: '空闲', itemStyle:{color:'#06c674'}},
 ]
 mapData.value = [
   {

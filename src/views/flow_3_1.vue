@@ -1,34 +1,9 @@
 <template>
   <div class="container">
-    <div class="header1">
-      <n-card hoverable
-        ><router-link to="flow_3">交通实时预测</router-link></n-card
-      >
-    </div>
-    <div class="header2">
-      <n-card hoverable>
-        <router-link to="flow_perception_hefei">路况预测</router-link>
+      <div class="header1">
+      <n-card>
+        <h1>面向智慧出行的城市群智感知验证系统</h1>
       </n-card>
-    </div>
-    <div class="header3">
-      <n-card hoverable class="active"
-        ><router-link to="flow_3_1">路口流量预测</router-link></n-card
-      >
-    </div>
-    <div class="header4">
-      <n-card hoverable
-        ><router-link to="flow_3_4">车辆轨迹预测</router-link></n-card
-      >
-    </div>
-    <div class="header5">
-      <n-card hoverable
-        ><router-link to="flow_3_5">公交流量预测</router-link></n-card
-      >
-    </div>
-    <div class="header6">
-      <n-card hoverable
-        ><router-link to="flow_3_2">事故预测</router-link></n-card
-      >
     </div>
     <div class="left1">
       <Pie :data="pieData" title="车流量情况"></Pie>
@@ -68,6 +43,7 @@
     </div>
     <div class="center3">
       <Line v-bind="lineData3"></Line>
+ 
     </div>
     <div class="right">
       <Table :data="mapData" :title1="'过车量'"></Table>
@@ -101,14 +77,15 @@ const zoomData = ref({});
 const lineData1 = ref({});
 const lineData2 = ref({});
 const lineData3 = ref({});
+const lineData4 = ref({});
 const gaugeDataPre = ref({});
 const gaugeDataCur = ref({});
 const mapData = ref([]);
 const center = [117.12932143951308,36.19724062736381];
 const pieData = [
-  { value: 1048, name: "拥堵" },
-  { value: 735, name: "平衡" },
-  { value: 580, name: "空闲" },
+  { value: 1048, name: "拥堵",itemStyle:{color:'#ee0e3b'} },
+  { value: 735, name: "平衡", itemStyle:{color:'#f9d00b'} },
+  { value: 580, name: "空闲", itemStyle:{color:'#06c674'} },
 ];
 for (let item of fake) {
   item.value = Math.round(Math.random() * (500 - 30 + 1) + 30);
@@ -116,22 +93,25 @@ for (let item of fake) {
 mapData.value = fake;
 lineData1.value = {
   categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  value: [2.0, 2.2, 9.1, 3.4, 12.0, 3.0, 3.2],
-  title: "拥堵指数图",
+  value: [1.85, 1.63, 1.33, 1.25, 1.78, 1.11, 1.15],
+  title: "预测拥堵趋势",
   title2: "拥堵指数",
 };
 lineData2.value = {
-  categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  value: [80, 92, 91, 34, 290, 130, 132],
-  title: "平均车速图",
-  title2: "车速",
+  categories: ["泰山区青年路07号", "泰山区望岳东路", "岱岳区高铁东路", "泰山区岱宗大街273号", "泰山区东湖路1"],
+  value: [499, 492, 489, 484, 483],
+  title: "预测热门拥堵路段",
+  title2: "过车量",
 };
 lineData3.value = {
   categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  value: [80, 92, 91, 34, 290, 130, 132],
-  title: "热门拥堵时段",
-  title2: "拥堵时段",
+  value: [80, 92, 91, 34, , , ], 
+  value2: [, , , 34, 290, 130, 132],
+  title: "卡口车流",
+  title2: "卡口真实值",
+   title3:"预测值",
 };
+
 const hours = [
   "12a",
   "1a",
@@ -168,7 +148,7 @@ const hours = [
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header1 header1 header2 header2 header3 header3 header4 header4 header5 header5 header6 header6"
+    "header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1"
     "left1 left1 left1 center1_1 center1_1 center1_2 center1_2 center1_3 center1_3 right right right"
     "left1 left1 left1 center2 center2 center2 center2 center2 center2 right right right"
     "left2 left2 left2 center2 center2 center2 center2 center2 center2 right right right"
@@ -187,25 +167,6 @@ const hours = [
   grid-area: header1;
 }
 
-.header2 {
-  grid-area: header2;
-}
-
-.header3 {
-  grid-area: header3;
-}
-
-.header4 {
-  grid-area: header4;
-}
-
-.header5 {
-  grid-area: header5;
-}
-
-.header6 {
-  grid-area: header6;
-}
 
 .left1 {
   grid-area: left1;

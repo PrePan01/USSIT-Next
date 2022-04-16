@@ -85,9 +85,9 @@ const mapData3 = ref([]);
 const center = [    117.22643291220883,
     36.13816840720741];
 const pieData = [
-  { value: 1048, name: "拥堵" },
-  { value: 735, name: "平衡" },
-  { value: 580, name: "空闲" },
+  { value: 1048, name: "拥堵",itemStyle:{color:'#ee0e3b'} },
+  { value: 735, name: "繁忙" ,itemStyle:{color:'#f9d00b'}},
+  { value: 580, name: "畅通",itemStyle:{color:'#06c674'}},
 ];
 const pieData2 = [
   { value: 80, name: "东西" },
