@@ -11,6 +11,7 @@
         v-if="mapData.length"
         title="车流量"
         :geoCoordMap="hefei"
+        geo="hefei"
         :data="mapData"
         :center="center"
         :zoom="100"
