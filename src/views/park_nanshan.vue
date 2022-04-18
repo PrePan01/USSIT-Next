@@ -4,7 +4,7 @@
       <Line v-bind="lineData"></Line>
     </div>
     <div class="right2" >
-      <Pie :data="pieData" title="车流量情况"></Pie>
+      <Pie :data="pieData" title="总体使用情况"></Pie>
     </div>
     <div class="center">
       <Map

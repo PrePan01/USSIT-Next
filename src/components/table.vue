@@ -53,7 +53,7 @@ const columns = [
     title: "路名",
     key: "name",
     render(row, index) {
-      return h('span', {}, [whichMap[row.name]?.name || '无名路'] )
+      return h('span', {}, [row.name + whichMap[row.name]?.name || '无名路'] )
     },
     sorter: (row1, row2) => row1.name - row2.name
   },

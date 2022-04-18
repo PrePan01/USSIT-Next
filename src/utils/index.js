@@ -185,8 +185,8 @@ export default {
     let zoom = {
       categories: [],
       value: [],
-      yTitle: '车流量',
-      title: '当前时刻车流量分布'
+      yTitle: '车位占用',
+      title: '当前车位占用分布'
     }
     let pieTmp = {
       '通畅': 0,

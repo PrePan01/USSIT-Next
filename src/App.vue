@@ -165,19 +165,7 @@ const menuOptions = [
             "路况预测"
           ),
         key: "/flow_perception_taian",
-      },
-      {
-        label: () =>
-          h(
-            "a",
-            {
-              href: "/#/flow_3_4",
-              rel: "noopenner noreferrer",
-            },
-            "车辆轨迹预测"
-          ),
-        key: "/flow_3_4",
-      },
+      }
       {
         label: () =>
           h(
