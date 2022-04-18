@@ -1,34 +1,9 @@
 <template>
   <div class="container">
-    <div class="header1">
-      <n-card hoverable
-        ><router-link to="flow_3">交通实时预测</router-link></n-card
-      >
-    </div>
-    <div class="header2">
-      <n-card hoverable
-        ><router-link to="flow_perception_hefei">路况预测</router-link>
+        <div class="header1">
+      <n-card>
+        <h1>面向智慧出行的城市群智感知验证系统</h1>
       </n-card>
-    </div>
-    <div class="header3">
-      <n-card hoverable
-        ><router-link to="flow_3_1">路口流量预测</router-link></n-card
-      >
-    </div>
-    <div class="header4">
-      <n-card hoverable
-        ><router-link to="flow_3_4">车辆轨迹预测</router-link></n-card
-      >
-    </div>
-    <div class="header5">
-      <n-card hoverable
-        ><router-link to="flow_3_5">公交流量预测</router-link></n-card
-      >
-    </div>
-    <div class="header6">
-      <n-card hoverable
-        ><router-link to="flow_3_2">事故预测</router-link></n-card
-      >
     </div>
     <div class="center">
       <Map
@@ -841,7 +816,7 @@ mapData.value = [
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header1 header1 header2 header2 header3 header3 header4 header4 header5 header5 header6 header6"
+    "header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1"
     "center center center center center center center center center center center center"
     "center center center center center center center center center center center center"
     "center center center center center center center center center center center center"
@@ -860,27 +835,4 @@ mapData.value = [
   grid-area: header1;
 }
 
-.header2 {
-  grid-area: header2;
-}
-
-.header3 {
-  grid-area: header3;
-}
-
-.header4 {
-  grid-area: header4;
-}
-
-.center {
-  grid-area: center;
-}
-
-.header5 {
-  grid-area: header5;
-}
-
-.header6 {
-  grid-area: header6;
-}
 </style>

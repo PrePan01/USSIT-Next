@@ -15,8 +15,10 @@ const props = defineProps(
   {
     categories: Array,
     value: Array,
+    value2:Array,
     title: String,
-    title2: String
+    title2: String,
+    title3:String
   }
 )
 const option = {
@@ -56,8 +58,25 @@ const option = {
       itemStyle: {
         color: '#626c91'
       }
-    }
-  ]
+    },
+     {
+                name : props.title3,
+                type : 'line',
+                smooth: true,
+                lineStyle : {
+                    color : '#d256b6',
+                    width : 2,
+                    type : 'solid',
+                },
+              
+                itemStyle : {
+                    color : '#d256b6'
+                },
+            
+           
+                data :  props.value2,
+            }]
+
 };
 
 // basic resize in echart

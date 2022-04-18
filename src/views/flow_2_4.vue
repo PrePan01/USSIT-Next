@@ -1,49 +1,34 @@
 <template>
   <div class="container">
-    <div class="header1">
-      <n-card hoverable>
-        <router-link to="/flow_2">交通路况感知</router-link></n-card
-      >
-    </div>
-    <div class="header2">
-      <n-card hoverable>
-        <router-link to="/flow_2_1">实时路况感知</router-link>
+     <div class="header1">
+      <n-card>
+        <h1>面向智慧出行的城市群智感知验证系统</h1>
       </n-card>
-    </div>
-    <div class="header3">
-      <n-card hoverable>
-        <router-link to="/flow_2_3">路口流量感知</router-link></n-card
-      >
-    </div>
-    <div class="header4">
-      <n-card class="active">
-        <router-link to="/flow_2_4">拥堵时空分析</router-link></n-card
-      >
     </div>
     <div class="left">
       <Table :data="mapData" title1="拥堵指数"></Table>
     </div>
     <div class="center1_1">
-      <n-card hoverable @click="clickMethod('today')">
-        <h2>今天</h2>
+      <n-card  class="edit_btn2"  hoverable @click="clickMethod('today')">
+        <h2 class="edit_btn">今天</h2>
       </n-card>
     </div>
 
     <div class="center1_2">
-      <n-card hoverable @click="clickMethod('yesterday')">
-        <h2>昨天</h2>
+      <n-card class="edit_btn2" hoverable @click="clickMethod('yesterday')">
+        <h2 class="edit_btn">昨天</h2>
       </n-card>
     </div>
 
     <div class="center1_3">
-      <n-card hoverable @click="clickMethod('sevenDays')">
-        <h2>近一周</h2>
+      <n-card class="edit_btn2" hoverable @click="clickMethod('sevenDays')">
+        <h2 class="edit_btn">近一周</h2>
       </n-card>
     </div>
 
     <div class="center1_4">
-      <n-card hoverable @click="clickMethod('thirtyDays')">
-        <h2>近一个月</h2>
+      <n-card class="edit_btn2" hoverable @click="clickMethod('thirtyDays')">
+        <h2 class="edit_btn">近一个月</h2>
       </n-card>
     </div>
     <div class="center2">
@@ -90,11 +75,7 @@ const gaugeDataPre = ref({});
 const gaugeDataCur = ref({});
 const mapData = ref([]);
 const center = [117.280338325, 31.84974485];
-const pieData = [
-  { value: 1048, name: "拥堵" },
-  { value: 735, name: "平衡" },
-  { value: 580, name: "空闲" },
-];
+
 const randArray = (len, min, max) => {
   return Array.from({ length: len }, (v) => Math.random() * (max - min) + min);
 };
@@ -123,19 +104,19 @@ const refreshLine = () => {
   lineData1.value = {
     categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     value: lineTotal["data1"][click].slice(),
-    title: "拥堵指数图",
+    title: "拥堵指数",
     title2: "拥堵指数",
   };
   lineData2.value = {
     categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     value: lineTotal["data2"][click].slice(),
-    title: "平均车速图",
+    title: "平均车速",
     title2: "车速",
   };
   lineData3.value = {
     categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     value: lineTotal["data3"][click].slice(),
-    title: "BCI",
+    title: "热门拥堵时段",
     title2: "value",
   };
   for (let item of fake) {
@@ -246,7 +227,7 @@ onMounted(async () => {
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header1 header1 header2 header2 header3 header3 header4 header4"
+    "header1 header1 header1 header1 header1 header1 header1 header1"
     "left left center1_1 center1_2 center1_3 center1_4 center1_5 center1_6"
     "left left center2 center2 center2 right1 right1 right1"
     "left left center2 center2 center2 right1 right1 right1"
@@ -255,34 +236,23 @@ onMounted(async () => {
     "left left center3 center3 center3 right2 right2 right2";
 }
 .edit_btn {
-  min-height: 100px;
-  font-size: 30px;
-  min-width: 150px;
-  background: aquamarine 80%;
-  border: #e6a23c;
+  font-size: 20px;
 }
 .edit_btn2 {
-  min-height: 70px;
-  font-size: 30px;
-  min-width: 90px;
-  background: burlywood 80%;
-  border: #e6a23c;
+  min-height: 75%;
+    height: 75%;
+  font-size: 800px;
+
+  min-width: 70%;
+  width: 70%;
+  background: rgb(16, 78, 193) 80%;
+  
 }
+
 .header1 {
   grid-area: header1;
 }
 
-.header2 {
-  grid-area: header2;
-}
-
-.header3 {
-  grid-area: header3;
-}
-
-.header4 {
-  grid-area: header4;
-}
 
 .left {
   grid-area: left;

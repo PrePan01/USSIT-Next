@@ -1,15 +1,6 @@
 <template>
   <div class="container">
-    <div class="header-3">
-      <n-card hoverable>
-        <router-link to="/flow_2_3">路口流量感知</router-link>
-      </n-card>
-    </div>
-    <div class="header-4">
-      <n-card hoverable>
-        <router-link to="/flow_2_4">拥塞时空分析</router-link>
-      </n-card>
-    </div>
+    
     <div class="center">
       <Map
         v-if="mapData.length"
@@ -21,16 +12,14 @@
         @reportData="changeSelect"
       ></Map>
     </div>
-    <div class="header-1">
-      <n-card hoverable>
-        <router-link to="/flow_2">交通路况感知</router-link>
+
+       <div class="header-1">
+      <n-card>
+        <h1>面向智慧出行的城市群智感知验证系统</h1>
       </n-card>
     </div>
-    <div class="header-2">
-      <n-card hoverable>
-        <router-link to="/flow_2_1">实时路况感知</router-link>
-      </n-card>
-    </div>
+    
+  
   </div>
 </template>
 
@@ -832,7 +821,7 @@ mapData.value = [
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header-1 header-1 header-2 header-2 header-3 header-3 header-4 header-4"
+    "header-1 header-1 header-1 header-1 header-1 header-1 header-1 header-1"
     "center center center center center center center center"
     "center center center center center center center center"
     "center center center center center center center center"
@@ -840,19 +829,6 @@ mapData.value = [
     "center center center center center center center center";
 }
 
-.header-3 {
-  grid-area: header-3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-4 {
-  grid-area: header-4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .center {
   grid-area: center;
@@ -865,12 +841,7 @@ mapData.value = [
   justify-content: center;
 }
 
-.header-2 {
-  grid-area: header-2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 n-button {
   height: 100% !important;

@@ -1,9 +1,10 @@
 <template>
 <div class="container">
-  <div class="left1"> <Table :data="mapData" :title1="'路段状态'"></Table></div>
-  <div class="button1"><n-button type="primary" size="large">按速度排序</n-button></div>
-  <div class="button2"><n-button type="primary" size="large">按舒适度优先排序</n-button></div>
-  <div class="picture1"> <Line v-bind="lineData1"></Line></div>
+  <div class="picture1"> <Table :data="mapData" :title1="'客流量'"></Table></div>
+  <div class="button1"><n-button type="primary" block size="large">预测舒适度排行</n-button></div>
+  <div class="left1">     <n-card>
+        <h1 class="edit_btn2">城市群智感知计算系统</h1>
+      </n-card></div>
   <div class="right"><Map
         v-if="mapData.length"
         title="车流量"
@@ -822,17 +823,30 @@ lineData1.value = {
     "left1 left1 left1 left1 right right right right right right right ."
     "left1 left1 left1 left1 right right right right right right right ."
     "left1 left1 left1 left1 right right right right right right right ."
-    "button1 button1 button2 button2 right right right right right right right ."
+    "button1 button1 button1 button1 right right right right right right right ."
     "picture1 picture1 picture1 picture1 right right right right right right right ."
     "picture1 picture1 picture1 picture1 right right right right right right right ."
     "picture1 picture1 picture1 picture1 right right right right right right right .";
 }
+.edit_btn2 {
+  min-height: 75%;
+    height: 75%;
+  font-size:28px;
+align-items: center;
+justify-content: center;
+margin-top: 35px;
+margin-left: 35px;
+color: wheat;
+white-space: normal;
+  min-width: 70%;
+  width: 70%;
 
+  
+}
 .left1 { grid-area: left1; }
 
 .button1 { grid-area: button1; }
 
-.button2 { grid-area: button2; }
 
 .picture1 { grid-area: picture1; }
 

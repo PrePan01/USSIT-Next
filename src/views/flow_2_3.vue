@@ -1,24 +1,9 @@
 <template>
   <div class="container">
     <div class="header-1">
-      <n-card hoverable>
-        <router-link to="/flow_2">交通路况感知</router-link></n-card
-      >
-    </div>
-    <div class="header-2">
-      <n-card hoverable>
-        <router-link to="/flow_2_1">实时路况感知</router-link>
+      <n-card>
+        <h1>面向智慧出行的城市群智感知验证系统</h1>
       </n-card>
-    </div>
-    <div class="header-3">
-      <n-card class="active">
-        <router-link to="/flow_2_3">路口流量感知</router-link></n-card
-      >
-    </div>
-    <div class="header-4">
-      <n-card hoverable>
-        <router-link to="/flow_2_4">拥塞时空分析</router-link></n-card
-      >
     </div>
     <div class="left-1">
       <Pie :data="pieData" title="当前流量情况"></Pie>
@@ -74,9 +59,9 @@ const gaugeDataCur = ref({});
 const mapData = ref([]);
 const center = [117.12932143951308, 36.19724062736381];
 const pieData = [
-  { value: 160, name: "拥堵" },
-  { value: 483, name: "平衡" },
-  { value: 961, name: "空闲" },
+  { value: 160, name: "拥堵",itemStyle:{color:'#ee0e3b'} },
+  { value: 483, name: "平衡",itemStyle:{color:'#f9d00b'} },
+  { value: 961, name: "空闲" ,itemStyle:{color:'#06c674'}},
 ];
 lineData.value = {
   categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -98,7 +83,7 @@ mapData.value = fake;
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header-1 header-1 header-2 header-2 header-3 header-3 header-4 header-4"
+    "header-1 header-1 header-1 header-1 header-1 header-1 header-1 header-1"
     "left-1 left-1 center center center center right-1 right-1"
     "left-1 left-1 center center center center right-1 right-1"
     "left-2 left-2 center center center center right-1 right-1"
@@ -117,17 +102,6 @@ mapData.value = fake;
   grid-area: header-1;
 }
 
-.header-2 {
-  grid-area: header-2;
-}
-
-.header-3 {
-  grid-area: header-3;
-}
-
-.header-4 {
-  grid-area: header-4;
-}
 
 .left-1 {
   grid-area: left-1;

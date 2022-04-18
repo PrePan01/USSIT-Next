@@ -58,7 +58,11 @@ const mapData = ref([])
 const idData = ref({})
 const zoomData = ref({})
 const lineData = ref({})
-const pieData = ref([])
+const pieData = [
+  { value: 1048, name: "拥堵",itemStyle:{color:'#ee0e3b'} },
+  { value: 735, name: "繁忙" ,itemStyle:{color:'#f9d00b'}},
+  { value: 580, name: "畅通",itemStyle:{color:'#06c674'}},
+];
 const gaugeDataPre = ref({})
 const gaugeDataCur = ref({})
 const TotalData = { mapData, idData, zoomData, lineData, pieData, gaugeDataPre, gaugeDataCur, clickData }
@@ -70,6 +74,7 @@ const handleClose = () => clickData.value = {}
 onMounted(() => {
   utils.requestApi(TotalData, base, city, 1644659576, 10000)
 })
+
 </script>
 
 <style>
