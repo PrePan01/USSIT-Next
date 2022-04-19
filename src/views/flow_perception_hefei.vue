@@ -12,6 +12,7 @@
         title="车流量"
         :geoCoordMap="hefei"
         geo="hefei"
+        :roadmap="roadmap"
         :data="mapData"
         :center="center"
         :zoom="100"
@@ -49,6 +50,7 @@ import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
 import hefei from '/src/assets/he_fei.json'
+import roadmap from '/src/assets/hefei_roadnet_v2.json'
 import { onMounted, ref } from "vue"
 import { NCard } from 'naive-ui'
 echarts.registerTheme('walden', walden)

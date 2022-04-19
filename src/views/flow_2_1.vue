@@ -15,6 +15,7 @@
         :data="mapData"
         :center="center"
         :zoom="2"
+        :roadmap="roadmap"
         @reportData="changeSelect"
       ></Map>
     </div>
@@ -41,6 +42,7 @@ import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
 import taian from "/src/assets/tai_an.json";
 import fake from '/src/assets/tai_an_fake.json'
+import roadmap from '/src/assets/taian_roadnet_v3.json'
 import { onMounted, ref } from "vue";
 import { NButton, NSpace, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);

@@ -18,6 +18,7 @@ const props = defineProps({
   geo: String,
   center: Array,
   zoom: Number,
+  roadmap: Array
 });
 const map = ref(null);
 const data = props.data || [];
@@ -248,6 +249,20 @@ const option = {
       },
       zlevel: 100,
     },
+    {
+      type: "lines",
+      coordinateSystem: "bmap",
+      polyline: true,
+      data: props.roadmap,
+      silent: true,
+      lineStyle: {
+          color: "#f7c5a0",
+          opacity: 0.5,
+          width: 2,
+        },
+      progressiveThreshold: 500,
+      progressive: 200,
+    },
   ],
 };
 
@@ -329,6 +344,20 @@ onUpdated(() => {
           scale: true,
         },
         zlevel: 100,
+      },
+      {
+        type: "lines",
+        coordinateSystem: "bmap",
+        polyline: true,
+        data: props.roadmap,
+        silent: true,
+        lineStyle: {
+          color: "#f7c5a0",
+          opacity: 0.5,
+          width: 2,
+        },
+        progressiveThreshold: 500,
+        progressive: 200,
       },
     ],
   });
