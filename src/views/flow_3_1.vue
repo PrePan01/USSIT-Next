@@ -12,7 +12,7 @@
       <Line v-bind="lineData1"></Line>
     </div>
     <div class="left3">
-      <Line v-bind="lineData2"></Line>
+      <Table :data="mapData1" :title1="'预测拥堵占比'"></Table>
     </div>
     <div class="center1_1">
       <n-card hoverable title="平均车流量">
@@ -46,7 +46,7 @@
  
     </div>
     <div class="right">
-      <Table :data="mapData" :title1="'过车量'"></Table>
+      <Table :data="mapData" :title1="'预测车流量'"></Table>
     </div>
   </div>
 </template>
@@ -81,6 +81,8 @@ const lineData4 = ref({});
 const gaugeDataPre = ref({});
 const gaugeDataCur = ref({});
 const mapData = ref([]);
+const mapData1 = ref([]);
+
 const center = [117.12932143951308,36.19724062736381];
 const pieData = [
   { value: 1048, name: "拥堵",itemStyle:{color:'#ee0e3b'} },
@@ -91,11 +93,29 @@ for (let item of fake) {
   item.value = Math.round(Math.random() * (500 - 30 + 1) + 30);
 }
 mapData.value = fake;
+mapData1.value=[
+  {
+    name: 74,
+    value: 32,
+  },
+  {
+    name: 119,
+    value: 32,
+  },
+  {
+    name: 91,
+    value: 31,
+  },
+]
+
+
 lineData1.value = {
-  categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  value: [1.85, 1.63, 1.33, 1.25, 1.78, 1.11, 1.15],
+  categories: ["12:00","12:30","13:00",],
+  value: [1.85, 1.63, ],
+    value2: [, 1.63, 1.72],
   title: "预测拥堵趋势",
-  title2: "拥堵指数",
+  title2: "实际拥堵指数",
+     title3:"预测值",
 };
 lineData2.value = {
   categories: ["泰山区青年路07号", "泰山区望岳东路", "岱岳区高铁东路", "泰山区岱宗大街273号", "泰山区东湖路1"],

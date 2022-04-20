@@ -822,8 +822,8 @@ lineData1.value = {
   grid-template-areas:
     "left1 left1 left1 left1 right right right right right right right ."
     "left1 left1 left1 left1 right right right right right right right ."
-    "left1 left1 left1 left1 right right right right right right right ."
     "button1 button1 button1 button1 right right right right right right right ."
+    "picture1 picture1 picture1 picture1 right right right right right right right ."
     "picture1 picture1 picture1 picture1 right right right right right right right ."
     "picture1 picture1 picture1 picture1 right right right right right right right ."
     "picture1 picture1 picture1 picture1 right right right right right right right .";
@@ -836,7 +836,7 @@ align-items: center;
 justify-content: center;
 margin-top: 35px;
 margin-left: 35px;
-color: wheat;
+color: white;
 white-space: normal;
   min-width: 70%;
   width: 70%;
