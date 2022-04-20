@@ -17,9 +17,9 @@
         <n-menu :options="menuOptions" />
       </n-layout-sider>
       <n-layout-content content-style="padding: 24px;">
-        <keep-alive>
+        <KeepAlive>
           <router-view> </router-view>
-        </keep-alive>
+        </KeepAlive>
       </n-layout-content>
     </n-layout>
   </n-config-provider>
@@ -187,24 +187,24 @@ const menuOptions = [
       h(
         "a",
         {
-          href: "/#/flow_4_1",
+          href: "/#/flow_4_2",
           rel: "noopenner noreferrer",
         },
         "交通调控引导"
       ),
-    key: "/flow_4_1",
+    key: "/flow_4_2_main",
     children: [
       {
         label: () =>
           h(
             "a",
             {
-              href: "/#/flow_4_1",
+              href: "/#/flow_4_2",
               rel: "noopenner noreferrer",
             },
             "智慧停车引导"
           ),
-        key: "/flow_4_1",
+        key: "/flow_4_2",
       },
     ],
   },
@@ -213,12 +213,12 @@ const menuOptions = [
       h(
         "a",
         {
-          href: "/#/flow_4_2",
+          href: "/#/flow_4_1",
           rel: "noopenner noreferrer",
         },
         "基础设施建设"
       ),
-    key: "hear-the-wind-sing",
+    key: "flow_4_1_main",
     children: [
       {
         label: () =>
