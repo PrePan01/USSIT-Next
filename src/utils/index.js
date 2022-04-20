@@ -226,10 +226,10 @@ export default {
       value: [],
       value2: [],
       yTitle: '',
-      yTitle2: '车流量',
+      yTitle2: '车位占用',
       title: ''
     }
-    ret.title = `Road ${id} 历史停车信息`
+    ret.title = `历史停车信息`
     for (let p of park_show) {
       ret.categories.push(p.park_timestamp)
       ret.value.push(p.park_congestion)
