@@ -43,10 +43,10 @@
     </div>
     <div class="center3">
       <Line v-bind="lineData3"></Line>
- 
+
     </div>
     <div class="right">
-      <Table :data="mapData" :title1="'预测车流量'"></Table>
+      <Table :data="flow31_right" :title1="'预测车流量'"></Table>
     </div>
   </div>
 </template>
@@ -68,6 +68,7 @@ import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
 import taian from "/src/assets/tai_an.json";
 import fake from "/src/assets/tai_an_fake.json"
+import flow31_right from '/src/assets/flow31_right.json'
 import { onMounted, ref } from "vue";
 import { NButton, NSpace, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);
@@ -125,7 +126,7 @@ lineData2.value = {
 };
 lineData3.value = {
   categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  value: [80, 92, 91, 34, , , ], 
+  value: [80, 92, 91, 34, , , ],
   value2: [, , , 34, 290, 130, 132],
   title: "卡口车流",
   title2: "卡口真实值",

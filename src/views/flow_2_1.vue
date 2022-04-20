@@ -9,13 +9,13 @@
       </n-card>
     </div>
     <div class="left1"><Pie :data="pieData" title="当前流量情况"></Pie></div>
-    <div class="left2"><Table :data="mapData" :title1="'过车量'"></Table></div>
+    <div class="left2"><Table :data="flow21_leftbottom" title1="实际" title2="预测"></Table></div>
     <div class="left3"><n-card><h1>路网拥堵态势</h1></n-card></div>
-   
+
     <div class="left4"><n-card class="edtn1">
       <h1 class="edtn_2">
         路网拥堵里程总占比
-          <h2 class="edtn_3">2.9%</h2> 
+          <h2 class="edtn_3">2.9%</h2>
       </h1></n-card></div>
 
         <div class="left5"><n-card class="edtn2">
@@ -35,7 +35,7 @@
       ></Map>
     </div>
     <div class="right">
-      <Table :data="mapData" :title1="'拥堵指数'"></Table>
+      <Table :data="flow21_right" :title1="'拥堵指数'"></Table>
     </div>
   </div>
 </template>
@@ -58,6 +58,8 @@ import hefei from "/src/assets/he_fei.json";
 import taian from "/src/assets/tai_an.json";
 import fake from "/src/assets/tai_an_fake.json";
 import roadmap from "/src/assets/taian_roadnet_v3.json";
+import flow21_leftbottom from '/src/assets/flow21_leftbottom.json'
+import flow21_right from '/src/assets/flow21_right.json'
 import { onMounted, ref } from "vue";
 import { NButton, NSpace, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);
@@ -129,7 +131,7 @@ onMounted(() => {
 .edtn_3 {
 
   font-size: 20px;
- 
+
   color: aquamarine;
   margin-top: 10px;
   margin-left: 80px;
@@ -144,7 +146,7 @@ onMounted(() => {
 .edtn_5 {
 
   font-size: 20px;
- 
+
   color: yellow;
   margin-top: 10px;
   margin-left: 20px;

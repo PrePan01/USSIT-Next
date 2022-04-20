@@ -14,61 +14,81 @@
 <script setup>
 import { processSlotOutlet } from "@vue/compiler-core";
 import { NCard, NDataTable } from "naive-ui";
-import { onMounted, ref, h, onUpdated } from 'vue'
-import he_feiMap from '/src/assets/he_feiMap.json'
-import tai_anMap from '/src/assets/tai_anMap.json'
+import { onMounted, ref, h, onUpdated } from "vue";
+import he_feiMap from "/src/assets/he_feiMap.json";
+import tai_anMap from "/src/assets/tai_anMap.json";
 import nan_shanMap from "/src/assets/nan_shanMap.json";
 
-const emit = defineEmits(['reportData'])
-const props = defineProps(
-  {
-    data: Array,
-    title1: String,
-    geo: String
-  }
-)
-let whichMap
-if (props.geo == 'nanshan') {
-  whichMap = nan_shanMap
+const emit = defineEmits(["reportData"]);
+const props = defineProps({
+  data: Array,
+  title1: String,
+  title2: String,
+  geo: String,
+});
+let whichMap;
+if (props.geo == "nanshan") {
+  whichMap = nan_shanMap;
 } else {
-  whichMap = tai_anMap
+  whichMap = tai_anMap;
 }
-const data = ref([])
+const data = ref([]);
 onUpdated(() => {
-  data.value = props.data
-})
+  data.value = props.data;
+});
 onMounted(() => {
-  data.value = props.data
-})
+  data.value = props.data;
+});
 const rowProps = (row) => {
   return {
-    style: 'cursor: pointer;',
+    style: "cursor: pointer;",
     onClick: () => {
-      reportData(row)
-    }
-  }
-}
-const columns = [
+      reportData(row);
+    },
+  };
+};
+let columns = [
   {
     title: "路名",
     key: "name",
     render(row, index) {
-      return h('span', {}, [row.name + whichMap[row.name]?.name || '无名路'] )
+      return h("span", {}, [whichMap[row.name]?.name || row.name]);
     },
-    sorter: (row1, row2) => row1.name - row2.name
+    sorter: (row1, row2) => row1.name - row2.name,
   },
   {
     title: props.title1,
     key: "value",
-    sorter: (row1, row2) => row1.value - row2.value
-  }
-]
+    sorter: (row1, row2) => row1.value - row2.value,
+  },
+];
 
-const reportData = (data) => {
-  emit('reportData', data)
+if (props.title2) {
+  columns = [
+    {
+      title: "路名",
+      key: "name",
+      render(row, index) {
+        return h("span", {}, [whichMap[row.name]?.name || row.name]);
+      },
+      sorter: (row1, row2) => row1.name - row2.name,
+    },
+    {
+      title: props.title1,
+      key: "value1",
+      sorter: (row1, row2) => row1.value1 - row2.value1,
+    },
+    {
+      title: props.title2,
+      key: "value2",
+      sorter: (row1, row2) => row1.value2 - row2.value2,
+    },
+  ];
 }
 
-
+const reportData = (data) => {
+  emit("reportData", data);
+};
 </script>
 
 <style scoped>
