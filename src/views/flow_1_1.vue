@@ -1,5 +1,12 @@
 <template>
-  <div class="container">
+  <div v-if="loading" class="loading">
+    <vue-loaders
+      name="ball-spin-fade-loader"
+      color="#6be6c1"
+      scale="2"
+    ></vue-loaders>
+  </div>
+  <div class="container" v-else>
     <div class="header-1">
       <n-card>
         <h1>面向智慧出行的城市群智感知验证系统</h1>
@@ -82,12 +89,11 @@ const gaugeDataCur = ref({});
 const mapData = ref([]);
 const mapData2 = ref([]);
 const mapData3 = ref([]);
-const center = [    117.22643291220883,
-    36.13816840720741];
+const center = [117.22643291220883, 36.13816840720741];
 const pieData = [
-  { value: 1048, name: "拥堵",itemStyle:{color:'#ee0e3b'} },
-  { value: 735, name: "繁忙" ,itemStyle:{color:'#f9d00b'}},
-  { value: 580, name: "畅通",itemStyle:{color:'#06c674'}},
+  { value: 1048, name: "拥堵", itemStyle: { color: "#ee0e3b" } },
+  { value: 735, name: "繁忙", itemStyle: { color: "#f9d00b" } },
+  { value: 580, name: "畅通", itemStyle: { color: "#06c674" } },
 ];
 const pieData2 = [
   { value: 80, name: "东西" },
@@ -102,6 +108,8 @@ const pieData3 = [
   { value: 0.28, name: "物理记录" },
   { value: 0.38, name: "实地调查" },
 ];
+
+const loading = ref(true);
 mapData.value = [
   {
     name: 74,
@@ -1008,6 +1016,12 @@ lineData1.value = {
   title: "交通流量趋势图",
   title2: "交通流量趋势",
 };
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
+    console.log(loading.value);
+  }, 2000);
+});
 </script>
 
 <style>

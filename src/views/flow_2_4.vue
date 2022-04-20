@@ -1,6 +1,13 @@
 <template>
-  <div class="container">
-     <div class="header1">
+  <div v-if="loading" class="loading">
+    <vue-loaders
+      name="ball-spin-fade-loader"
+      color="#6be6c1"
+      scale="2"
+    ></vue-loaders>
+  </div>
+  <div class="container" v-else>
+    <div class="header1">
       <n-card>
         <h1>面向智慧出行的城市群智感知验证系统</h1>
       </n-card>
@@ -9,7 +16,7 @@
       <Table :data="mapData" title1="拥堵指数"></Table>
     </div>
     <div class="center1_1">
-      <n-card  class="edit_btn2"  hoverable @click="clickMethod('today')">
+      <n-card class="edit_btn2" hoverable @click="clickMethod('today')">
         <h2 class="edit_btn">今天</h2>
       </n-card>
     </div>
@@ -208,6 +215,8 @@ const clickMethod = (val) => {
   click = val;
   refreshLine();
 };
+
+const loading = ref(true);
 onMounted(async () => {
   // let { data } = await utils.requestData("/mapData2_3");
   // mapData.value = [...data.small, ...data.medium, ...data.large];
@@ -216,6 +225,10 @@ onMounted(async () => {
     item.value = Math.random() * (2 - 1 + 1) + 1;
   }
   mapData.value = fake;
+  setTimeout(() => {
+    loading.value = false;
+    console.log(loading.value);
+  }, 2000);
 });
 </script>
 
@@ -240,19 +253,17 @@ onMounted(async () => {
 }
 .edit_btn2 {
   min-height: 75%;
-    height: 75%;
+  height: 75%;
   font-size: 800px;
 
   min-width: 70%;
   width: 70%;
   background: rgb(16, 78, 193) 80%;
-  
 }
 
 .header1 {
   grid-area: header1;
 }
-
 
 .left {
   grid-area: left;

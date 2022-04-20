@@ -1,6 +1,9 @@
 <template>
-  <div class="container">
-     <div class="header1">
+  <div v-if="loading" class="loading">
+    <vue-loaders name="ball-spin-fade-loader" color="#6be6c1" scale="2"></vue-loaders>
+  </div>
+  <div class="container" v-else>
+    <div class="header1">
       <n-card>
         <h1>面向智慧出行的城市群智感知验证系统</h1>
       </n-card>
@@ -41,8 +44,8 @@ import utils from "/src/utils/index.js";
 import walden from "/src/assets/walden.json";
 import hefei from "/src/assets/he_fei.json";
 import taian from "/src/assets/tai_an.json";
-import fake from '/src/assets/tai_an_fake.json'
-import roadmap from '/src/assets/taian_roadnet_v3.json'
+import fake from "/src/assets/tai_an_fake.json";
+import roadmap from "/src/assets/taian_roadnet_v3.json";
 import { onMounted, ref } from "vue";
 import { NButton, NSpace, NCard } from "naive-ui";
 echarts.registerTheme("walden", walden);
@@ -52,13 +55,20 @@ const zoomData = ref({});
 const gaugeDataPre = ref({});
 const gaugeDataCur = ref({});
 const mapData = ref([]);
-const center = [117.12932143951308,36.19724062736381];
+const center = [117.12932143951308, 36.19724062736381];
 const pieData = [
-  { value: 104, name: "拥堵",itemStyle:{color:'#ee0e3b'} },
-  { value: 325, name: "繁忙", itemStyle:{color:'#f9d00b'} },
-  { value: 999, name: "畅通" ,itemStyle:{color:'#06c674'}},
+  { value: 104, name: "拥堵", itemStyle: { color: "#ee0e3b" } },
+  { value: 325, name: "繁忙", itemStyle: { color: "#f9d00b" } },
+  { value: 999, name: "畅通", itemStyle: { color: "#06c674" } },
 ];
-mapData.value = fake
+const loading = ref(true);
+mapData.value = fake;
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
+    console.log(loading.value);
+  }, 2000);
+});
 </script>
 
 <style>
@@ -88,7 +98,6 @@ mapData.value = fake
   grid-area: header1;
 }
 
-
 .left1 {
   grid-area: left1;
 }
@@ -104,6 +113,5 @@ mapData.value = fake
 .right {
   grid-area: right;
 }
-
 
 </style>

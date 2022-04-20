@@ -17,7 +17,9 @@
         <n-menu :options="menuOptions" />
       </n-layout-sider>
       <n-layout-content content-style="padding: 24px;">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view> </router-view>
+        </keep-alive>
       </n-layout-content>
     </n-layout>
   </n-config-provider>
@@ -60,13 +62,13 @@ const menuOptions = [
     key: "/flow_1_1",
   },
   {
-    key: 'divider-1',
-    type: 'divider',
+    key: "divider-1",
+    type: "divider",
     props: {
       style: {
-        marginLeft: '32px'
-      }
-    }
+        marginLeft: "32px",
+      },
+    },
   },
   {
     label: () =>
@@ -178,7 +180,7 @@ const menuOptions = [
           ),
         key: "/flow_3_5",
       },
-    ]
+    ],
   },
   {
     label: () =>
@@ -204,19 +206,33 @@ const menuOptions = [
           ),
         key: "/flow_4_1",
       },
-    ]
+    ],
   },
   {
     label: () =>
       h(
         "a",
         {
-          href: "/#/park_nanshan",
+          href: "/#/flow_4_2",
           rel: "noopenner noreferrer",
         },
         "基础设施建设"
       ),
     key: "hear-the-wind-sing",
+    children: [
+      {
+        label: () =>
+          h(
+            "a",
+            {
+              href: "/#/flow_4_1",
+              rel: "noopenner noreferrer",
+            },
+            "充电桩智慧部署"
+          ),
+        key: "/flow_4_1",
+      },
+    ],
   },
 ];
 </script>

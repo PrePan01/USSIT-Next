@@ -87,6 +87,11 @@ const routes = [
   {
     path: "/flow_4_1",
     name: "flow_4_1",
+    component: flow_4_1
+  },
+  {
+    path: "/flow_4_2",
+    name: "flow_4_2",
     component: park_nanshan
   },
 ]

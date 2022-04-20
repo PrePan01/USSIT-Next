@@ -1,41 +1,6 @@
 <template>
-<div class="container">
-  <div class="left1">    
-     <Line v-bind="lineData1"></Line>
-     </div>
-  <div class="left2">     
-    <Line v-bind="lineData2"></Line>
-    </div>
-  <div class="left3">    
-     <Line v-bind="lineData3"></Line>
-  </div>
-  <div class="center2"> 
-
-  </div>
-  <div class="center1">    
-      <n-space>
-        <div class="edit_btn">深圳市南山区泊车数据可视化</div>
-      </n-space>
-      </div>
-  <div class="center3"> 
-    <Map
-        v-if="mapData.length"
-        title="车流量"
-        :geoCoordMap="hefei"
-        :data="mapData"
-        :center="center"
-        :zoom="2"
-        @reportData="changeSelect"
-      ></Map>
-      </div>
-  <div class="center4">
-     <Line v-bind="lineData4"></Line>
-     </div>
-  <div class="right1">
-    <Table :data="mapData" :title1="'过车量'"></Table>
-    </div>
-  <div class="right2">  <Pie :data="pieData" title="当前流量方向"></Pie></div>
-</div>
+  <iframe src="http://charge.lawted.tech" width="100%" height="100%">
+  </iframe>
 </template>
 
 <script setup>
@@ -916,4 +881,8 @@ white-space: normal;
 
 .right2 { grid-area: right2;  background-color: aqua;}
 
+.n-layout-scroll-container {
+  padding: 0px !important;
+  overflow: hidden;
+}
 </style>

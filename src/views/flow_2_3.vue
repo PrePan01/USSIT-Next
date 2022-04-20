@@ -1,5 +1,8 @@
 <template>
-  <div class="container">
+  <div v-if="loading" class="loading">
+    <vue-loaders name="ball-spin-fade-loader" color="#6be6c1" scale="2"></vue-loaders>
+  </div>
+  <div class="container" v-else>
     <div class="header-1">
       <n-card>
         <h1>面向智慧出行的城市群智感知验证系统</h1>
@@ -63,6 +66,8 @@ const pieData = [
   { value: 483, name: "平衡",itemStyle:{color:'#f9d00b'} },
   { value: 961, name: "空闲" ,itemStyle:{color:'#06c674'}},
 ];
+
+const loading = ref(true);
 lineData.value = {
   categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
   value: [820, 932, 901, 934, 1290, 1330, 1320],
@@ -73,6 +78,12 @@ for (let item of fake) {
   item.value = Math.floor(Math.random() * (1000 - 10 + 1) + 10)
 }
 mapData.value = fake;
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
+    console.log(loading.value);
+  }, 2000);
+});
 </script>
 
 <style>
