@@ -10,6 +10,18 @@
     </div>
     <div class="left1"><Pie :data="pieData" title="当前流量情况"></Pie></div>
     <div class="left2"><Table :data="mapData" :title1="'过车量'"></Table></div>
+    <div class="left3"><n-card><h1>路网拥堵态势</h1></n-card></div>
+   
+    <div class="left4"><n-card class="edtn1">
+      <h1 class="edtn_2">
+        路网拥堵里程总占比
+          <h2 class="edtn_3">2.9%</h2> 
+      </h1></n-card></div>
+
+        <div class="left5"><n-card class="edtn2">
+          <h1 class="edtn_4">路网平均车速
+            <h2 class="edtn_5">29.6km/h</h2>
+            </h1></n-card></div>
     <div class="center">
       <Map
         v-if="mapData.length"
@@ -74,18 +86,21 @@ onMounted(() => {
 <style>
 .container {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1.1fr 0.9fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1.1fr 0.9fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
-    "header1 header1 header1 header1 header1 header1 header1 header1"
-    "left1 left1 center center center center right right"
-    "left1 left1 center center center center right right"
-    "left2 left2 center center center center right right"
-    "left2 left2 center center center center right right"
-    "left2 left2 center center center center right right"
-    "left2 left2 center center center center right right";
+    "header1 header1 header1 header1 header1 header1 header1 header1 header1 header1 header1"
+    "left1 left1 left1 left1 center center center center right right right"
+    "left1 left1 left1 left1 center center center center right right right"
+    "left1 left1 left1 left1 center center center center right right right"
+    "left3 left3 left3 left3 center center center center right right right"
+    "left4 left4 left5 left5 center center center center right right right"
+    "left2 left2 left2 left2 center center center center right right right"
+    "left2 left2 left2 left2 center center center center right right right"
+    "left2 left2 left2 left2 center center center center right right right"
+    "left2 left2 left2 left2 center center center center right right right";
 }
 .edit_btn {
   min-height: 100px;
@@ -93,6 +108,46 @@ onMounted(() => {
   min-width: 150px;
   background: burlywood 80%;
   border: #e6a23c;
+}
+.edtn1 {
+
+  background: rgb(3, 67, 3);
+
+}
+.edtn2 {
+
+  background: rgb(158, 117, 6);
+
+}
+.edtn_2 {
+  min-height: 80px;
+  font-size: 23px;
+  min-width: 100px;
+  color: aquamarine;
+  margin-top: 20px;
+}
+.edtn_3 {
+
+  font-size: 20px;
+ 
+  color: aquamarine;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+.edtn_4 {
+  min-height: 80px;
+  font-size: 23px;
+  min-width: 100px;
+  color: yellow;
+  margin-top: 20px;
+}
+.edtn_5 {
+
+  font-size: 20px;
+ 
+  color: yellow;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 .header1 {
   grid-area: header1;
@@ -104,6 +159,17 @@ onMounted(() => {
 
 .left2 {
   grid-area: left2;
+}
+
+.left4 {
+  grid-area: left4;
+}
+
+.left5 {
+  grid-area: left5;
+}
+.left3 {
+  grid-area: left3;
 }
 
 .center {

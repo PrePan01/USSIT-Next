@@ -25,8 +25,13 @@
         @reportData="changeSelect"
       ></Map>
     </div>
+     <div class="right-0">
+      <n-card>卡口预测</n-card>
+     
+    </div>
     <div class="right-1">
       <Table :data="mapData" :title1="'过车量'"></Table>
+     
     </div>
     <div class="right-2">
       <Line v-bind="lineData"></Line>
@@ -69,9 +74,9 @@ const pieData = [
 
 const loading = ref(true);
 lineData.value = {
-  categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-  value: [820, 932, 901, 934, 1290, 1330, 1320],
-  title: "重构准确率",
+  categories: ["一", "二", "三", "四", "五", "六", "日"],
+  value: [0.8, 0.88, 0.76, 0.7567, 0.8172, 0.69, 0.8390],
+  title: "预测准确率",
   title2: "准确率",
 };
 for (let item of fake) {
@@ -95,7 +100,7 @@ onMounted(() => {
   grid-auto-flow: row;
   grid-template-areas:
     "header-1 header-1 header-1 header-1 header-1 header-1 header-1 header-1"
-    "left-1 left-1 center center center center right-1 right-1"
+    "left-1 left-1 center center center center right-0 right-0"
     "left-1 left-1 center center center center right-1 right-1"
     "left-2 left-2 center center center center right-1 right-1"
     "left-2 left-2 center center center center right-2 right-2"
@@ -124,6 +129,9 @@ onMounted(() => {
 
 .center {
   grid-area: center;
+}
+.right-0 {
+  grid-area: right-0;
 }
 
 .right-1 {
