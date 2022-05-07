@@ -1,6 +1,71 @@
 <template>
-  <iframe src="http://charge.lawted.tech" width="100%" height="100%">
-  </iframe>
+  <!--<iframe src="http://charge.lawted.tech" width="100%" height="100%">
+  </iframe>-->
+
+  <!--左侧容器-->
+  <div class="leftContainer">
+    <!--左上-->
+    <div class="charger-info">
+      <div class="charger-info-item">
+        <span class="charger-info-title">当前充电桩ID</span><span class="charger-info-number" style="color: rgb(62,142,255)">3</span>
+      </div>
+      <div class="charger-info-item">
+        <span class="charger-info-title">快充桩数</span><span class="charger-info-number"
+                                                          style="color: rgb(39,174,96)">16</span>
+      </div>
+      <div class="charger-info-item">
+        <span class="charger-info-title">慢充桩数</span><span class="charger-info-number"
+                                                          style="color: rgb(255,66,66)">12</span>
+      </div>
+    </div>
+    <!--关键指标-->
+    <div>
+      <div class="result-info-title" style="margin-top: 30px;">
+        结果关键指标
+      </div>
+      <div class="result-key-info">
+        <div class="result-key-info-detail">
+          <div>日间营收</div>
+          <span>215261</span><span>元</span>
+        </div>
+        <img src="../assets/icon-income.png" alt="">
+      </div>
+      <div class="result-key-info">
+        <div class="result-key-info-detail">
+          <div>慢桩利用率</div>
+          <span>32.79</span><span>%</span>
+        </div>
+        <img src="../assets/icon-slowCharge.png" alt="">
+      </div>
+      <div class="result-key-info">
+        <div class="result-key-info-detail">
+          <div>快桩利用率</div>
+          <span>31.06</span><span>%</span>
+        </div>
+        <img src="../assets/icon-fastCharge.png" alt="">
+      </div>
+      <div class="result-key-info">
+        <div class="result-key-info-detail">
+          <div>回报周期</div>
+          <span>1.15</span><span>年</span>
+        </div>
+        <img src="../assets/icon-cycle.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!--右侧容器-->
+  <div class="rightContainer">
+    <Map
+        v-if="mapData.length"
+        title="车流量"
+        :geoCoordMap="hefei"
+        :data="mapData"
+        :center="center"
+        :zoom="2"
+        @reportData="changeSelect">
+    </Map>
+  </div>
 </template>
 
 <script setup>
@@ -19,8 +84,9 @@ import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
 import hefei from '/src/assets/he_fei.json'
-import { onMounted, ref } from "vue"
-import { NButton, NSpace } from 'naive-ui'
+import {onMounted, ref} from "vue"
+import {NButton, NSpace} from 'naive-ui'
+
 echarts.registerTheme('walden', walden)
 const clickData = ref({})
 const idData = ref({})
@@ -34,9 +100,9 @@ const gaugeDataCur = ref({})
 const mapData = ref([])
 const center = [117.280338325, 31.84974485]
 const pieData = [
-  { value: 150, name: '拥堵' ,itemStyle:{color:'#ee0e3b'}},
-  { value: 430, name: '平衡' ,itemStyle:{color:'#f9d00b'}},
-  { value: 980, name: '空闲', itemStyle:{color:'#06c674'}},
+  {value: 150, name: '拥堵', itemStyle: {color: '#ee0e3b'}},
+  {value: 430, name: '平衡', itemStyle: {color: '#f9d00b'}},
+  {value: 980, name: '空闲', itemStyle: {color: '#06c674'}},
 ]
 mapData.value = [
   {
@@ -802,7 +868,7 @@ mapData.value = [
 ]
 lineData1.value = {
   categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  value: [1.4, 1.3, 2.2, 4.1,3.3, 7.6,7.9],
+  value: [1.4, 1.3, 2.2, 4.1, 3.3, 7.6, 7.9],
   title: '南山区占用指数图',
   title2: '南山区平均占用率'
 }
@@ -828,61 +894,102 @@ lineData4.value = {
 </script>
 
 <style>
-.container {  display: grid;
-  grid-template-columns: 1.1fr 0.9fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1.1fr 0.8fr 1.1fr 1fr 1fr 1fr;
-  gap: 10px 10px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "left1 left1 left1 center1 center1 center1 center1 center1 right1 right1 right1 ."
-    "left1 left1 left1 center1 center1 center1 center1 center1 right1 right1 right1 ."
-    "left2 left2 left2 center2 center2 . . . right1 right1 right1 ."
-    "left2 left2 left2 center3 center3 center3 center3 center3 right1 right1 right1 ."
-    "left2 left2 left2 center3 center3 center3 center3 center3 right2 right2 right2 ."
-    "left3 left3 left3 center4 center4 center4 center4 center4 right2 right2 right2 ."
-    "left3 left3 left3 center4 center4 center4 center4 center4 right2 right2 right2 .";
+
+img {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
 }
-.edit_btn {
 
+/*左侧容器*/
 
-font-size: 30px;
-
-
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-height: 70px;
-margin-left: 70px;
-margin-top: 40px;
-
-color:black;
-
-white-space: normal;
+.leftContainer {
+  width: 20vw;
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  border-radius: 18px;
+  margin-right: 10px;
+  flex-direction: column;
+  align-items: center;
 }
-.left1 { grid-area: left1; background-color: aqua;}
 
-.left2 { grid-area: left2;  background-color: aqua;}
+/*充电桩信息*/
+.charger-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh 0 5vh 0;
+}
 
-.left3 { grid-area: left3;  background-color: aqua;}
+.charger-info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-.center2 { grid-area: center2; }
+.charger-info-title {
+  color: white;
+  font-size: 26px;
+  margin-right: 15px;
+  font-weight: bold;
+}
 
-.center1 { grid-area: center1;  background-color: aqua;}
+.charger-info-number {
+  font-size: 44px;
+  font-weight: bold;
+}
 
-.center3 { grid-area: center3; }
+/*结果关键指标*/
 
-.center4 { grid-area: center4; background-color: aqua; }
+.result-info-title {
+  width: 15vw;
+  font-size: 36px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  text-align: center;
+  color: white;
+}
 
-.right1 { grid-area: right1; background-color: aqua; }
+.result-key-info {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  color: white;
+  margin-left: 20px;
+  justify-content: space-between
+}
 
-.right2 { grid-area: right2;  background-color: aqua;}
+.result-key-info img {
+  width: 50px;
+  margin-right: 30px;
+}
 
-.n-layout-scroll-container {
-  padding: 0px !important;
+.result-key-info-detail {
+  display: inline-block;
+}
+
+.result-key-info-detail div {
+  font-size: 16px;
+  font-weight: lighter;
+  color: #A0AEC0;
+}
+
+.result-key-info-detail span:nth-of-type(1) {
+  font-size: 34px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/*右侧容器*/
+
+.rightContainer {
+  height: 100%;
+  background-color: rgb(32, 41, 52);
+  border-radius: 18px;
   overflow: hidden;
 }
 </style>
