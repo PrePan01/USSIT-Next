@@ -6,6 +6,9 @@
   <div class="leftContainer">
     <!--左上-->
     <div class="charger-info">
+      <div class="result-info-title" style="margin-top: 30px;">
+        基础设施规划
+      </div>
       <div class="charger-info-item">
         <span class="charger-info-title">当前充电桩ID</span><span class="charger-info-number" style="color: rgb(62,142,255)">3</span>
       </div>
@@ -20,7 +23,7 @@
     </div>
     <!--关键指标-->
     <div>
-      <div class="result-info-title" style="margin-top: 30px;">
+      <div class="result-info-title">
         结果关键指标
       </div>
       <div class="result-key-info">
@@ -922,13 +925,13 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2vh 0 5vh 0;
+  margin: 0 0 5vh 0;
 }
 
 .charger-info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .charger-info-title {
@@ -946,7 +949,6 @@ img {
 /*结果关键指标*/
 
 .result-info-title {
-  width: 15vw;
   font-size: 36px;
   font-weight: bold;
   padding-bottom: 10px;
@@ -957,7 +959,7 @@ img {
 .result-key-info {
   display: flex;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 24px;
   color: white;
   margin-left: 20px;
   justify-content: space-between
@@ -970,6 +972,8 @@ img {
 
 .result-key-info-detail {
   display: inline-block;
+  margin-right: 40px;
+
 }
 
 .result-key-info-detail div {
