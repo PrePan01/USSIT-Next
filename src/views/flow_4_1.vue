@@ -10,7 +10,7 @@
         基础设施规划
       </div>
       <div class="charger-info-item">
-        <span class="charger-info-title">当前充电桩ID</span><span class="charger-info-number" style="color: rgb(62,142,255)">3</span>
+        <span class="charger-info-title">当前充电桩ID</span><span class="charger-info-number" style="color: rgb(62,142,255)">{{ chargerId }}</span>
       </div>
       <div class="charger-info-item">
         <span class="charger-info-title">快充桩数</span><span class="charger-info-number"
@@ -66,6 +66,7 @@
         :data="mapData"
         :center="center"
         :zoom="2"
+        @idIndex="idIndex"
         @reportData="changeSelect">
     </Map>
   </div>
@@ -87,10 +88,16 @@ import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
 import hefei from '/src/assets/he_fei.json'
-import {onMounted, ref} from "vue"
+import {inject, onBeforeUpdate, onMounted, reactive, ref, watch} from "vue"
 import {NButton, NSpace} from 'naive-ui'
 
 echarts.registerTheme('walden', walden)
+
+const chargerId = ref()
+function idIndex(data){
+  chargerId.value = data
+}
+
 const clickData = ref({})
 const idData = ref({})
 const zoomData = ref({})

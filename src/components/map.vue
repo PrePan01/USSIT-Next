@@ -3,14 +3,15 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref, onUpdated } from "vue";
+import {onBeforeUnmount, onMounted, onUpdated, ref} from "vue";
 import * as echarts from "echarts";
 import "echarts/extension/bmap/bmap";
 import _ from "lodash";
 import he_feiMap from "/src/assets/he_feiMap.json";
 import tai_anMap from "/src/assets/tai_anMap.json";
 import nan_shanMap from "/src/assets/nan_shanMap.json";
-const emit = defineEmits(["reportData"]);
+
+const emit = defineEmits(["reportData", "idIndex"]);
 const props = defineProps({
   title: String,
   data: Array,
@@ -52,6 +53,16 @@ const convertData = function (data) {
 const option = {
   tooltip: {
     trigger: "item",
+    triggerOn: 'click',
+    enterable: true,
+    formatter: function (params) {
+      idIndex(params.dataIndex)
+      return `
+        <div style="color: white;background-color: rgb(18,23,40);" onclick="myAlert('${params.dataIndex}')">
+            路段：${params.name}
+        </div>
+      `;
+    }
   },
   bmap: {
     zoom: 13,
@@ -266,6 +277,8 @@ const option = {
   ],
 };
 
+
+
 // basic resize in echart
 const resizeHandler = _.debounce(() => {
   if (myChart) {
@@ -280,6 +293,11 @@ onMounted(() => {
   myChart.on("click", function (params) {
     reportData(params.data);
   });
+
+  function myAlert(nam){
+    provide("roadData", nam)
+  }
+  window.myAlert=myAlert;
 });
 
 onUpdated(() => {
@@ -370,6 +388,10 @@ onBeforeUnmount(() => {
 const reportData = (data) => {
   emit("reportData", data);
 };
+
+function idIndex(data){
+  emit("idIndex", data)
+}
 </script>
 
 <style scoped>
