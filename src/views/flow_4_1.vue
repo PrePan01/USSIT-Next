@@ -4,8 +4,8 @@
 
   <!--左侧容器-->
   <div class="leftContainer">
-    <!--左上-->
-    <div class="charger-info">
+    <!--基础设施规划-->
+    <div class="charger-info" v-if="chargerId">
       <div class="result-info-title" style="margin-top: 30px;">
         基础设施规划
       </div>
@@ -59,7 +59,7 @@
 
   <!--右侧容器-->
   <div class="rightContainer">
-    <Map
+    <Map4_1
         v-if="mapData.length"
         title="车流量"
         :geoCoordMap="hefei"
@@ -68,7 +68,7 @@
         :zoom="2"
         @idIndex="idIndex"
         @reportData="changeSelect">
-    </Map>
+    </Map4_1>
   </div>
 </template>
 
@@ -78,7 +78,7 @@ import Pie from "/src/components/pie.vue"
 import All from "/src/components/all.vue"
 import Bar from "/src/components/bar.vue"
 import Line from "/src/components/line.vue"
-import Map from "/src/components/map.vue"
+import Map4_1 from "/src/components/map4_1.vue"
 import Zoom from "/src/components/zoom.vue"
 import Table from "/src/components/table.vue"
 import Gauge from "/src/components/gauge.vue"
@@ -932,48 +932,45 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 5vh 0;
+  margin: 0 0 4vh 0;
 }
 
 .charger-info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
 }
 
 .charger-info-title {
-  color: white;
-  font-size: 26px;
+  color: rgba(7, 23, 56, 0.85);
+  font-size: 24px;
   margin-right: 15px;
-  font-weight: bold;
 }
 
 .charger-info-number {
-  font-size: 44px;
+  font-size: 36px;
   font-weight: bold;
 }
 
 /*结果关键指标*/
 
 .result-info-title {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
-  padding-bottom: 10px;
   text-align: center;
-  color: white;
+  color: rgba(7, 23, 56, 0.7);
 }
 
 .result-key-info {
   display: flex;
   align-items: center;
-  margin-top: 24px;
-  color: white;
+  margin-top: 2vh;
+  color: rgba(7, 23, 56, 0.7);
   margin-left: 20px;
   justify-content: space-between
 }
 
 .result-key-info img {
-  width: 50px;
+  width: 40px;
   margin-right: 30px;
 }
 
@@ -990,7 +987,7 @@ img {
 }
 
 .result-key-info-detail span:nth-of-type(1) {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: bold;
   margin-right: 5px;
 }

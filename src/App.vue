@@ -1,9 +1,9 @@
 <template>
   <n-config-provider
-    :theme="darkTheme"
+    :theme="null"
     style="height: 100%"
-    :theme-overrides="themeOverrides"
   >
+    <!--:theme-overrides="themeOverrides"-->
     <n-layout has-sider>
       <n-layout-sider
         collapse-mode="width"
@@ -242,7 +242,7 @@ const menuOptions = [
 .n-layout-sider-scroll-container {
   width: 100%;
   height: 100%;
-  background-color: #293441;
+  background-color: #ffffff;
 }
 body {
   margin: 0px;

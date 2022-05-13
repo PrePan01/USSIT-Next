@@ -68,12 +68,12 @@ const option = {
                     width : 2,
                     type : 'solid',
                 },
-              
+
                 itemStyle : {
                     color : '#d256b6'
                 },
-            
-           
+
+
                 data :  props.value2,
             }]
 
@@ -88,7 +88,7 @@ const resizeHandler = _.debounce(() => {
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
-  myChart = echarts.init(line.value, 'walden')
+  myChart = echarts.init(line.value, 'shine')
   myChart.setOption(option)
 });
 
