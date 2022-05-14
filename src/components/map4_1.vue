@@ -57,25 +57,26 @@ const option = {
     enterable: true,
     formatter: function (params) {
       idIndex(params.dataIndex)
+      // TODO
       return `
-        <div>
+        <div style="padding: 2px 2px">
           <!--路段标题-->
           <div style="display: flex;align-items: center">
             <img src="/src/assets/charger.png" alt="" style="width: 30px;height: 30px;margin-right: 10px">
             <div onclick="myAlert('${params.dataIndex}')" style="display: inline-block">
-                <div style="font-size: 16px">路段：<b>${params.name}</b></div>
+                <div style="font-size: 18px">路段：<b>${params.name}</b></div>
             </div>
           </div>
           <div style="margin-top: 10px;display: flex;align-items: center;justify-content: space-evenly">
             <!--营收-->
-            <div style="display: inline-block;padding: 0 10px 0 2px;border-right: 1px solid black">
-              <div style="margin-bottom: 5px;font-size: 12px">营收</div>
-              <span style="font-size: 18px;margin-right: 5px;font-weight: bold">3122</span><span style="font-size: 12px">元</span>
+            <div style="display: inline-block;padding: 0 12px 0 0;border-right: 1px solid black">
+              <div style="margin-bottom: 5px;font-size: 14px">营收</div>
+              <span style="font-size: 22px;margin-right: 5px;font-weight: bold">3122</span><span style="font-size: 12px">元</span>
             </div>
             <!--利用率占比-->
             <div style="display: inline-block;padding: 0 10px">
-              <div style="margin-bottom: 5px;font-size: 12px">利用率占比</div>
-              <span style="font-size: 18px;margin-right: 5px;font-weight: bold">24.12</span><span style="font-size: 12px">%</span>
+              <div style="margin-bottom: 5px;font-size: 14px">利用率占比</div>
+              <span style="font-size: 22px;margin-right: 5px;font-weight: bold">24.12</span><span style="font-size: 12px">%</span>
             </div>
             <img src="/src/assets/Line Chart 2.png" alt="" style="height: 40px">
           </div>
@@ -1315,14 +1316,14 @@ const option = {
   ],
 };
 
-
-
 // basic resize in echart
 const resizeHandler = _.debounce(() => {
   if (myChart) {
     myChart.resize();
   }
 }, 200);
+
+
 
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
@@ -1335,6 +1336,7 @@ onMounted(() => {
   function myAlert(nam){
     provide("roadData", nam)
   }
+
   window.myAlert=myAlert;
 });
 

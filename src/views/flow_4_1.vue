@@ -59,6 +59,7 @@
 
   <!--右侧容器-->
   <div class="rightContainer">
+    <Line4_1 class="curSum-chart" v-show="showLineChart"></Line4_1>
     <Map4_1
         v-if="mapData.length"
         title="车流量"
@@ -70,6 +71,12 @@
         @reportData="changeSelect">
     </Map4_1>
   </div>
+
+  <n-button strong secondary @click="showLineChart = !showLineChart" type="primary" style="position: absolute;bottom: 10px;left: 40px">
+    显示/隐藏LineChart
+  </n-button>
+
+
 </template>
 
 <script setup>
@@ -79,6 +86,7 @@ import All from "/src/components/all.vue"
 import Bar from "/src/components/bar.vue"
 import Line from "/src/components/line.vue"
 import Map4_1 from "/src/components/map4_1.vue"
+import Line4_1 from "/src/components/line4_1.vue"
 import Zoom from "/src/components/zoom.vue"
 import Table from "/src/components/table.vue"
 import Gauge from "/src/components/gauge.vue"
@@ -97,6 +105,8 @@ const chargerId = ref()
 function idIndex(data){
   chargerId.value = data
 }
+
+const showLineChart = ref(false)
 
 const clickData = ref({})
 const idData = ref({})
@@ -916,7 +926,7 @@ img {
 /*左侧容器*/
 
 .leftContainer {
-  width: 20vw;
+  width: 16vw;
   height: 100%;
   float: left;
   display: flex;
@@ -942,22 +952,24 @@ img {
 
 .charger-info-title {
   color: rgba(7, 23, 56, 0.85);
-  font-size: 24px;
+  font-size: 26px;
   margin-right: 15px;
 }
 
 .charger-info-number {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: bold;
 }
 
 /*结果关键指标*/
 
 .result-info-title {
-  font-size: 30px;
+  font-size: 2vw;
   font-weight: bold;
   text-align: center;
   color: rgba(7, 23, 56, 0.7);
+  text-shadow: 1px 1px 1px lightgray;
+  margin: 10px 0;
 }
 
 .result-key-info {
@@ -965,29 +977,25 @@ img {
   align-items: center;
   margin-top: 2vh;
   color: rgba(7, 23, 56, 0.7);
-  margin-left: 20px;
   justify-content: space-between
 }
 
 .result-key-info img {
-  width: 40px;
-  margin-right: 30px;
+  width: 3vw;
 }
 
 .result-key-info-detail {
   display: inline-block;
-  margin-right: 40px;
-
+  margin-right: 2vw;
 }
 
 .result-key-info-detail div {
-  font-size: 16px;
-  font-weight: lighter;
+  font-size: 20px;
   color: #A0AEC0;
 }
 
 .result-key-info-detail span:nth-of-type(1) {
-  font-size: 32px;
+  font-size: 2vw;
   font-weight: bold;
   margin-right: 5px;
 }
@@ -996,8 +1004,21 @@ img {
 
 .rightContainer {
   height: 100%;
-  background-color: rgb(32, 41, 52);
   border-radius: 18px;
   overflow: hidden;
+}
+
+/*当前总体利用率*/
+.curSum-chart{
+  position: absolute;
+  display: inline-block;
+  z-index: 100;
+  background-color: rgb(255,255,255);
+  border-radius: 18px;
+  padding: 30px 0 0 30px;
+  border: 1px solid rgb(204,214,215);
+  left: 58%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
