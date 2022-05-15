@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import {onBeforeUnmount, onMounted, onUpdated, ref} from "vue";
+import {onBeforeUnmount, onMounted, onUpdated, ref, watch} from "vue";
 import * as echarts from "echarts";
 import "echarts/extension/bmap/bmap";
 import _ from "lodash";
@@ -22,7 +22,9 @@ const props = defineProps({
   roadmap: Array
 });
 const map = ref(null);
-const data = props.data || [];
+const data = props.data || []
+
+
 const geoCoordMap = props.geoCoordMap;
 let myChart;
 const convertData = function (data) {
@@ -1328,7 +1330,7 @@ const resizeHandler = _.debounce(() => {
 onMounted(() => {
   window.addEventListener("resize", resizeHandler);
   myChart = echarts.init(map.value);
-  myChart.setOption(option);
+  myChart.setOption(option, true);
   myChart.on("click", function (params) {
     reportData(params.data);
   });
@@ -1420,6 +1422,12 @@ onUpdated(() => {
     ],
   });
 });
+
+onMounted(() => {
+  watch(props.data, (newValue) => {
+    console.log(newValue)
+  }, {immediate: true})
+})
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", resizeHandler);

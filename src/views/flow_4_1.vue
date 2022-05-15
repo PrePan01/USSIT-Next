@@ -76,7 +76,6 @@
     显示/隐藏LineChart
   </n-button>
 
-
 </template>
 
 <script setup>
@@ -886,6 +885,8 @@ mapData.value = [
     "value": 0
   }
 ]
+
+
 lineData1.value = {
   categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   value: [1.4, 1.3, 2.2, 4.1, 3.3, 7.6, 7.9],
