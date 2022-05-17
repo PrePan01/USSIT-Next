@@ -3,58 +3,113 @@
   </iframe>-->
 
   <!--左侧容器-->
+
   <div class="leftContainer">
-    <!--基础设施规划-->
+    <!--标题-->
+    <div class="mainTitle">
+      基础设施规划
+    </div>
+    <!--充电桩配置信息-->
+    <div class="result-info-title">
+      充电桩配置信息
+    </div>
+    <div>
+      <div class="chargerConfig">
+        <span class="chargerConfig-title">城市</span>
+        <n-dropdown trigger="hover" :options="cityOptions">
+          <n-button class="chargerConfig-options">
+            <div style="display: flex;margin-top: 5px">
+              <span style="display: inline-block;width: 110px">北京</span>
+              <img src="../assets/options.png" alt="" style="width: 18px">
+            </div>
+          </n-button>
+        </n-dropdown>
+      </div>
+      <div class="chargerConfig">
+        <span class="chargerConfig-title">预算档位</span>
+        <n-dropdown trigger="hover" :options="budgetOptions">
+          <n-button class="chargerConfig-options">
+            <div style="display: flex;margin-top: 5px">
+              <span style="display: inline-block;width: 110px">1000万元</span>
+              <img src="../assets/options.png" alt="" style="width: 18px">
+            </div>
+          </n-button>
+        </n-dropdown>
+      </div>
+      <div class="chargerConfig">
+        <span class="chargerConfig-title">方法</span>
+        <n-dropdown trigger="hover" :options="wayOptions">
+          <n-button class="chargerConfig-options">
+            <div style="display: flex;margin-top: 5px">
+              <span style="display: inline-block;width: 110px">SWAP</span>
+              <img src="../assets/options.png" alt="" style="width: 18px">
+            </div>
+          </n-button>
+        </n-dropdown>
+      </div>
+    </div>
+
+    <!--当前节点信息-->
+    <div class="result-info-title">
+      当前节点信息
+    </div>
     <div class="charger-info" v-if="chargerId">
-      <div class="result-info-title" style="margin-top: 30px;">
-        基础设施规划
+      <div class="charger-info-item">
+        <span class="charger-info-title">充电桩ID</span>
+        <span class="charger-info-number" style="color: rgb(62,142,255)">{{ chargerId }}</span>
       </div>
       <div class="charger-info-item">
-        <span class="charger-info-title">当前充电桩ID</span><span class="charger-info-number" style="color: rgb(62,142,255)">{{ chargerId }}</span>
+        <span class="charger-info-title">快充桩数</span>
+        <span class="charger-info-number" style="color: rgb(39,174,96)">16</span>
       </div>
       <div class="charger-info-item">
-        <span class="charger-info-title">快充桩数</span><span class="charger-info-number"
-                                                          style="color: rgb(39,174,96)">16</span>
+        <span class="charger-info-title">慢充桩数</span>
+        <span class="charger-info-number" style="color: rgb(255,66,66)">12</span>
       </div>
       <div class="charger-info-item">
-        <span class="charger-info-title">慢充桩数</span><span class="charger-info-number"
-                                                          style="color: rgb(255,66,66)">12</span>
+        <span class="charger-info-title">路段名称</span>
+        <span class="charger-info-number" style="color: rgb(84,81,224)">{{roadName}}</span>
       </div>
     </div>
     <!--关键指标-->
-    <div>
-      <div class="result-info-title">
-        结果关键指标
-      </div>
-      <div class="result-key-info">
-        <div class="result-key-info-detail">
-          <div>日间营收</div>
-          <span>215261</span><span>元</span>
-        </div>
-        <img src="../assets/icon-income.png" alt="">
-      </div>
-      <div class="result-key-info">
-        <div class="result-key-info-detail">
-          <div>慢桩利用率</div>
-          <span>32.79</span><span>%</span>
-        </div>
-        <img src="../assets/icon-slowCharge.png" alt="">
-      </div>
-      <div class="result-key-info">
-        <div class="result-key-info-detail">
-          <div>快桩利用率</div>
-          <span>31.06</span><span>%</span>
-        </div>
-        <img src="../assets/icon-fastCharge.png" alt="">
-      </div>
-      <div class="result-key-info">
-        <div class="result-key-info-detail">
-          <div>回报周期</div>
-          <span>1.15</span><span>年</span>
-        </div>
-        <img src="../assets/icon-cycle.png" alt="">
-      </div>
+    <div class="result-info-title">
+      结果关键指标
     </div>
+    <div>
+      <div class="result-key">
+        <div class="result-key-info">
+          <div class="result-key-info-detail">
+            <div>日间营收</div>
+            <span>215261</span><span>元</span>
+          </div>
+          <img src="../assets/icon-income.png" alt="">
+        </div>
+        <div class="result-key-info">
+          <div class="result-key-info-detail">
+            <div>回报周期</div>
+            <span>1.15</span><span>年</span>
+          </div>
+          <img src="../assets/icon-cycle.png" alt="">
+        </div>
+      </div>
+
+      <div class="result-key">
+        <div class="result-key-info">
+          <div class="result-key-info-detail">
+            <div>慢桩利用率</div>
+            <span>32.79</span><span>%</span>
+          </div>
+          <img src="../assets/icon-slowCharge.png" alt="">
+        </div>
+        <div class="result-key-info">
+          <div class="result-key-info-detail">
+            <div>快桩利用率</div>
+            <span>31.06</span><span>%</span>
+          </div>
+          <img src="../assets/icon-fastCharge.png" alt="">
+        </div>
+      </div>
+      </div>
   </div>
 
   <!--右侧容器-->
@@ -68,6 +123,7 @@
         :center="center"
         :zoom="2"
         @idIndex="idIndex"
+        @getRoadName="getRoadName"
         @reportData="changeSelect">
     </Map4_1>
   </div>
@@ -95,14 +151,18 @@ import utils from '/src/utils/index.js'
 // Theme Config
 import walden from '/src/assets/walden.json'
 import hefei from '/src/assets/he_fei.json'
-import {inject, onBeforeUpdate, onMounted, reactive, ref, watch} from "vue"
-import {NButton, NSpace} from 'naive-ui'
+import {defineComponent, inject, onBeforeUpdate, onMounted, reactive, ref, watch} from "vue"
+import {NButton, NSpace, NDropdown} from 'naive-ui'
 
 echarts.registerTheme('walden', walden)
 
 const chargerId = ref()
+const roadName = ref()
 function idIndex(data){
   chargerId.value = data
+}
+function getRoadName(data){
+  roadName.value = data
 }
 
 const showLineChart = ref(false)
@@ -912,6 +972,49 @@ lineData4.value = {
   title2: '路段占用'
 }
 
+// 充电桩配置信息
+const cityOptions = [
+  {
+    label: '北京',
+    key: 'beijing',
+    disabled: true
+  },
+  {
+    label: '广州',
+    key: 'guangzhou',
+  },
+  {
+    label: '天津',
+    key: 'tianjin',
+  },
+]
+
+const budgetOptions = [
+  {
+    label: '1000万元',
+    key: '1kw',
+    disabled: true
+  },
+  {
+    label: '2000万元',
+    key: '2kw'
+  },
+]
+
+const wayOptions = [
+  {
+    label: 'SWAP',
+    key: 'SWAP',
+    disabled: true
+  },
+  {
+    label: 'others',
+    key: 'others'
+  },
+]
+
+
+
 </script>
 
 <style>
@@ -927,58 +1030,93 @@ img {
 /*左侧容器*/
 
 .leftContainer {
-  width: 16vw;
+  width: 28vw;
   height: 100%;
   float: left;
-  display: flex;
+  /*display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;*/
   border-radius: 18px;
   margin-right: 10px;
-  flex-direction: column;
+  padding: 0 10px;
+
+}
+
+.mainTitle{
+  font-size: 40px;
+  border-bottom: 5px solid black;
+  width: 18vw;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/*充电桩配置信息*/
+.chargerConfig{
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.chargerConfig-title{
+  font-size: 24px;
+  width: 8vw;
+  text-align: center;
+}
+
+.chargerConfig-options{
+  width: 140px;
 }
 
 /*充电桩信息*/
 .charger-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0 0 4vh 0;
-}
-
-.charger-info-item {
-  display: flex;
-  align-items: center;
+  margin: 0 0 2vh 0;
 }
 
 .charger-info-title {
   color: rgba(7, 23, 56, 0.85);
   font-size: 26px;
   margin-right: 15px;
+  display: inline-block;
 }
 
 .charger-info-number {
-  font-size: 40px;
+  font-size: 26px;
   font-weight: bold;
+  display: inline-block;
+}
+.charger-info-item{
+  display: flex;
+  align-items: center;
+  width: 26vw;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 /*结果关键指标*/
+.result-key{
+  width: 28vw;
+  display: flex;
+  justify-content: space-between
+}
 
 .result-info-title {
-  font-size: 2vw;
+  font-size: 30px;
   font-weight: bold;
-  text-align: center;
-  color: rgba(7, 23, 56, 0.7);
-  text-shadow: 1px 1px 1px lightgray;
-  margin: 10px 0;
+  color: black;
+  margin-top: 10px;
 }
 
 .result-key-info {
   display: flex;
   align-items: center;
-  margin-top: 2vh;
+  margin-top: 1vh;
   color: rgba(7, 23, 56, 0.7);
-  justify-content: space-between
 }
 
 .result-key-info img {
@@ -987,7 +1125,7 @@ img {
 
 .result-key-info-detail {
   display: inline-block;
-  margin-right: 2vw;
+  width: 10vw;
 }
 
 .result-key-info-detail div {
@@ -996,9 +1134,16 @@ img {
 }
 
 .result-key-info-detail span:nth-of-type(1) {
-  font-size: 2vw;
+  font-size: 32px;
   font-weight: bold;
   margin-right: 5px;
+  color: black;
+}
+
+.result-key-info-detail span:nth-of-type(2) {
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
 }
 
 /*右侧容器*/

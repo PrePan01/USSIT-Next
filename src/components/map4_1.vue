@@ -58,14 +58,13 @@ const option = {
     triggerOn: 'click',
     enterable: true,
     formatter: function (params) {
-      idIndex(params.dataIndex)
-      // TODO
+      idIndex(params.dataIndex, params.name)
       return `
         <div style="padding: 2px 2px">
           <!--路段标题-->
           <div style="display: flex;align-items: center">
             <img src="/src/assets/charger.png" alt="" style="width: 30px;height: 30px;margin-right: 10px">
-            <div onclick="myAlert('${params.dataIndex}')" style="display: inline-block">
+            <div style="display: inline-block">
                 <div style="font-size: 18px">路段：<b>${params.name}</b></div>
             </div>
           </div>
@@ -1334,12 +1333,6 @@ onMounted(() => {
   myChart.on("click", function (params) {
     reportData(params.data);
   });
-
-  function myAlert(nam){
-    provide("roadData", nam)
-  }
-
-  window.myAlert=myAlert;
 });
 
 onUpdated(() => {
@@ -1423,12 +1416,6 @@ onUpdated(() => {
   });
 });
 
-onMounted(() => {
-  watch(props.data, (newValue) => {
-    console.log(newValue)
-  }, {immediate: true})
-})
-
 onBeforeUnmount(() => {
   window.removeEventListener("resize", resizeHandler);
 });
@@ -1437,8 +1424,9 @@ const reportData = (data) => {
   emit("reportData", data);
 };
 
-function idIndex(data){
+function idIndex(data, name){
   emit("idIndex", data)
+  emit("getRoadName", name)
 }
 </script>
 

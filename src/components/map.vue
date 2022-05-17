@@ -56,9 +56,8 @@ const option = {
     triggerOn: 'click',
     enterable: true,
     formatter: function (params) {
-      idIndex(params.dataIndex)
       return `
-        <div style="color: white;background-color: rgb(18,23,40);" onclick="myAlert('${params.dataIndex}')">
+        <div style="color: white;background-color: rgb(18,23,40);">
             路段：${params.name}
         </div>
       `;
@@ -1407,10 +1406,6 @@ onBeforeUnmount(() => {
 const reportData = (data) => {
   emit("reportData", data);
 };
-
-function idIndex(data){
-  emit("idIndex", data)
-}
 </script>
 
 <style scoped>
