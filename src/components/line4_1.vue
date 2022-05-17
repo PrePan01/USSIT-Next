@@ -3,8 +3,11 @@
 </template>
 
 <script setup>
-import {onMounted, ref} from "vue";
+import {onMounted, ref, watch} from "vue";
 import * as echarts from "echarts";
+import fastDemand from "/src/assets/chargerInfo/chart/fast_demand.json"
+import slowDemand from "/src/assets/chargerInfo/chart/slow_demand.json"
+import revenue from "/src/assets/chargerInfo/chart/revenue.json"
 
 const curSum = ref(null)
 const option = {
@@ -39,7 +42,10 @@ const option = {
     {
       type: 'category',
       boundaryGap: false,
-      data: ['8:00','10:30','13:00','15:30','18:00','20:30']
+      data: ['8:00',"8:30",'9:00',"9:30",'10:00',"10:30",'11:00',
+        "11:30",'12:00',"12:30",'13:00',"13:30",'14:00',"14:30",
+        '15:00',"15:30",'16:00',"16:30",'17:00',"17:30",'18:00',
+        "18:30", '19:00',"19:30",'20:00',"20:30"]
     }
   ],
   yAxis: [
@@ -74,7 +80,7 @@ const option = {
       emphasis: {
         focus: 'series'
       },
-      data: [340, 432, 201, 264, 90, 340, 250]
+      data: slowData
     },
     {
       name: '快桩利用率',
@@ -102,7 +108,7 @@ const option = {
       emphasis: {
         focus: 'series'
       },
-      data: [120, 282, 111, 234, 220, 340, 310]
+      data: fastData
     },
     {
       name: '站点营收',
@@ -130,10 +136,29 @@ const option = {
       emphasis: {
         focus: 'series'
       },
-      data: [320, 332, 201, 334, 190, 130, 220]
+      data: revData
     }
   ]
 }
+const props = defineProps({
+  city: String,
+  budget: String,
+  way: String
+})
+
+let cityData = ref()
+let budgetData = ref()
+let wayData = ref()
+
+watch(() =>[props.city, props.budget, props.way], (newValue) => {
+  [cityData.value, budgetData, wayData] = [...newValue]
+}, {immediate: true})
+
+let fastData = ref([
+
+])
+let slowData = ref([])
+let revData = ref([])
 
 onMounted(() => {
   let curSumChart = echarts.init(curSum.value);

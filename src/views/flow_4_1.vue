@@ -56,19 +56,19 @@
     <div class="charger-info" v-if="chargerId">
       <div class="charger-info-item">
         <span class="charger-info-title">充电桩ID</span>
-        <span class="charger-info-number" style="color: rgb(62,142,255)">{{ chargerId }}</span>
+        <span class="charger-info-number" style="color: rgb(62,142,255)">#{{ chargerId }}</span>
       </div>
       <div class="charger-info-item">
         <span class="charger-info-title">快充桩数</span>
-        <span class="charger-info-number" style="color: rgb(39,174,96)">16</span>
+        <span class="charger-info-number" style="color: rgb(39,174,96)">{{ fastCharger }}</span>
       </div>
       <div class="charger-info-item">
         <span class="charger-info-title">慢充桩数</span>
-        <span class="charger-info-number" style="color: rgb(255,66,66)">12</span>
+        <span class="charger-info-number" style="color: rgb(255,66,66)">{{ slowCharger }}</span>
       </div>
       <div class="charger-info-item">
         <span class="charger-info-title">路段名称</span>
-        <span class="charger-info-number" style="color: rgb(84,81,224)">{{roadName}}</span>
+        <span class="charger-info-number roadName" style="color: rgb(84,81,224)">{{roadName}}</span>
       </div>
     </div>
     <!--关键指标-->
@@ -114,7 +114,7 @@
 
   <!--右侧容器-->
   <div class="rightContainer">
-    <Line4_1 class="curSum-chart" v-show="showLineChart"></Line4_1>
+    <Line4_1 class="curSum-chart" v-show="showLineChart" :city="city" :budget="budget" :way="way"></Line4_1>
     <Map4_1
         v-if="mapData.length"
         title="车流量"
@@ -158,11 +158,14 @@ import {NButton, NSpace, NDropdown} from 'naive-ui'
 import beijingKey from "/src/assets/chargerInfo/keys/beijing_key_metrics.json"
 import tianjinKey from "/src/assets/chargerInfo/keys/tianjin_key_metrics.json"
 import guangzhouKey from "/src/assets/chargerInfo/keys/guangzhou_key_metrics.json"
+import beijingPlan from "/src/assets/chargerInfo/plan/beijing_plan.json"
+import guangzhouPlan from "/src/assets/chargerInfo/plan/guangzhou_plan.json"
+import tianjinPlan from "/src/assets/chargerInfo/plan/tianjing_plan.json"
 
 echarts.registerTheme('walden', walden)
 
-const chargerId = ref()
-const roadName = ref()
+const chargerId = ref('1')
+const roadName = ref('北京市通州区曹园南街')
 function idIndex(data){
   chargerId.value = data
 }
@@ -179,7 +182,7 @@ const gaugeDataPre = ref({})
 const gaugeDataCur = ref({})
 const mapData = ref([])
 // 最初地图聚焦中心点坐标
-const center = [116.66342052947668, 39.866526542896786]
+const center = ref([116.66342052947668, 39.866526542896786])
 mapData.value = [
   {
     "name": 74,
@@ -1014,14 +1017,36 @@ let dayIncome = ref()
 let slowUse = ref()
 let fastUse = ref()
 let cycle = ref()
+let fastCharger = ref()
+let slowCharger = ref()
 
-watch([city, budget, way],newValue => {
-  let cityKey = beijingKey, budgetNum = '1w', wayNum = 0
-
+watch([city, budget, way, chargerId],(newValue,oldValue) => {
+  let cityKey = beijingKey, cityPlan =beijingPlan, budgetNum = '1w', wayNum = 0
   switch (city.value){
-    case '北京': cityKey = beijingKey; break
-    case '广州': cityKey = guangzhouKey; break
-    case '天津': cityKey = tianjinKey; break
+    case '北京': {
+      cityKey = beijingKey
+      cityPlan = beijingPlan
+      if(newValue[0] !== oldValue[0]){
+        center.value = [116.66342052947668, 39.866526542896786]
+      }
+      break
+    }
+    case '广州': {
+      cityKey = guangzhouKey
+      cityPlan = guangzhouPlan
+      if(newValue[0] !== oldValue[0]){
+        center.value = [113.27822154820997, 23.08354497586727]
+      }
+      break
+    }
+    case '天津': {
+      cityKey = tianjinKey
+      cityPlan = tianjinPlan
+      if(newValue[0] !== oldValue[0]){
+        center.value = [117.38830793338316, 39.167028314992606]
+      }
+      break
+    }
   }
   switch (budget.value){
       case '1000万元': budgetNum = "1w"; break
@@ -1036,6 +1061,10 @@ watch([city, budget, way],newValue => {
     case 'SPAP': wayNum = 2; break
   }
 
+  // 快慢充电桩
+  slowCharger.value = cityPlan[budgetNum][wayNum][0][parseInt(chargerId.value)]
+  fastCharger.value = cityPlan[budgetNum][wayNum][1][parseInt(chargerId.value)]
+  // 指标
   dayIncome.value = Math.round(cityKey[budgetNum][wayNum][0])
   slowUse.value = (cityKey[budgetNum][wayNum][1]*100).toFixed(2)
   fastUse.value = (cityKey[budgetNum][wayNum][2]*100).toFixed(2)
@@ -1125,6 +1154,14 @@ img {
   width: 26vw;
   justify-content: space-between;
   margin-top: 10px;
+}
+.roadName {
+  width: 18vw !important;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  word-break:keep-all;
+  text-align: right;
 }
 
 /*结果关键指标*/

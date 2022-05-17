@@ -13,12 +13,26 @@ import tai_anMap from "/src/assets/tai_anMap.json";
 import nan_shanMap from "/src/assets/nan_shanMap.json";
 
 import beijing_locations from "/src/assets/chargerInfo/locations/beijing_locations.json"
+import guangzhou_locations from "/src/assets/chargerInfo/locations/guangzhou_locations.json"
+import tianjin_locations from "/src/assets/chargerInfo/locations/tianjin_locations.json"
 
 let geoData = []
 for(let item in beijing_locations){
   geoData.push({
     name: beijing_locations[item].address,
     value: [beijing_locations[item].lon, beijing_locations[item].lat, item]
+  })
+}
+for(let item in guangzhou_locations){
+  geoData.push({
+    name: guangzhou_locations[item].address,
+    value: [guangzhou_locations[item].lon, guangzhou_locations[item].lat, item]
+  })
+}
+for(let item in tianjin_locations){
+  geoData.push({
+    name: tianjin_locations[item].address,
+    value: [tianjin_locations[item].lon, tianjin_locations[item].lat, item]
   })
 }
 
