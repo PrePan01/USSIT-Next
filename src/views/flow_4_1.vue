@@ -16,10 +16,10 @@
     <div>
       <div class="chargerConfig">
         <span class="chargerConfig-title">城市</span>
-        <n-dropdown trigger="hover" :options="cityOptions">
+        <n-dropdown trigger="hover" :options="cityOptions" @select="changeCity">
           <n-button class="chargerConfig-options">
             <div style="display: flex;margin-top: 5px">
-              <span style="display: inline-block;width: 110px">北京</span>
+              <span style="display: inline-block;width: 110px">{{ city }}</span>
               <img src="../assets/options.png" alt="" style="width: 18px">
             </div>
           </n-button>
@@ -27,10 +27,10 @@
       </div>
       <div class="chargerConfig">
         <span class="chargerConfig-title">预算档位</span>
-        <n-dropdown trigger="hover" :options="budgetOptions">
+        <n-dropdown trigger="hover" :options="budgetOptions" @select="changeBudget">
           <n-button class="chargerConfig-options">
             <div style="display: flex;margin-top: 5px">
-              <span style="display: inline-block;width: 110px">1000万元</span>
+              <span style="display: inline-block;width: 110px">{{ budget }}</span>
               <img src="../assets/options.png" alt="" style="width: 18px">
             </div>
           </n-button>
@@ -38,10 +38,10 @@
       </div>
       <div class="chargerConfig">
         <span class="chargerConfig-title">方法</span>
-        <n-dropdown trigger="hover" :options="wayOptions">
+        <n-dropdown trigger="hover" :options="wayOptions" @select="changeWay">
           <n-button class="chargerConfig-options">
             <div style="display: flex;margin-top: 5px">
-              <span style="display: inline-block;width: 110px">SWAP</span>
+              <span style="display: inline-block;width: 110px">{{ way }}</span>
               <img src="../assets/options.png" alt="" style="width: 18px">
             </div>
           </n-button>
@@ -73,21 +73,21 @@
     </div>
     <!--关键指标-->
     <div class="result-info-title">
-      结果关键指标
+    结果关键指标
     </div>
     <div>
       <div class="result-key">
         <div class="result-key-info">
           <div class="result-key-info-detail">
             <div>日间营收</div>
-            <span>215261</span><span>元</span>
+            <span>{{ dayIncome }}</span><span>元</span>
           </div>
           <img src="../assets/icon-income.png" alt="">
         </div>
         <div class="result-key-info">
           <div class="result-key-info-detail">
             <div>回报周期</div>
-            <span>1.15</span><span>年</span>
+            <span>{{ cycle }}</span><span>年</span>
           </div>
           <img src="../assets/icon-cycle.png" alt="">
         </div>
@@ -97,14 +97,14 @@
         <div class="result-key-info">
           <div class="result-key-info-detail">
             <div>慢桩利用率</div>
-            <span>32.79</span><span>%</span>
+            <span>{{ slowUse }}</span><span>%</span>
           </div>
           <img src="../assets/icon-slowCharge.png" alt="">
         </div>
         <div class="result-key-info">
           <div class="result-key-info-detail">
             <div>快桩利用率</div>
-            <span>31.06</span><span>%</span>
+            <span>{{ fastUse }}</span><span>%</span>
           </div>
           <img src="../assets/icon-fastCharge.png" alt="">
         </div>
@@ -121,6 +121,7 @@
         :geoCoordMap="hefei"
         :data="mapData"
         :center="center"
+        :cityOption="city"
         :zoom="2"
         @idIndex="idIndex"
         @getRoadName="getRoadName"
@@ -153,6 +154,10 @@ import walden from '/src/assets/walden.json'
 import hefei from '/src/assets/he_fei.json'
 import {defineComponent, inject, onBeforeUpdate, onMounted, reactive, ref, watch} from "vue"
 import {NButton, NSpace, NDropdown} from 'naive-ui'
+// 结果关键指标
+import beijingKey from "/src/assets/chargerInfo/keys/beijing_key_metrics.json"
+import tianjinKey from "/src/assets/chargerInfo/keys/tianjin_key_metrics.json"
+import guangzhouKey from "/src/assets/chargerInfo/keys/guangzhou_key_metrics.json"
 
 echarts.registerTheme('walden', walden)
 
@@ -170,19 +175,11 @@ const showLineChart = ref(false)
 const clickData = ref({})
 const idData = ref({})
 const zoomData = ref({})
-const lineData1 = ref({})
-const lineData2 = ref({})
-const lineData3 = ref({})
-const lineData4 = ref({})
 const gaugeDataPre = ref({})
 const gaugeDataCur = ref({})
 const mapData = ref([])
-const center = [117.280338325, 31.84974485]
-const pieData = [
-  {value: 150, name: '拥堵', itemStyle: {color: '#ee0e3b'}},
-  {value: 430, name: '平衡', itemStyle: {color: '#f9d00b'}},
-  {value: 980, name: '空闲', itemStyle: {color: '#06c674'}},
-]
+// 最初地图聚焦中心点坐标
+const center = [116.66342052947668, 39.866526542896786]
 mapData.value = [
   {
     "name": 74,
@@ -946,73 +943,105 @@ mapData.value = [
   }
 ]
 
-
-lineData1.value = {
-  categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  value: [1.4, 1.3, 2.2, 4.1, 3.3, 7.6, 7.9],
-  title: '南山区占用指数图',
-  title2: '南山区平均占用率'
-}
-lineData2.value = {
-  categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  value: [1.5, 1.1, 3.3, 3.4, 6.0, 8.8, 8.2],
-  title: '区块占用指数',
-  title2: '区块占用率'
-}
-lineData3.value = {
-  categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-  value: [2.0, 2.2, 9.1, 3.4, 12.0, 3.0, 3.2],
-  title: '区块BCU',
-  title2: '区块BCU'
-}
-lineData4.value = {
-  categories: ['Road1', 'Road2', 'Road3', 'Road4', 'Road5', 'Road6', 'Road7'],
-  value: [9.5, 8.3, 8.1, 7.0, 5.5, 3.1, 1.2],
-  title: '路段占用图',
-  title2: '路段占用'
-}
-
 // 充电桩配置信息
 const cityOptions = [
   {
     label: '北京',
-    key: 'beijing',
-    disabled: true
+    key: '北京',
   },
   {
     label: '广州',
-    key: 'guangzhou',
+    key: '广州',
   },
   {
     label: '天津',
-    key: 'tianjin',
+    key: '天津',
   },
 ]
+let city = ref('北京')
+function changeCity(key){
+  city.value = key
+}
 
+// 预算档位配置
 const budgetOptions = [
   {
     label: '1000万元',
-    key: '1kw',
-    disabled: true
+    key: '1000万元',
   },
   {
     label: '2000万元',
-    key: '2kw'
+    key: '2000万元'
+  },
+  {
+    label: '3000万元',
+    key: '3000万元'
+  },
+  {
+    label: '4000万元',
+    key: '4000万元'
+  },
+  {
+    label: '5000万元',
+    key: '5000万元'
   },
 ]
+let budget = ref('1000万元')
+function changeBudget(key){
+  budget.value = key
+}
 
 const wayOptions = [
   {
-    label: 'SWAP',
-    key: 'SWAP',
-    disabled: true
+    label: 'Even',
+    key: 'Even'
   },
   {
-    label: 'others',
-    key: 'others'
+    label: 'Greedy',
+    key: 'Greedy'
+  },
+  {
+    label: 'SPAP',
+    key: 'SPAP',
   },
 ]
+let way = ref('Even')
+function changeWay(key){
+  way.value = key
+}
 
+let dayIncome = ref()
+let slowUse = ref()
+let fastUse = ref()
+let cycle = ref()
+
+watch([city, budget, way],newValue => {
+  let cityKey = beijingKey, budgetNum = '1w', wayNum = 0
+
+  switch (city.value){
+    case '北京': cityKey = beijingKey; break
+    case '广州': cityKey = guangzhouKey; break
+    case '天津': cityKey = tianjinKey; break
+  }
+  switch (budget.value){
+      case '1000万元': budgetNum = "1w"; break
+      case '2000万元': budgetNum = "2w"; break
+      case '3000万元': budgetNum = "3w"; break
+      case '4000万元': budgetNum = "4w"; break
+      case '5000万元': budgetNum = "5w"; break
+  }
+  switch (way.value){
+    case 'Even': wayNum = 0; break
+    case 'Greedy': wayNum = 1; break
+    case 'SPAP': wayNum = 2; break
+  }
+
+  dayIncome.value = Math.round(cityKey[budgetNum][wayNum][0])
+  slowUse.value = (cityKey[budgetNum][wayNum][1]*100).toFixed(2)
+  fastUse.value = (cityKey[budgetNum][wayNum][2]*100).toFixed(2)
+  cycle.value = cityKey[budgetNum][wayNum][3].toFixed(2)
+
+},{immediate: true})
 
 
 </script>

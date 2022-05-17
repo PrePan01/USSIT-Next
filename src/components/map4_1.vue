@@ -7,9 +7,20 @@ import {onBeforeUnmount, onMounted, onUpdated, ref, watch} from "vue";
 import * as echarts from "echarts";
 import "echarts/extension/bmap/bmap";
 import _ from "lodash";
+// TODO 删
 import he_feiMap from "/src/assets/he_feiMap.json";
 import tai_anMap from "/src/assets/tai_anMap.json";
 import nan_shanMap from "/src/assets/nan_shanMap.json";
+
+import beijing_locations from "/src/assets/chargerInfo/locations/beijing_locations.json"
+
+let geoData = []
+for(let item in beijing_locations){
+  geoData.push({
+    name: beijing_locations[item].address,
+    value: [beijing_locations[item].lon, beijing_locations[item].lat, item]
+  })
+}
 
 const emit = defineEmits(["reportData", "idIndex"]);
 const props = defineProps({
@@ -19,15 +30,23 @@ const props = defineProps({
   geo: String,
   center: Array,
   zoom: Number,
-  roadmap: Array
+  roadmap: Array,
+  // 切换城市
+  cityOption: String,
 });
 const map = ref(null);
 const data = props.data || []
 
+// 切换城市
+let cityOption = ref("beijing")
+watch(()=>props.cityOption, (newValue) => {
+  cityOption.value = newValue
+})
 
 const geoCoordMap = props.geoCoordMap;
 let myChart;
-const convertData = function (data) {
+
+/*const convertData = function (data) {
   var res = [];
   for (var i = 0; i < data.length; i++) {
     var geoCoord = geoCoordMap[data[i].name];
@@ -35,30 +54,33 @@ const convertData = function (data) {
       if (props.geo == "nanshan") {
         res.push({
           name: nan_shanMap[data[i].name]?.name || "无名路",
-          value: geoCoord.concat(data[i].value),
+          value: geoCoord.concat(data[i].value).concat('demo'),
         });
       } else if (props.geo == "hefei") {
         res.push({
           name: he_feiMap[data[i].name]?.name || "无名路",
-          value: geoCoord.concat(data[i].value),
+          value: geoCoord.concat(data[i].value).concat('demo'),
         });
       } else {
         res.push({
           name: tai_anMap[data[i].name]?.name || "无名路",
-          value: geoCoord.concat(data[i].value),
+          value: geoCoord.concat(data[i].value).concat('demo'),
         });
       }
     }
   }
   return res;
-};
+};*/
+
 const option = {
+  //弹出框配置
   tooltip: {
     trigger: "item",
     triggerOn: 'click',
     enterable: true,
     formatter: function (params) {
-      idIndex(params.dataIndex, params.name)
+      // 路名 value[2] 序号 value[3]
+      idIndex(params.value[2], params.name)
       return `
         <div style="padding: 2px 2px">
           <!--路段标题-->
@@ -85,132 +107,12 @@ const option = {
       `;
     }
   },
+  //地图样式配置
   bmap: {
     zoom: 13,
     roam: true,
     center: props.center,
     mapStyle: {
-      /*styleJson: [
-        {
-          featureType: "water",
-          elementType: "all",
-          stylers: {
-            color: "#031628",
-          },
-        },
-        {
-          featureType: "land",
-          elementType: "geometry",
-          stylers: {
-            color: "#293441",
-          },
-        },
-        {
-          featureType: "highway",
-          elementType: "all",
-          stylers: {
-            visibility: "off",
-          },
-        },
-        {
-          featureType: "arterial",
-          elementType: "geometry.fill",
-          stylers: {
-            color: "#000000",
-          },
-        },
-        {
-          featureType: "arterial",
-          elementType: "geometry.stroke",
-          stylers: {
-            color: "#0b3d51",
-          },
-        },
-        {
-          featureType: "local",
-          elementType: "geometry",
-          stylers: {
-            color: "#000000",
-          },
-        },
-        {
-          featureType: "railway",
-          elementType: "geometry.fill",
-          stylers: {
-            color: "#000000",
-          },
-        },
-        {
-          featureType: "railway",
-          elementType: "geometry.stroke",
-          stylers: {
-            color: "#08304b",
-          },
-        },
-        {
-          featureType: "subway",
-          elementType: "geometry",
-          stylers: {
-            lightness: -70,
-          },
-        },
-        {
-          featureType: "building",
-          elementType: "geometry.fill",
-          stylers: {
-            color: "#000000",
-          },
-        },
-        {
-          featureType: "all",
-          elementType: "labels.text.fill",
-          stylers: {
-            color: "#857f7f",
-          },
-        },
-        {
-          featureType: "all",
-          elementType: "labels.text.stroke",
-          stylers: {
-            color: "#000000",
-          },
-        },
-        {
-          featureType: "building",
-          elementType: "geometry",
-          stylers: {
-            color: "#022338",
-          },
-        },
-        {
-          featureType: "green",
-          elementType: "geometry",
-          stylers: {
-            color: "#062032",
-          },
-        },
-        {
-          featureType: "boundary",
-          elementType: "all",
-          stylers: {
-            color: "#465b6c",
-          },
-        },
-        {
-          featureType: "manmade",
-          elementType: "all",
-          stylers: {
-            color: "#022338",
-          },
-        },
-        {
-          featureType: "label",
-          elementType: "all",
-          stylers: {
-            visibility: "off",
-          },
-        },
-      ],*/
       styleJson: [
           {
         "featureType": "water",
@@ -1237,13 +1139,13 @@ const option = {
       name: props.title,
       type: "scatter",
       coordinateSystem: "bmap",
-      data: convertData(data),
+      data: geoData,
       symbolSize: function (val) {
         return val[2] / props.zoom;
       },
-      encode: {
+      /*encode: {
         value: 2,
-      },
+      },*/
       label: {
         formatter: "{b}",
         position: "right",
@@ -1265,13 +1167,10 @@ const option = {
       name: "Top 5",
       type: "effectScatter",
       coordinateSystem: "bmap",
-      data: convertData(
-        data
-          .sort(function (a, b) {
-            return b.value - a.value;
-          })
-          .slice(0, 6)
-      ),
+      data: geoData.sort(function (a, b) {
+        return b.value - a.value;
+      }).slice(0, 6)
+      ,
       symbolSize: function (val) {
         return val[2] / props.zoom;
       },
@@ -1345,7 +1244,7 @@ onUpdated(() => {
         name: props.title,
         type: "scatter",
         coordinateSystem: "bmap",
-        data: convertData(data),
+        data: geoData,
         encode: {
           value: 2,
         },
@@ -1362,56 +1261,7 @@ onUpdated(() => {
             show: true,
           },
         },
-      },
-      {
-        name: "Top 5",
-        type: "effectScatter",
-        coordinateSystem: "bmap",
-        data: convertData(
-          data
-            .sort(function (a, b) {
-              return b.value - a.value;
-            })
-            .slice(0, 6)
-        ),
-        encode: {
-          value: 2,
-        },
-        showEffectOn: "render",
-        rippleEffect: {
-          brushType: "stroke",
-        },
-        label: {
-          formatter: "{b}",
-          position: "right",
-          show: true,
-          textStyle: {
-            color: "#fff",
-          },
-        },
-        itemStyle: {
-          shadowBlur: 10,
-          shadowColor: "#333",
-        },
-        emphasis: {
-          scale: true,
-        },
-        zlevel: 100,
-      },
-      {
-        type: "lines",
-        coordinateSystem: "bmap",
-        polyline: true,
-        data: props.roadmap,
-        silent: true,
-        lineStyle: {
-          color: "#f7c5a0",
-          opacity: 0.5,
-          width: 2,
-        },
-        progressiveThreshold: 500,
-        progressive: 200,
-      },
+      }
     ],
   });
 });
