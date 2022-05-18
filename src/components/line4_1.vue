@@ -9,6 +9,19 @@ import fastDemand from "/src/assets/chargerInfo/chart/fast_demand.json"
 import slowDemand from "/src/assets/chargerInfo/chart/slow_demand.json"
 import revenue from "/src/assets/chargerInfo/chart/revenue.json"
 
+const props = defineProps({
+  city: String,
+  budget: String,
+  way: String
+})
+let fastData = []
+let slowData = []
+let revData = []
+
+let cityData = ref()
+let budgetData = ref()
+let wayData = ref()
+
 const curSum = ref(null)
 const option = {
   color: ['rgb(255,66,66)', 'rgb(39,174,96)', 'rgb(242,201,76)'],
@@ -140,35 +153,60 @@ const option = {
     }
   ]
 }
-const props = defineProps({
-  city: String,
-  budget: String,
-  way: String
-})
 
-let cityData = ref()
-let budgetData = ref()
-let wayData = ref()
-
-watch(() =>[props.city, props.budget, props.way], (newValue) => {
-  [cityData.value, budgetData, wayData] = [...newValue]
-}, {immediate: true})
-
-let fastData = ref([
-
-])
-let slowData = ref([])
-let revData = ref([])
 
 onMounted(() => {
-  let curSumChart = echarts.init(curSum.value);
+  watch(() =>[props.city, props.budget, props.way], (newValue) => {
+    [cityData.value, budgetData.value, wayData.value] = [...newValue]
+    let budget, city, way
+    switch (cityData.value){
+      case '北京': {
+        city = 'beijing'
+        break
+      }
+      case '广州': {
+        city = 'guangzhou'
+        break
+      }
+      case '天津': {
+        city = 'tianjin'
+        break
+      }
+    }
+    switch (budgetData.value){
+      case '1000万元': budget = "1w"; break
+      case '2000万元': budget = "2w"; break
+      case '3000万元': budget = "3w"; break
+      case '4000万元': budget = "4w"; break
+      case '5000万元': budget = "5w"; break
+    }
+    switch (wayData.value){
+      case 'Even': way = 0; break
+      case 'Greedy': way = 1; break
+      case 'SPAP': way = 2; break
+    }
+    fastData = []
+    slowData = []
+    revData = []
+    for(let item in fastDemand[budget][city][way][0]){
+      fastData.push(fastDemand[budget][city][way][0][item]*100)
+    }
+    for(let item in slowDemand[budget][city][way][0]){
+      slowData.push(slowDemand[budget][city][way][0][item]*100)
+    }
+    for(let item in revenue[budget][city][way][0]){
+      revData.push(revenue[budget][city][way][0][item])
+    }
+
+  }, {immediate: true})
+  let curSumChart = echarts.init(curSum.value)
   curSumChart.setOption(option)
 })
 </script>
 
 <style scoped>
   .curSum-chart{
-    width: 70vw;
+    width: 60vw;
     height: 70vh;
   }
 </style>

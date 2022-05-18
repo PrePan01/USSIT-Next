@@ -1229,7 +1229,7 @@ img {
   border-radius: 18px;
   padding: 30px 0 0 30px;
   border: 1px solid rgb(204,214,215);
-  left: 58%;
+  left: 65%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
