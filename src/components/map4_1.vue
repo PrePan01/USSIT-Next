@@ -7,14 +7,11 @@ import {onBeforeUnmount, onMounted, onUpdated, ref, watch} from "vue";
 import * as echarts from "echarts";
 import "echarts/extension/bmap/bmap";
 import _ from "lodash";
-// TODO 删
-import he_feiMap from "/src/assets/he_feiMap.json";
-import tai_anMap from "/src/assets/tai_anMap.json";
-import nan_shanMap from "/src/assets/nan_shanMap.json";
 
 import beijing_locations from "/src/assets/chargerInfo/locations/beijing_locations.json"
 import guangzhou_locations from "/src/assets/chargerInfo/locations/guangzhou_locations.json"
 import tianjin_locations from "/src/assets/chargerInfo/locations/tianjin_locations.json"
+import {NButton} from 'naive-ui'
 
 let geoData = []
 for(let item in beijing_locations){
@@ -60,32 +57,6 @@ watch(()=>props.cityOption, (newValue) => {
 const geoCoordMap = props.geoCoordMap;
 let myChart;
 
-/*const convertData = function (data) {
-  var res = [];
-  for (var i = 0; i < data.length; i++) {
-    var geoCoord = geoCoordMap[data[i].name];
-    if (geoCoord) {
-      if (props.geo == "nanshan") {
-        res.push({
-          name: nan_shanMap[data[i].name]?.name || "无名路",
-          value: geoCoord.concat(data[i].value).concat('demo'),
-        });
-      } else if (props.geo == "hefei") {
-        res.push({
-          name: he_feiMap[data[i].name]?.name || "无名路",
-          value: geoCoord.concat(data[i].value).concat('demo'),
-        });
-      } else {
-        res.push({
-          name: tai_anMap[data[i].name]?.name || "无名路",
-          value: geoCoord.concat(data[i].value).concat('demo'),
-        });
-      }
-    }
-  }
-  return res;
-};*/
-
 const option = {
   //弹出框配置
   tooltip: {
@@ -104,19 +75,22 @@ const option = {
                 <div style="font-size: 18px">路段：<b>${params.name}</b></div>
             </div>
           </div>
-          <div style="margin-top: 10px;display: flex;align-items: center;justify-content: space-evenly">
-            <!--营收-->
+          <div style="color: rgb(65,184,131);font-size: 16px;text-align: center;padding: 10px 0;cursor: pointer" onClick="isShowLine()">
+            营收利用率曲线
+          </div>
+          <!--<div style="margin-top: 10px;display: flex;align-items: center;justify-content: space-evenly">
+            营收
             <div style="display: inline-block;padding: 0 12px 0 0;border-right: 1px solid black">
               <div style="margin-bottom: 5px;font-size: 14px">营收</div>
               <span style="font-size: 22px;margin-right: 5px;font-weight: bold">3122</span><span style="font-size: 12px">元</span>
             </div>
-            <!--利用率占比-->
+            &lt;!&ndash;利用率占比&ndash;&gt;
             <div style="display: inline-block;padding: 0 10px">
               <div style="margin-bottom: 5px;font-size: 14px">利用率占比</div>
               <span style="font-size: 22px;margin-right: 5px;font-weight: bold">24.12</span><span style="font-size: 12px">%</span>
             </div>
             <img src="/src/assets/Line Chart 2.png" alt="" style="height: 40px">
-          </div>
+          </div>-->
         </div>
       `;
     }
@@ -1291,6 +1265,10 @@ const reportData = (data) => {
 function idIndex(data, name){
   emit("idIndex", data)
   emit("getRoadName", name)
+}
+
+window.isShowLine = function isShowLine(){
+  emit("showLine", true)
 }
 </script>
 

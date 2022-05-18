@@ -8,11 +8,13 @@ import * as echarts from "echarts";
 import fastDemand from "/src/assets/chargerInfo/chart/fast_demand.json"
 import slowDemand from "/src/assets/chargerInfo/chart/slow_demand.json"
 import revenue from "/src/assets/chargerInfo/chart/revenue.json"
+import {parseInt} from "lodash/string";
 
 const props = defineProps({
   city: String,
   budget: String,
-  way: String
+  way: String,
+  chargerId: String
 })
 let fastData = []
 let slowData = []
@@ -21,6 +23,7 @@ let revData = []
 let cityData = ref()
 let budgetData = ref()
 let wayData = ref()
+let chargerIdData = ref()
 
 const curSum = ref(null)
 const option = {
@@ -156,8 +159,8 @@ const option = {
 
 
 onMounted(() => {
-  watch(() =>[props.city, props.budget, props.way], (newValue) => {
-    [cityData.value, budgetData.value, wayData.value] = [...newValue]
+  watch(() =>[props.city, props.budget, props.way, props.chargerId], (newValue) => {
+    [cityData.value, budgetData.value, wayData.value, chargerIdData.value] = [...newValue]
     let budget, city, way
     switch (cityData.value){
       case '北京': {
@@ -185,22 +188,19 @@ onMounted(() => {
       case 'Greedy': way = 1; break
       case 'SPAP': way = 2; break
     }
-    fastData = []
-    slowData = []
-    revData = []
-    for(let item in fastDemand[budget][city][way][0]){
-      fastData.push(fastDemand[budget][city][way][0][item]*100)
-    }
-    for(let item in slowDemand[budget][city][way][0]){
-      slowData.push(slowDemand[budget][city][way][0][item]*100)
-    }
-    for(let item in revenue[budget][city][way][0]){
-      revData.push(revenue[budget][city][way][0][item])
-    }
 
+    for(let item in fastDemand[budget][city][way][parseInt(chargerIdData.value)]){
+      fastData[item] = (fastDemand[budget][city][way][parseInt(chargerIdData.value)][item]*100)
+    }
+    for(let item in slowDemand[budget][city][way][parseInt(chargerIdData.value)]){
+      slowData[item] = (slowDemand[budget][city][way][parseInt(chargerIdData.value)][item]*100)
+    }
+    for(let item in revenue[budget][city][way][parseInt(chargerIdData.value)]){
+      revData[item] = (revenue[budget][city][way][parseInt(chargerIdData.value)][item])
+    }
+    let curSumChart = echarts.init(curSum.value)
+    curSumChart.setOption(option)
   }, {immediate: true})
-  let curSumChart = echarts.init(curSum.value)
-  curSumChart.setOption(option)
 })
 </script>
 
